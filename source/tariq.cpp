@@ -146,7 +146,7 @@ void Tariq::startConcept(std::vector<Concepts> conceptsIn)
 		this->startConceptSalutations();
 		this->_joy++;
 
-		this->_memories.push_back(Memory("You", "JOY++", "said hello to me", "", "", ""));
+		this->_memories.push_back(Memory("You", "JOY++", "said hello to me", DUNNO, DUNNO, DUNNO));
 		//this->_memories.at(0).printtheMemory();
 	}
 	if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_NAME") != conceptsInString.end())
@@ -155,23 +155,44 @@ void Tariq::startConcept(std::vector<Concepts> conceptsIn)
 		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_YOU") != conceptsInString.end()))
 	{
 		// Element in vector.
-		this->startConceptName("I");
+		this->startConceptName("I", "CONCEPT_NAME");
 		this->_joy++;
 
-		this->_memories.push_back(Memory("You", "JOY++", "asked my name", "", "", ""));
+		this->_memories.push_back(Memory("You", "JOY++", "asked my name", DUNNO, DUNNO, DUNNO));
 		//this->_memories.at(0).printtheMemory();
 	}
-	std::cout << this->sentenceToSay << std::endl;
-	//reseting the sentence to say
-	this->sentenceToSay = "";
+	if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_FIRSTNAME") != conceptsInString.end())
+		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_BE") != conceptsInString.end())
+		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_WHAT") != conceptsInString.end())
+		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_YOU") != conceptsInString.end()))
+	{
+		// Element in vector.
+		this->startConceptName("I", "CONCEPT_FIRSTNAME");
+		this->_joy++;
+
+		this->_memories.push_back(Memory("You", "JOY++", "asked my firstname", DUNNO, DUNNO, DUNNO));
+		//this->_memories.at(0).printtheMemory();
+	}
+	if (this->sentenceToSay == "")
+	{
+		this->noConceptFound();
+	}
+	else
+	{
+		std::cout << this->sentenceToSay << std::endl;
+		//reseting the sentence to say
+		this->sentenceToSay = "";
+
+	}
+	
 }
 
 
-void Tariq::startConceptName(std::string subject)
+void Tariq::startConceptName(std::string subject, std::string conceptdude)
 {
 	for (int i = 0; i < this->_memories.size(); i++)
 	{
-		if (this->_memories.at(i).getWhat() == "CONCEPT_NAME" && this->_memories.at(i).getWho() == subject)
+		if (this->_memories.at(i).getWhat() == conceptdude && this->_memories.at(i).getWho() == subject)
 		{
 			this->sentenceToSay += this->_memories.at(i).getHow();
 		}
@@ -208,7 +229,7 @@ void Tariq::ConceptSalutations()
 	salutationWords.push_back("BONJOUR");
 	salutationWords.push_back("SALUT");
 	this->addConcept(Concepts("CONCEPT_SALUTATION", salutationWords));
-	this->_memories.push_back(Memory("", "CONCEPT_SALUTATION", "Hi", "", "", ""));
+	this->_memories.push_back(Memory("", "CONCEPT_SALUTATION", "Hi", DUNNO, DUNNO, DUNNO));
 }
 
 void Tariq::ConceptName()
@@ -217,7 +238,7 @@ void Tariq::ConceptName()
 	nameWords.push_back("NAME");
 	
 	this->addConcept(Concepts("CONCEPT_NAME", nameWords));
-	this->_memories.push_back(Memory("I", "CONCEPT_NAME", "Riahi", "", "", ""));
+	this->_memories.push_back(Memory("I", "CONCEPT_NAME", "Riahi", DUNNO, DUNNO, DUNNO));
 
 }
 void Tariq::ConceptFirstName()
@@ -226,7 +247,7 @@ void Tariq::ConceptFirstName()
 	firstnameWords.push_back("FIRSTNAME");
 
 	this->addConcept(Concepts("CONCEPT_FIRSTNAME", firstnameWords));
-	this->_memories.push_back(Memory("I", "CONCEPT_FIRSTNAME", "Tariq", "", "", ""));
+	this->_memories.push_back(Memory("I", "CONCEPT_FIRSTNAME", "Tariq", DUNNO, DUNNO, DUNNO));
 }
 void Tariq::ConceptBe()
 {
@@ -307,5 +328,5 @@ void Tariq::ConceptWhen()
 }
 void Tariq::InitMemories()
 {
-	this->_memories.push_back(Memory("I", "CONCEPT_FEELING", "Good", "", "", ""));
+	this->_memories.push_back(Memory("I", "CONCEPT_FEELING", "Good", DUNNO, DUNNO, DUNNO));
 }

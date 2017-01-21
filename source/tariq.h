@@ -6,6 +6,7 @@
 #include <sstream>
 #include "memory.h"
 
+#define DUNNO "I don\'t know much about that."
 class Tariq : public AI {
 public:
 	Tariq();
@@ -39,7 +40,7 @@ public:
 	*/
 	void startConceptSalutations();
 
-	void startConceptName(std::string subject);
+	void startConceptName(std::string subject, std::string conceptdude);
 	/*
 	Say "Dunno about this concept"
 	*/
