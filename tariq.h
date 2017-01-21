@@ -38,6 +38,8 @@ public:
 	Say Hello :)
 	*/
 	void startConceptSalutations();
+
+	void startConceptName(std::string subject);
 	/*
 	Say "Dunno about this concept"
 	*/
@@ -49,7 +51,26 @@ protected:
 private:
 	/*Function to init the salutation concept*/
 	void ConceptSalutations();
+	
+	void ConceptMe();
+	void ConceptYou();
 
+	void ConceptName();
+	void ConceptFirstName();
+
+
+	void ConceptBe();
+	void ConceptHave();
+
+
+	void ConceptWhat();
+	void ConceptWho();
+	void ConceptHow();
+	void ConceptWhere();
+	void ConceptWhy();
+	void ConceptWhen();
+
+	void InitMemories();
 	
 };
 #endif

@@ -10,7 +10,7 @@ This class saves every conversations, eventually create people they meet to reme
 class Memory {
 public:
 	Memory();
-	Memory(std::string, std::string, std::string, std::string, std::string, std::string);
+	Memory(std::string who, std::string what, std::string how, std::string why, std::string where, std::string when);
 	~Memory();
 
 	std::string getWho();
