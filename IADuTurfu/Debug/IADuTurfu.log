@@ -1,0 +1,10 @@
+﻿  tariq.cpp
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(69): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(87): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(139): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(193): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\iaduturfu\iaduturfu\tariq.cpp(204): warning C4018: '<': signed/unsigned mismatch
+  IADuTurfu.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\IADuTurfu\Debug\IADuTurfu.exe
+  IADuTurfu.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\IADuTurfu\Debug\IADuTurfu.pdb (Partial PDB)
