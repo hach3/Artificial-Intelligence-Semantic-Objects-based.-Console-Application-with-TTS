@@ -34,7 +34,7 @@ std::string AI::getAIName()
 
 void AI::addConcept(Concepts c)
 {
-
+	this->_concepts.push_back(c);
 }
 std::vector<Concepts> AI::getConcepts()
 {

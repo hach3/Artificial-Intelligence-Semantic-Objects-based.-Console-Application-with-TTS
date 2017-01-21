@@ -17,6 +17,7 @@ public:
 	Start();
 	~Start();
 
+	/*Main loop that'll wait for the user to put a message*/
 	void loop();
 protected:
 private:

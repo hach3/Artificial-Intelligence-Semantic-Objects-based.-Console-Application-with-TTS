@@ -27,12 +27,13 @@ void Start::loop()
 		
 		userSentence = "";
 
-		std::cin >> userSentence;
+		std::getline(std::cin, userSentence);
+		
 		
 		bot1.startBehavior(userSentence);
 	
 
-		std::cin.ignore();
+		
 
 		userSentence = "";
 		

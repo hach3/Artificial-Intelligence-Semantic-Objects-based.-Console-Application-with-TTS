@@ -4,6 +4,7 @@
 #include "concepts.h"
 #include <iostream>
 #include <sstream>
+#include "memory.h"
 
 class Tariq : public AI {
 public:
@@ -31,13 +32,15 @@ public:
 	/*
 	Get the conceptName and start the conceptaction
 	*/
-	void startConcept(std::string);
+	void startConcept(std::vector<Concepts> conceptsIn);
 
 	/*
 	Say Hello :)
 	*/
 	void startConceptSalutations();
-
+	/*
+	Say "Dunno about this concept"
+	*/
 	void noConceptFound();
 
 
@@ -47,8 +50,6 @@ private:
 	/*Function to init the salutation concept*/
 	void ConceptSalutations();
 
-	/*concept Salutation here */
-	Concepts _conceptSalutations;
-
+	
 };
 #endif
