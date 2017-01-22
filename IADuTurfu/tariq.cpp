@@ -20,28 +20,10 @@ void Tariq::Initialization()
 	this->_anger = 0;
 	this->_sadness = 0;
 	this->_fear = 0;
+	this->_asking = false;
+	this->_answering = true;
 
-
-	this->ConceptSalutations();
-	this->ConceptMe();
-	this->ConceptYou();
-
-	this->ConceptName();
-	this->ConceptFirstName();
-
-
-	this->ConceptBe();
-	this->ConceptHave();
-
-
-	this->ConceptWhat();
-	this->ConceptWho();
-	this->ConceptHow();
-	this->ConceptWhere();
-	this->ConceptWhy();
-	this->ConceptWhen();
-
-	this->InitMemories();
+	this->InitConcepts();
 }
 
 
@@ -66,13 +48,16 @@ void Tariq::startBehavior(std::string userSentence)
 	
 	*/
 	std::vector<Concepts> conceptFoundInSentence;
+	std::vector<std::string> conceptWordsTO;
+	bool find;
 	for (int i = 0; i < conceptInSentence.size(); i++)
 	{
+		find = false;
 		//std::cout << "Starting checking every word in the sentence : " << conceptInSentence.at(i) << std::endl;
 		for (int y = 0; y < this->_concepts.size(); y++)
 		{
 			
-			std::vector<std::string> conceptWordsTO = this->_concepts.at(y).getConceptWords();
+			conceptWordsTO = this->_concepts.at(y).getConceptWords();
 			//std::cout << "Comparing concepts : " << conceptInSentence.at(i) << std::endl;
 			for (int w = 0; w < conceptWordsTO.size(); w++)
 			{
@@ -83,6 +68,7 @@ void Tariq::startBehavior(std::string userSentence)
 					//On le rajoute dans le vector @CONCEPTS TO HANDLE
 					//Le rajouter uniquement s'il y est pas déja
 					int totalfound = 0;
+					
 					//std::cout << "Starting checking if the concept is already saved : " << conceptInSentence.at(i) << std::endl;
 					for (int x = 0; x < conceptFoundInSentence.size(); x++)
 					{
@@ -96,15 +82,27 @@ void Tariq::startBehavior(std::string userSentence)
 					if (totalfound == 0)
 					{
 						conceptFoundInSentence.push_back(this->_concepts.at(y));
+						this->_relatedWordToConcept.push_back(this->putToUpperCase(conceptInSentence.at(i)));
 						//std::cout << "Saving the concept : " << this->_concepts.at(y).getConceptName() << std::endl;
+						find = true;
 					}
 					
 				}
+			
 			}
 			
 			
 		}
+		if (find == false)
+		{
+			this->_wordsNoConceptString.append(this->putToUpperCase(conceptInSentence.at(i)));
+		}
 	}
+
+	//check all the words that are not in the concept lists
+
+
+	//
 	if (conceptFoundInSentence.size() > 0)
 	{
 		//std::cout << "Starting the concept : " << std::endl;
@@ -115,7 +113,7 @@ void Tariq::startBehavior(std::string userSentence)
 		this->noConceptFound();
 	}
 	
-	
+	this->_wordsNoConceptString = "";
 	
 }
 
@@ -125,87 +123,128 @@ Instead of one conceptName, create a list of string to start adding each concept
 */
 void Tariq::startConcept(std::vector<Concepts> conceptsIn)
 {
-	//if salutations => say hello
-	/*
-	if what is your name => say My Name Is Riahi
-	if(concept == what -> add what)
-	if(concept == be -> add "how")
-	if(concept == you -> add "I" who)
-	if(concept == NAME -> add what == conceptNAME)
-
-	select(WHAT where how = be and who = i)
-	*/
+	
 	std::vector<std::string> conceptsInString;
+	std::string getStockingConcept;
+	std::string stockingConcept;
+
+
+	this->_currentConcepts.clear();
 	for (int p = 0; p < conceptsIn.size(); p++)
 	{
 		conceptsInString.push_back(conceptsIn.at(p).getConceptName());
+		
 	}
-	if (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_SALUTATION") != conceptsInString.end())
-	{
-		// Element in vector.
-		this->startConceptSalutations();
-		this->_joy++;
 
-		this->_memories.push_back(Memory("You", "JOY++", "said hello to me", DUNNO, DUNNO, DUNNO));
-		//this->_memories.at(0).printtheMemory();
-	}
-	if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_NAME") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_BE") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_WHAT") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_YOU") != conceptsInString.end()))
-	{
-		// Element in vector.
-		this->startConceptName("I", "CONCEPT_NAME");
-		this->_joy++;
 
-		this->_memories.push_back(Memory("You", "JOY++", "asked my name", DUNNO, DUNNO, DUNNO));
-		//this->_memories.at(0).printtheMemory();
-	}
-	if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_FIRSTNAME") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_BE") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_WHAT") != conceptsInString.end())
-		&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_YOU") != conceptsInString.end()))
-	{
-		// Element in vector.
-		this->startConceptName("I", "CONCEPT_FIRSTNAME");
-		this->_joy++;
+	
+		//std::cout << "Trying to answer smth" << std::endl;
+		for (int z = 0; z < conceptsInString.size(); z++)
+		{
+			this->_currentConcepts.push_back(conceptsInString.at(z));
+			
+		}
+		if (conceptsInString.size() == 1)
+		{
+			this->startConceptToDo("", conceptsInString.at(0));
+		}
 
-		this->_memories.push_back(Memory("You", "JOY++", "asked my firstname", DUNNO, DUNNO, DUNNO));
-		//this->_memories.at(0).printtheMemory();
-	}
+		/* Answer to question "what is [something]" by looking in the memory the "how" is something where WHAT = [concept_something]*/
+		else if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_BE") != conceptsInString.end())
+			&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_WHAT") != conceptsInString.end())
+			&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_YOU") != conceptsInString.end()))
+		{
+			
+			for (int a = 0; a < conceptsInString.size(); a++)
+			{
+				if (conceptsInString.at(a) != "CONCEPT_BE" && conceptsInString.at(a) != "CONCEPT_WHAT" && conceptsInString.at(a) != "CONCEPT_YOU")
+				{
+					stockingConcept = conceptsInString.at(a);
+				}
+			}
+			this->startConceptToDo("I", stockingConcept);
+		
+		}
+		else if ((std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_BE") != conceptsInString.end())
+			&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_WHAT") != conceptsInString.end())
+			&& (std::find(conceptsInString.begin(), conceptsInString.end(), "CONCEPT_ME") != conceptsInString.end()))
+		{
+			
+			for (int a = 0; a < conceptsInString.size(); a++)
+			{
+				if (conceptsInString.at(a) != "CONCEPT_BE" && conceptsInString.at(a) != "CONCEPT_WHAT" && conceptsInString.at(a) != "CONCEPT_ME")
+				{
+					stockingConcept = conceptsInString.at(a);
+				}
+			}
+			this->startConceptToDo("You", stockingConcept);
+	
+		}
+
+		//std::cout << "Trying to ask smth" << std::endl;
+		else if ((std::find(this->_currentConcepts.begin(), this->_currentConcepts.end(), "CONCEPT_BE") != this->_currentConcepts.end())
+			&& (std::find(this->_currentConcepts.begin(), this->_currentConcepts.end(), "CONCEPT_ME") != this->_currentConcepts.end()))
+		{
+			//std::cout << "Found a question with be & you" << std::endl;
+			for (int e = 0; e < this->_currentConcepts.size(); e++)
+			{
+				if (this->_currentConcepts.at(e) != "CONCEPT_BE" && this->_currentConcepts.at(e) != "CONCEPT_ME")
+				{
+					getStockingConcept = this->_currentConcepts.at(e);
+			
+					
+					
+				}
+			}
+			for (int r = 0; r < this->_memories.size(); r++)
+			{
+				//std::cout << "Checking if i already know the answer ?" << std::endl;
+				if (this->_memories.at(r).getWhat() == getStockingConcept && this->_memories.at(r).getWho() == "You")
+				{
+					this->_memories.erase(this->_memories.begin() + r);
+					this->_memories.push_back(Memory("You", getStockingConcept, this->_wordsNoConceptString, DUNNO, DUNNO, DUNNO));
+					r = this->_memories.size();
+					
+				}
+			}
+			this->startConceptToDo("You", getStockingConcept);
+	
+		}
+	
+	
+	
+
+	/* Say the default sentence */
 	if (this->sentenceToSay == "")
 	{
 		this->noConceptFound();
 	}
-	else
+	else //Say the sentence
 	{
 		std::cout << this->sentenceToSay << std::endl;
 		//reseting the sentence to say
 		this->sentenceToSay = "";
-
 	}
 	
 }
 
-
-void Tariq::startConceptName(std::string subject, std::string conceptdude)
+/* Say the "how" from the memory of a concept...*/
+void Tariq::startConceptToDo(std::string subject, std::string conceptdude)
 {
+
+
+
 	for (int i = 0; i < this->_memories.size(); i++)
 	{
 		if (this->_memories.at(i).getWhat() == conceptdude && this->_memories.at(i).getWho() == subject)
 		{
 			this->sentenceToSay += this->_memories.at(i).getHow();
+		
 		}
-	}
-}
-void Tariq::startConceptSalutations()
-{
-
-	for (int i = 0; i < this->_memories.size(); i++)
-	{
-		if (this->_memories.at(i).getWhat() == "CONCEPT_SALUTATION")
+		if (this->_memories.at(i).getWhat() == conceptdude && this->_memories.at(i).getWho() == "You" && this->_memories.at(i).getHow() == "")
 		{
-			this->sentenceToSay += this->_memories.at(i).getHow();
+			this->sentenceToSay += "I don\'t know your name. Can you tell me about ?";
+		
 		}
 	}
 }
@@ -218,11 +257,10 @@ void Tariq::noConceptFound()
 	this->sentenceToSay = "";
 }
 
-
-
-
-void Tariq::ConceptSalutations()
+void Tariq::InitConcepts()
 {
+	
+	/* CONCEPT SALUTATIONS */
 	std::vector<std::string> salutationWords;
 	salutationWords.push_back("HELLO");
 	salutationWords.push_back("HI");
@@ -230,27 +268,25 @@ void Tariq::ConceptSalutations()
 	salutationWords.push_back("SALUT");
 	this->addConcept(Concepts("CONCEPT_SALUTATION", salutationWords));
 	this->_memories.push_back(Memory("", "CONCEPT_SALUTATION", "Hi", DUNNO, DUNNO, DUNNO));
-}
 
-void Tariq::ConceptName()
-{
+
+	/* CONCEPT NAME*/
 	std::vector<std::string> nameWords;
 	nameWords.push_back("NAME");
-	
+
 	this->addConcept(Concepts("CONCEPT_NAME", nameWords));
 	this->_memories.push_back(Memory("I", "CONCEPT_NAME", "Riahi", DUNNO, DUNNO, DUNNO));
+	this->_memories.push_back(Memory("You", "CONCEPT_NAME", "", DUNNO, DUNNO, DUNNO));
 
-}
-void Tariq::ConceptFirstName()
-{
+	/* CONCEPT FIRSTNAME*/
 	std::vector<std::string> firstnameWords;
 	firstnameWords.push_back("FIRSTNAME");
 
 	this->addConcept(Concepts("CONCEPT_FIRSTNAME", firstnameWords));
 	this->_memories.push_back(Memory("I", "CONCEPT_FIRSTNAME", "Tariq", DUNNO, DUNNO, DUNNO));
-}
-void Tariq::ConceptBe()
-{
+	this->_memories.push_back(Memory("You", "CONCEPT_FIRSTNAME", "", DUNNO, DUNNO, DUNNO));
+
+	/* CONCEPT BE*/
 	std::vector<std::string> beWords;
 	beWords.push_back("BE");
 	beWords.push_back("AM");
@@ -258,75 +294,66 @@ void Tariq::ConceptBe()
 	beWords.push_back("IS");
 
 	this->addConcept(Concepts("CONCEPT_BE", beWords));
-}
-void Tariq::ConceptHave()
-{
+
+
+	/* CONCEPT HAVE*/
 	std::vector<std::string> haveWords;
 	haveWords.push_back("HAVE");
 	haveWords.push_back("HAS");
 
 	this->addConcept(Concepts("CONCEPT_HAVE", haveWords));
-}
 
-void Tariq::ConceptMe()
-{
+	/* CONCEPT ME*/
 	std::vector<std::string> meWords;
 	meWords.push_back("ME");
 	meWords.push_back("I");
 	meWords.push_back("MY");
 	this->addConcept(Concepts("CONCEPT_ME", meWords));
-}
-void Tariq::ConceptYou()
-{
+
+
+	/* CONCEPT YOU*/
 	std::vector<std::string> youWords;
 	youWords.push_back("YOU");
 	youWords.push_back("YOUR");
 
 	this->addConcept(Concepts("CONCEPT_YOU", youWords));
-}
-void Tariq::ConceptWhat()
-{
+
+
+	/* CONCEPT WHAT*/
 	std::vector<std::string> whatWords;
 	whatWords.push_back("WHAT");
 
 	this->addConcept(Concepts("CONCEPT_WHAT", whatWords));
-}
-void Tariq::ConceptWho()
-{
+
+	/* CONCEPT WHO*/
 	std::vector<std::string> whoWords;
 	whoWords.push_back("WHO");
 
 	this->addConcept(Concepts("CONCEPT_WHO", whoWords));
-}
-void Tariq::ConceptHow()
-{
+
+	/* CONCEPT HOW*/
 	std::vector<std::string> howWords;
 	howWords.push_back("HOW");
 
 	this->addConcept(Concepts("CONCEPT_HOW", howWords));
-}
-void Tariq::ConceptWhere()
-{
+
+	/* CONCEPT WHERE*/
 	std::vector<std::string> whereWords;
 	whereWords.push_back("WHERE");
 
 	this->addConcept(Concepts("CONCEPT_WHERE", whereWords));
-}
-void Tariq::ConceptWhy()
-{
+
+	/* CONCEPT WHY*/
 	std::vector<std::string> whyWords;
 	whyWords.push_back("WHY");
 
 	this->addConcept(Concepts("CONCEPT_WHY", whyWords));
-}
-void Tariq::ConceptWhen()
-{
+
+	/* CONCEPT WHEN*/
 	std::vector<std::string> whenWords;
 	whenWords.push_back("WHEN");
 
 	this->addConcept(Concepts("CONCEPT_WHEN", whenWords));
 }
-void Tariq::InitMemories()
-{
-	this->_memories.push_back(Memory("I", "CONCEPT_FEELING", "Good", DUNNO, DUNNO, DUNNO));
-}
+
+

@@ -5,8 +5,11 @@
 #include <iostream>
 #include <sstream>
 #include "memory.h"
+#include "person.h"
 
 #define DUNNO "I don\'t know much about that."
+
+
 class Tariq : public AI {
 public:
 	Tariq();
@@ -38,9 +41,7 @@ public:
 	/*
 	Say Hello :)
 	*/
-	void startConceptSalutations();
-
-	void startConceptName(std::string subject, std::string conceptdude);
+	void startConceptToDo(std::string subject, std::string conceptdude);
 	/*
 	Say "Dunno about this concept"
 	*/
@@ -50,28 +51,16 @@ public:
 	
 protected:
 private:
-	/*Function to init the salutation concept*/
-	void ConceptSalutations();
+	void InitConcepts();
+	Person person;
 	
-	void ConceptMe();
-	void ConceptYou();
 
-	void ConceptName();
-	void ConceptFirstName();
+	bool _asking;
+	bool _answering;
+	std::vector<std::string> _currentConcepts;
 
-
-	void ConceptBe();
-	void ConceptHave();
-
-
-	void ConceptWhat();
-	void ConceptWho();
-	void ConceptHow();
-	void ConceptWhere();
-	void ConceptWhy();
-	void ConceptWhen();
-
-	void InitMemories();
-	
+	std::vector<std::string> _relatedWordToConcept;
+	std::vector<std::string> _wordsNoConcept;
+	std::string _wordsNoConceptString;
 };
 #endif

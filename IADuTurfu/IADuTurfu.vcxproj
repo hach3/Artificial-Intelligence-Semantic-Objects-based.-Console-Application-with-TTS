@@ -112,18 +112,18 @@
   <ItemGroup>
     <ClCompile Include="ai.cpp" />
     <ClCompile Include="concepts.cpp" />
-    <ClCompile Include="current.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="memory.cpp" />
+    <ClCompile Include="person.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="tariq.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="concepts.h" />
     <ClInclude Include="ai.h" />
-    <ClInclude Include="current.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="memory.h" />
+    <ClInclude Include="person.h" />
     <ClInclude Include="start.h" />
     <ClInclude Include="tariq.h" />
   </ItemGroup>
