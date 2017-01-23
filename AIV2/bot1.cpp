@@ -43,18 +43,18 @@ void Bot1::startBehavior(std::string userSentence)
 
 	if (this->_ConceptWH.checkIfWordIsWH(conceptInSentence.at(0))) // Si c'est WH
 	{
-		std::cout << "Found a WH" << std::endl;
+		//std::cout << "Found a WH" << std::endl;
 		if (this->_conceptBe.checkIfExist(conceptInSentence.at(1))) // Si c'est Be
 		{
-			std::cout << "Found BE" << std::endl;
+			//std::cout << "Found BE" << std::endl;
 			if (this->_ConceptSubject.checkIfExist(conceptInSentence.at(2)) || 
 				this->_ConceptSubjectChild.checkIfExist(conceptInSentence.at(2))) // Si c'est SUJET
 			{
-				std::cout << "FOUND A SUBJECT" << std::endl;
+				//std::cout << "FOUND A SUBJECT" << std::endl;
 				if (this->_conceptComplement.checkIfExistByWord(conceptInSentence.at(3)) ||
 					this->_ConceptComplementChild.checkIfExistByWord(conceptInSentence.at(3))) // Si c'est COMPLEMENT
 				{
-					std::cout << "FOUND A COMPLEMENT" << std::endl;
+					//std::cout << "FOUND A COMPLEMENT" << std::endl;
 					std::string wh = this->putToUpperCase(conceptInSentence.at(0));
 					std::string be = this->putToUpperCase(conceptInSentence.at(1));
 					std::string subject = this->putToUpperCase(conceptInSentence.at(2));
@@ -76,12 +76,12 @@ void Bot1::startBehavior(std::string userSentence)
 					if (this->_conceptComplement.checkIfExistByWord(conceptInSentence.at(3)))
 					{
 						conceptComplement = this->_conceptComplement.containInto(complement);
-						std::cout << "The complement is master" << std::endl;
+						//std::cout << "The complement is master" << std::endl;
 					}
 					else if (this->_ConceptComplementChild.checkIfExistByWord(conceptInSentence.at(3)))
 					{
 						conceptComplement = this->_ConceptComplementChild.containInto(complement);
-						std::cout << "The complement is slave" << std::endl;
+						//std::cout << "The complement is slave" << std::endl;
 					}
 					
 					std::string whValueInMemory;
@@ -90,11 +90,11 @@ void Bot1::startBehavior(std::string userSentence)
 					conceptBe = this->putToUpperCase(conceptBe);
 					conceptComplement = this->putToUpperCase(conceptComplement);
 					wh = this->putToUpperCase(wh);
-					std::cout << "Looking in the memory for :" << conceptSubject << std::endl;
-					std::cout << "Subject :" << conceptSubject << std::endl;
-					std::cout << "conceptBe" << conceptBe << std::endl;
-					std::cout << "conceptComplement :" << conceptComplement << std::endl;
-					std::cout << "wh :" << wh << std::endl;
+					//std::cout << "Looking in the memory for :" << conceptSubject << std::endl;
+					//std::cout << "Subject :" << conceptSubject << std::endl;
+					//std::cout << "conceptBe" << conceptBe << std::endl;
+					//std::cout << "conceptComplement :" << conceptComplement << std::endl;
+					//std::cout << "wh :" << wh << std::endl;
 					whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, conceptBe, conceptComplement, wh);
 
 
@@ -135,11 +135,23 @@ void Bot1::startBehavior(std::string userSentence)
 					else {
 						verbAnswer = be;
 					}
-					this->sentenceToSay = subjectAnswer + " " + complement + " " + be + " " + whValueInMemory;
-					std::cout << this->sentenceToSay << std::endl;
+					if (whValueInMemory != "")
+					{
+						this->sentenceToSay = subjectAnswer + " " + complement + " " + be + " " + whValueInMemory;
+					}
+					else {
+						this->sentenceToSay = "I don\'t know...";
+					}
+					
 				}
 			}
 		}
 	}
+	if (this->sentenceToSay == "")
+	{
+		this->sentenceToSay = "So many concepts are still unknown to me...";
+	}
+
+	std::cout << this->sentenceToSay << std::endl;
 }
 
