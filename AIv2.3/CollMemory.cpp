@@ -20,11 +20,17 @@ void CollMemory::Init()
 	Add a row with the real name to answer question who are you ? -> it will answer "WHO", so who are you = i am i :p
 	*/
 	 this->addSouvenir("CONCEPT_BE", "", "I", "", "On this machine...", "Since today", "A machine", "Fine", true, true);
-	 this->addSouvenir("CONCEPT_BE", "", "YOU", "", "In front of the screen bich", "", "A human...I guess", "", true, true);
+
+
+	 this->addSouvenir("CONCEPT_BE", "", "YOU", "", "In front of the screen bich", "", "A human I guess", "", true, true);
 
 
 	 this->addSouvenir("CONCEPT_BE", "CONCEPT_NAME", "I", "", "", "", "Gandalf", "", true, true);
+
+
 	 this->addSouvenir("CONCEPT_BE", "CONCEPT_CAR", "I", "", "", "", "MERCEDES", "RED", true, true);
+
+
 	 this->addSouvenir("CONCEPT_BE", "CONCEPT_LOVE", "I", "", "", "", "", "", true, true);
 }
 

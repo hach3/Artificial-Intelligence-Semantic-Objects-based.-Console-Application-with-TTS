@@ -4,3 +4,34 @@ The concepts are composed by a name and associated words. For example, the conce
 Once I extracted the concepts of a sentence, I can create connections between them to formatate sentences.
 
 It's a console based program written in C++ right now.
+
+
+Available sentences :
+
+Only question are allowed atm.
+
+WH + Be + S
+examples :
+What are you ?
+who are you ?
+Where am I ?
+...
+
+WH + Be + S + C
+examples :
+What is your name ? : The subject is supposed to be "your name", but i just exact "your" as the subject and turn "name" as complement
+What is your car ?
+What is my name ?...
+
+You can check which answers is known by checking in memory.cpp. The init function creates all "souvenirs".
+
+To add a souvenir :
+this->addSouvenir("CONCEPT_VERB", "CONCEPT_NAME", "WHO", "WHY", "WHERE", "WHEN", "WHAT", "HOW", BOOL IS, BOOL HAVE);
+The booleans are still on working :p
+
+Example :
+this->addSouvenir("CONCEPT_BE", "CONCEPT_NAME", "I", dunnowhy, dunnowhere, dunnowhen, "Gandalf", dunnohow, true, true);
+We just created a souvenir of having a name, and its value.
+
+Concepts are structures (check concept.h) of words category. Words can be name, subject, etc...
+
