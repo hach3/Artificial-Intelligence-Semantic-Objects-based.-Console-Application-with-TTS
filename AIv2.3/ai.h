@@ -3,6 +3,11 @@
 
 #include <string>
 #include <vector>
+
+#include <ctime>
+#include <sapi.h>
+#include "stdafx.h"
+
 //We include all the collectioner of concepts and memory
 //Memory
 #include "CollMemory.h"
@@ -28,6 +33,12 @@ public:
 
     /* Init all the concepts of Tariq*/
 	void Initialization();
+
+	void saySomething();
+
+	bool checkIfQuestionWHBeSC(std::string &wh, std::string &be, std::string &subject, std::string &complement, std::vector<std::string> vectorSentence);
+	bool checkIfQuestionWHBeS(std::string &wh, std::string &be, std::string &subject, std::vector<std::string> vectorSentence);
+	bool checkIfQuestionWHBeC(std::string &wh, std::string &be, std::string &complement, std::vector<std::string> vectorSentence);
 
 protected:
 	//Declaring every collectionners for memory

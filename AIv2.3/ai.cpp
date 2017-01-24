@@ -39,6 +39,100 @@ void AI::Initialization()
     this->_Expression.Init();
 }
 
+void AI::saySomething()
+{
+	if (this->sentenceToSay == "")
+	{
+		this->sentenceToSay = "So many concepts are still unknown to me...";
+	}
+	this->sentenceToSay = this->putToLowerCase(this->sentenceToSay);
+	std::cout << this->sentenceToSay << std::endl;
+
+	//Let's convert the string to say in wstring
+	std::wstring text(this->sentenceToSay.begin(), this->sentenceToSay.end());
+
+	ISpVoice * pVoice = NULL;
+
+	if (FAILED(::CoInitialize(NULL)))
+	{
+
+	}
+	else
+	{
+		HRESULT hr = CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void **)&pVoice);
+		if (SUCCEEDED(hr))
+
+		{
+
+			hr = pVoice->Speak(text.c_str(), 0, NULL);
+			pVoice->Release();
+			pVoice = NULL;
+		}
+
+		::CoUninitialize();
+
+	}
+
+}
+
+
+bool AI::checkIfQuestionWHBeSC(std::string &wh, std::string &be, std::string &subject, std::string &complement, std::vector<std::string> vectorSentence)
+{
+	bool isWHBeSC = false;
+
+	if (this->_ConceptWH.checkIfExistInVector(wh, vectorSentence) &&
+		this->_conceptBe.checkIfExistInVector(be, vectorSentence) &&
+		(this->_ConceptSubject.checkIfExistInVector(subject, vectorSentence) ||
+		this->_ConceptSubjectChild.checkIfExistInVector(subject, vectorSentence)) &&
+		(this->_conceptComplement.checkIfExistByWordInVector(complement, vectorSentence) ||
+		this->_ConceptComplementChild.checkIfExistByWordInVector(complement, vectorSentence))
+		)
+	{
+		isWHBeSC = true;
+	}
+	return isWHBeSC;
+}
+
+bool AI::checkIfQuestionWHBeS(std::string &wh, std::string &be, std::string &subject, std::vector<std::string> vectorSentence)
+{
+	bool isWHBeS = false;
+
+	if (this->_ConceptWH.checkIfExistInVector(wh, vectorSentence) &&
+		this->_conceptBe.checkIfExistInVector(be, vectorSentence) &&
+		(this->_ConceptSubject.checkIfExistInVector(subject, vectorSentence) ||
+		this->_ConceptSubjectChild.checkIfExistInVector(subject, vectorSentence))
+		)
+		
+	{
+		isWHBeS = true;
+	}
+	return isWHBeS;
+}
+
+
+
+bool AI::checkIfQuestionWHBeC(std::string &wh, std::string &be, std::string &complement, std::vector<std::string> vectorSentence)
+{
+	bool isWHBeC = false;
+
+	if (this->_ConceptWH.checkIfExistInVector(wh, vectorSentence) &&
+		this->_conceptBe.checkIfExistInVector(be, vectorSentence) &&
+		(this->_conceptComplement.checkIfExistByWordInVector(complement, vectorSentence) ||
+		this->_ConceptComplementChild.checkIfExistByWordInVector(complement, vectorSentence))
+		)
+	{
+		isWHBeC = true;
+	}
+	return isWHBeC;
+}
+
+
+
+
+
+
+
+
 
 /* Turn a string to uppercase and return it. I use it to turn the userSentence concepts to uppercase to compare them with the AI's concepts*/
 std::string AI::putToUpperCase(std::string s)

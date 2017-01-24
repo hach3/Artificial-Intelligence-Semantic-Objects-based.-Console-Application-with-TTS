@@ -1,8 +1,6 @@
 #include "bot1.h"
 #include <iostream>
-#include <ctime>
-#include <sapi.h>
-#include "stdafx.h"
+
 //#include "voce.h"
 Bot1::Bot1()
 {
@@ -32,144 +30,132 @@ void Bot1::startBehavior(std::string userSentence)
 	std::string complement;
 
 
-    /* Si c'est une expression */
-    if(this->_Expression.checkIfExist(userSentence))
-    {
-        this->sentenceToSay = this->_Expression.getAnswer(userSentence);
-    }
+   
     /* Si ça commence par un WH*/
-	else if (this->_ConceptWH.checkIfExistInVector(wh, conceptInSentence)) // Si c'est WH
+	if (this->checkIfQuestionWHBeSC(wh, be, subject, complement, conceptInSentence))
 	{
-		//std::cout << "Found a WH" << std::endl;
-		/* Si la question comporte Be */
-		if (this->_conceptBe.checkIfExistInVector(be, conceptInSentence)) // Si c'est Be
-		{
-			//std::cout << "Found BE" << std::endl;
-			/* s'il y a un sujet */
-			if (this->_ConceptSubject.checkIfExistInVector(subject, conceptInSentence) ||
-				this->_ConceptSubjectChild.checkIfExistInVector(subject, conceptInSentence)) // Si c'est SUJET
-			{
-				//std::cout << "FOUND A SUBJECT" << std::endl;
-				std::string conceptSubject;
-				if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence))
-				{
-					//subject = this->putToUpperCase(this->_ConceptSubject.getCurrentConceptWord());
-					conceptSubject = this->_ConceptSubject.getSubjectForMemory(subject);
-				}
-				else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence))
-				{
-					//subject = this->putToUpperCase(this->_ConceptSubjectChild.getCurrentConceptWord());
-					conceptSubject = this->_ConceptSubjectChild.getSubjectForMemory(subject);
-				}
-
-				conceptSubject = this->putToUpperCase(conceptSubject);
-
-
-				/* S'il y a un complement ou un complement de sujet */
-				if (this->_conceptComplement.checkIfExistByWordInVector(complement, conceptInSentence) ||
-					this->_ConceptComplementChild.checkIfExistByWordInVector(complement, conceptInSentence)) // Si c'est COMPLEMENT
-				{
-					//std::cout << "FOUND A COMPLEMENT" << std::endl;
-				
-
-					std::string conceptComplement;
-					if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
-					{
-						//complement = this->putToUpperCase(this->_conceptComplement.getCurrentConceptWord());
-						conceptComplement = this->_conceptComplement.containInto(complement);
-						//std::cout << "The complement is master" << std::endl;
-					}
-					else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
-					{
-						//complement = this->putToUpperCase(this->_ConceptComplementChild.getCurrentConceptWord());
-						conceptComplement = this->_ConceptComplementChild.containInto(complement);
-						//std::cout << "The complement is slave" << std::endl;
-					}
-
-					std::string whValueInMemory;					
-					conceptComplement = this->putToUpperCase(conceptComplement);
-					wh = this->putToUpperCase(wh);				
-					whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", conceptComplement, wh);
-
-					std::string subjectAnswer;
-                    subjectAnswer = this->getRealSubject(subject);
-					std::string verbAnswer;
-					verbAnswer = this->getRealBe(be);
-
-					if (whValueInMemory != "")
-					{
-						this->sentenceToSay = subjectAnswer
-						+ " "
-						+ this->putToLowerCase(complement)
-						+ " "
-						+ be
-						+ " "
-						+ whValueInMemory;
-					}
-					else {
-						this->sentenceToSay = "I don\'t know...";
-					}
-
-				}
-				else 
-				{
-					//std::cout << "HAVENT FOUND COMPLEMENT" << std::endl;
-					std::string whValueInMemory;
-					wh = this->putToUpperCase(wh);
-					whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", "", wh);
-
-					std::string subjectAnswer;
-					subjectAnswer = this->getRealSubject(subject);
-					std::string verbAnswer;
-					verbAnswer = this->getRealBe(be);
-
-					if (whValueInMemory != "")
-					{
-						this->sentenceToSay = subjectAnswer
-							+ " "
-							+ verbAnswer
-							+ " "
-							+ whValueInMemory;
-					}
-					else {
-						this->sentenceToSay = "I don\'t know...";
-					}
-				}
-			}
+		std::string conceptSubject;
+		if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence)){
+			conceptSubject = this->_ConceptSubject.getSubjectForMemory(subject);
 		}
-	}
-	if (this->sentenceToSay == "")
-	{
-		this->sentenceToSay = "So many concepts are still unknown to me...";
-	}
-    this->sentenceToSay = this->putToLowerCase(this->sentenceToSay);
-    std::cout << this->sentenceToSay << std::endl;
-
-	//Let's convert the string to say in wstring
-	std::wstring text(this->sentenceToSay.begin(), this->sentenceToSay.end());
-
-	ISpVoice * pVoice = NULL;
-
-	if (FAILED(::CoInitialize(NULL)))
-	{
-
-	}
-	else
-	{
-		HRESULT hr = CoCreateInstance(CLSID_SpVoice, NULL, CLSCTX_ALL, IID_ISpVoice, (void **)&pVoice);
-		if (SUCCEEDED(hr))
-
-		{
-			
-			hr = pVoice->Speak(text.c_str(), 0, NULL);
-			pVoice->Release();
-			pVoice = NULL;
+		else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence)){
+			conceptSubject = this->_ConceptSubjectChild.getSubjectForMemory(subject);
 		}
-
-		::CoUninitialize();
+		conceptSubject = this->putToUpperCase(conceptSubject);
 		
+		std::string conceptComplement;
+		if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
+		{
+			conceptComplement = this->_conceptComplement.containInto(complement);
+		}
+		else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
+		{
+			conceptComplement = this->_ConceptComplementChild.containInto(complement);
+		}
+		std::string whValueInMemory;
+		conceptComplement = this->putToUpperCase(conceptComplement);
+		wh = this->putToUpperCase(wh);
+		whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", conceptComplement, wh);
+
+		std::string subjectAnswer;
+		subjectAnswer = this->getRealSubject(subject);
+		std::string verbAnswer;
+		verbAnswer = this->getRealBe(be);
+
+		if (whValueInMemory != "")
+		{
+			this->sentenceToSay = subjectAnswer
+				+ " "
+				+ this->putToLowerCase(complement)
+				+ " "
+				+ be
+				+ " "
+				+ whValueInMemory;
+		}
+		else {
+			this->sentenceToSay = DUNNO;
+		}
 	}
+	/*Si c'est Who are you / how are you (WH BE Subject)*/
+	else if (this->checkIfQuestionWHBeS(wh, be, subject, conceptInSentence))
+	{
+		std::string conceptSubject;
+		if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence))
+		{
+			//subject = this->putToUpperCase(this->_ConceptSubject.getCurrentConceptWord());
+			conceptSubject = this->_ConceptSubject.getSubjectForMemory(subject);
+		}
+		else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence))
+		{
+			//subject = this->putToUpperCase(this->_ConceptSubjectChild.getCurrentConceptWord());
+			conceptSubject = this->_ConceptSubjectChild.getSubjectForMemory(subject);
+		}
+
+		conceptSubject = this->putToUpperCase(conceptSubject);
+
+		//std::cout << "HAVENT FOUND COMPLEMENT" << std::endl;
+		std::string whValueInMemory;
+		wh = this->putToUpperCase(wh);
+		whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", "", wh);
+
+		std::string subjectAnswer;
+		subjectAnswer = this->getRealSubject(subject);
+		std::string verbAnswer;
+		verbAnswer = this->getRealBe(be);
+
+		if (whValueInMemory != "")
+		{
+			this->sentenceToSay = subjectAnswer
+				+ " "
+				+ verbAnswer
+				+ " "
+				+ whValueInMemory;
+		}
+		else {
+			this->sentenceToSay = DUNNO;
+		}
+	}
+	/* WH S C : what is love ?*/
+	else if (this->checkIfQuestionWHBeC(wh, be, complement, conceptInSentence))
+	{
+		std::string conceptComplement;
+		if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
+		{
+			conceptComplement = this->_conceptComplement.containInto(complement);
+		}
+		else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
+		{
+			conceptComplement = this->_ConceptComplementChild.containInto(complement);
+		}
+		std::string whValueInMemory;
+		conceptComplement = this->putToUpperCase(conceptComplement);
+		wh = this->putToUpperCase(wh);
+		whValueInMemory = this->_souvenirs.getWHValue("", "CONCEPT_BE", conceptComplement, wh);
+
+		std::string verbAnswer;
+		verbAnswer = this->getRealBe(be);
+
+		if (whValueInMemory != "")
+		{
+			this->sentenceToSay = complement
+				+ " "
+				+ be
+				+ " "
+				+ whValueInMemory;
+		}
+		else {
+			this->sentenceToSay = DUNNO;
+		}
+
+	}
+	/* Si c'est une expression */
+	else if (this->_Expression.checkIfExist(userSentence))
+	{
+		this->sentenceToSay = this->_Expression.getAnswer(userSentence);
+	}
+
 	
+	this->saySomething();
 }
 
 std::string Bot1::getRealSubject(std::string subject)
