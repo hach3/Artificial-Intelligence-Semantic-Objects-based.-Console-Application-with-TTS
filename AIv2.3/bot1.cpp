@@ -35,25 +35,12 @@ void Bot1::startBehavior(std::string userSentence)
 	if (this->checkIfQuestionWHBeSC(wh, be, subject, complement, conceptInSentence))
 	{
 		std::string conceptSubject;
-		if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence)){
-			conceptSubject = this->_ConceptSubject.getSubjectForMemory(subject);
-		}
-		else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence)){
-			conceptSubject = this->_ConceptSubjectChild.getSubjectForMemory(subject);
-		}
-		conceptSubject = this->putToUpperCase(conceptSubject);
+		this->getSubjectFromVectors(conceptSubject, conceptInSentence, subject);
 		
 		std::string conceptComplement;
-		if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
-		{
-			conceptComplement = this->_conceptComplement.containInto(complement);
-		}
-		else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
-		{
-			conceptComplement = this->_ConceptComplementChild.containInto(complement);
-		}
-		std::string whValueInMemory;
-		conceptComplement = this->putToUpperCase(conceptComplement);
+		this->getComplementFromVectors(conceptComplement, conceptInSentence, complement);
+
+		std::string whValueInMemory;		
 		wh = this->putToUpperCase(wh);
 		whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", conceptComplement, wh);
 
@@ -62,38 +49,20 @@ void Bot1::startBehavior(std::string userSentence)
 		std::string verbAnswer;
 		verbAnswer = this->getRealBe(be);
 
-		if (whValueInMemory != "")
-		{
-			this->sentenceToSay = subjectAnswer
-				+ " "
-				+ this->putToLowerCase(complement)
-				+ " "
-				+ be
-				+ " "
-				+ whValueInMemory;
-		}
-		else {
-			this->sentenceToSay = DUNNO;
-		}
+		std::vector<std::string> sentenceToBuild;
+		sentenceToBuild.push_back(subjectAnswer);
+		sentenceToBuild.push_back(this->putToLowerCase(complement));
+		sentenceToBuild.push_back(verbAnswer);
+		sentenceToBuild.push_back(whValueInMemory);
+
+		this->buildAnswerWH(sentenceToBuild);
 	}
 	/*Si c'est Who are you / how are you (WH BE Subject)*/
 	else if (this->checkIfQuestionWHBeS(wh, be, subject, conceptInSentence))
 	{
 		std::string conceptSubject;
-		if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence))
-		{
-			//subject = this->putToUpperCase(this->_ConceptSubject.getCurrentConceptWord());
-			conceptSubject = this->_ConceptSubject.getSubjectForMemory(subject);
-		}
-		else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence))
-		{
-			//subject = this->putToUpperCase(this->_ConceptSubjectChild.getCurrentConceptWord());
-			conceptSubject = this->_ConceptSubjectChild.getSubjectForMemory(subject);
-		}
+		this->getSubjectFromVectors(conceptSubject, conceptInSentence, subject);	
 
-		conceptSubject = this->putToUpperCase(conceptSubject);
-
-		//std::cout << "HAVENT FOUND COMPLEMENT" << std::endl;
 		std::string whValueInMemory;
 		wh = this->putToUpperCase(wh);
 		whValueInMemory = this->_souvenirs.getWHValue(conceptSubject, "CONCEPT_BE", "", wh);
@@ -102,31 +71,20 @@ void Bot1::startBehavior(std::string userSentence)
 		subjectAnswer = this->getRealSubject(subject);
 		std::string verbAnswer;
 		verbAnswer = this->getRealBe(be);
+		std::vector<std::string> sentenceToBuild;
+		sentenceToBuild.push_back(subjectAnswer);
+		sentenceToBuild.push_back(verbAnswer);
+		sentenceToBuild.push_back(whValueInMemory);
 
-		if (whValueInMemory != "")
-		{
-			this->sentenceToSay = subjectAnswer
-				+ " "
-				+ verbAnswer
-				+ " "
-				+ whValueInMemory;
-		}
-		else {
-			this->sentenceToSay = DUNNO;
-		}
+		this->buildAnswerWH(sentenceToBuild);
+	
 	}
 	/* WH S C : what is love ?*/
 	else if (this->checkIfQuestionWHBeC(wh, be, complement, conceptInSentence))
 	{
 		std::string conceptComplement;
-		if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
-		{
-			conceptComplement = this->_conceptComplement.containInto(complement);
-		}
-		else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
-		{
-			conceptComplement = this->_ConceptComplementChild.containInto(complement);
-		}
+		this->getComplementFromVectors(conceptComplement, conceptInSentence, complement);	
+
 		std::string whValueInMemory;
 		conceptComplement = this->putToUpperCase(conceptComplement);
 		wh = this->putToUpperCase(wh);
@@ -135,17 +93,13 @@ void Bot1::startBehavior(std::string userSentence)
 		std::string verbAnswer;
 		verbAnswer = this->getRealBe(be);
 
-		if (whValueInMemory != "")
-		{
-			this->sentenceToSay = complement
-				+ " "
-				+ be
-				+ " "
-				+ whValueInMemory;
-		}
-		else {
-			this->sentenceToSay = DUNNO;
-		}
+		std::vector<std::string> sentenceToBuild;
+		sentenceToBuild.push_back(complement);
+		sentenceToBuild.push_back(verbAnswer);
+		sentenceToBuild.push_back(whValueInMemory);
+
+		this->buildAnswerWH(sentenceToBuild);
+	
 
 	}
 	/* Si c'est une expression */

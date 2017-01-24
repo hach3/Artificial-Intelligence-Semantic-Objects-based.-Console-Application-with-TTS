@@ -1,9 +1,4 @@
-﻿  CollMemory.cpp
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(48): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(62): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(122): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(213): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(272): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\collmemory.cpp(284): warning C4018: '<': signed/unsigned mismatch
+﻿  ai.cpp
+c:\users\hach3\documents\visual studio 2015\projects\aiv2.3\aiv2.3\ai.cpp(45): warning C4018: '<': signed/unsigned mismatch
   AIv2.3.vcxproj -> C:\Users\hach3\Documents\Visual Studio 2015\Projects\AIv2.3\Debug\AIv2.3.exe
   AIv2.3.vcxproj -> C:\Users\hach3\Documents\Visual Studio 2015\Projects\AIv2.3\Debug\AIv2.3.pdb (Full PDB)

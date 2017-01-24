@@ -38,7 +38,26 @@ void AI::Initialization()
     this->_ConceptWH.Init();
     this->_Expression.Init();
 }
-
+void AI::buildAnswerWH(std::vector<std::string> words)
+{
+	if (whValueInMemory != "")
+	{
+		for (int i = 0; i < words.size(); i++)
+		{
+			if (i != words.size() - 1)
+			{
+				this->sentenceToSay += words.at(i) + " ";
+			}
+			else
+			{
+				this->sentenceToSay += words.at(i) + ".";
+			}
+		}
+	}
+	else {
+		this->sentenceToSay = DUNNO;
+	}
+}
 void AI::saySomething()
 {
 	if (this->sentenceToSay == "")
@@ -127,7 +146,34 @@ bool AI::checkIfQuestionWHBeC(std::string &wh, std::string &be, std::string &com
 }
 
 
+bool AI::getSubjectFromVectors(std::string &conceptSubject, std::vector<std::string> conceptInSentence, std::string subject)
+{
 
+	if (this->_ConceptSubject.checkIfExistInVector(conceptInSentence))
+	{
+		//subject = this->putToUpperCase(this->_ConceptSubject.getCurrentConceptWord());
+		conceptSubject = this->putToUpperCase(this->_ConceptSubject.getSubjectForMemory(subject));
+	}
+	else if (this->_ConceptSubjectChild.checkIfExistInVector(conceptInSentence))
+	{
+		//subject = this->putToUpperCase(this->_ConceptSubjectChild.getCurrentConceptWord());
+		conceptSubject = this->putToUpperCase(this->_ConceptSubjectChild.getSubjectForMemory(subject));
+	}
+	return true;
+}
+bool AI::getComplementFromVectors(std::string &conceptComplement, std::vector<std::string> conceptInSentence, std::string complement)
+{
+
+	if (this->_conceptComplement.checkIfExistByWordInVector(conceptInSentence))
+	{
+		conceptComplement = this->putToUpperCase(this->_conceptComplement.containInto(complement));
+	}
+	else if (this->_ConceptComplementChild.checkIfExistByWordInVector(conceptInSentence))
+	{
+		conceptComplement = this->putToUpperCase(this->_ConceptComplementChild.containInto(complement));
+	}
+	return true;
+}
 
 
 
