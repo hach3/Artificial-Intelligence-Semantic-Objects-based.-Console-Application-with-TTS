@@ -18,6 +18,8 @@ public:
 	Modal_Verb();
 	~Modal_Verb();
 
+	bool isModal(std::string word);
+
 	void addModal(std::string infinitiveForm);
 	void addModal(std::string infinitiveForm, std::string conceptOfModal);
 	void addModal(std::string infinitiveForm, std::vector<std::string> presentForm);

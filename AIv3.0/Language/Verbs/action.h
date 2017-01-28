@@ -12,9 +12,9 @@ typedef struct {
 
 	std::vector<std::string> relatedWords;
 
-	bool isMental;
-	bool isPhysical;
-	bool isStateOfBeing;
+	bool isMental; // i know
+	bool isPhysical; // i cut
+	bool isStateOfBeing; // i am a student
 
 	/* 
 	Transitive : richards phones his boss (direct object)
@@ -29,6 +29,8 @@ class Action_Verb {
 public:
 	Action_Verb();
 	~Action_Verb();
+
+	bool isActionVerb(std::string word);
 
 	bool isInfinitive(std::string verb);
 	bool isGerund(std::string verb);

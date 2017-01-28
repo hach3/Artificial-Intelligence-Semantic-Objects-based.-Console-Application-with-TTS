@@ -19,6 +19,8 @@ public:
 	Stative_Verb();
 	~Stative_Verb();
 
+	bool isStative(std::string word);
+
 	void addStative(std::string infinitiveForm);
 	void addStative(std::string infinitiveForm, std::string mainRelatedWord);
 	void addStative(std::string infinitiveForm, std::vector<std::string> presentForm);

@@ -18,6 +18,8 @@ public:
 	Phrasal_Verb();
 	~Phrasal_Verb();
 
+	bool isPhrasal(std::string word);
+
 	void addPhrasal(std::string infinitiveForm);
 	void addPhrasal(std::string infinitiveForm, std::vector<std::string> presentForm);
 

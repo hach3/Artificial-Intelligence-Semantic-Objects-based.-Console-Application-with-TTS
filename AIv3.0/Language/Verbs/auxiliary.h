@@ -15,6 +15,8 @@ class Auxiliary_Verb {
 public:
 	Auxiliary_Verb();
 	~Auxiliary_Verb();
+	
+	bool isAuxiliary(std::string word);
 
 	void addAuxiliary(std::string infitiveForm);
 	void addAuxiliary(std::string infinitiveForm, std::vector<std::string> presentForm);
