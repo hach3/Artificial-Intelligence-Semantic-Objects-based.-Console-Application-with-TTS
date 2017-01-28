@@ -111,18 +111,6 @@
     <ClInclude Include="Language\Verbs\phrasal.h">
       <Filter>Header Files\Language\Verbs</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Verbs\tense.h">
-      <Filter>Header Files\Language\Verbs</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Verbs\irregular.h">
-      <Filter>Header Files\Language\Verbs</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Verbs\confusing.h">
-      <Filter>Header Files\Language\Verbs</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Verbs\gerundInfinitives.h">
-      <Filter>Header Files\Language\Verbs</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Pronouns\indefinite.h">
       <Filter>Header Files\Language\Pronouns</Filter>
     </ClInclude>
