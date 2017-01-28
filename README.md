@@ -5,7 +5,7 @@ Once I extracted the concepts of a sentence, I can create connections between th
 
 It's a console based program written in C++ right now.
 
-
+https://www.lucidchart.com/invitations/accept/2a97dcbf-d29c-46d3-aea1-c894717636a8
 
 Available sentences :
 
