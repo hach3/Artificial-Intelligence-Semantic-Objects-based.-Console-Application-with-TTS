@@ -1,69 +1,69 @@
+
+
 # AIConceptBased
 
-The concepts are composed by a name and associated words. For example, the concept of "me" is composed of words "I, me, my, mine". 
-Once I extracted the concepts of a sentence, I can create connections between them to formatate sentences.
-
-It's a console based program written in C++ right now.
-
+This ai is based on the semantic. It extracts the type of words and try to understand a sentence. Words are link between them by concepts. Piano is linked to music for example.
+The uml right here: 
 https://www.lucidchart.com/invitations/accept/2a97dcbf-d29c-46d3-aea1-c894717636a8
+Once the sentence is understood, it looks in the memory to answer. It can be a souvenir or an object. 
+## Getting Started
 
-Available sentences :
+@TODO : Makefile PLEASE :p
 
+### Prerequisites
 
-Only question are allowed atm.
+This project works fine on visual studio community 2015 as I use a TTS (text to speed) library included.
 
-WH + Be + S
+```
+Lorem ipsum
+```
 
-examples :
+### Installing
 
-What are you ?
+@TODO
 
-who are you ?
-
-Where am I ?
-
-...
-
-
-WH + Be + S + C
-
-examples :
-
-What is your name ? : The subject is supposed to be "your name", but i just extract "your" as the subject and turn "name" as complement
-
-What is your car ?
-
-What is my name ?...
-
-You can check which answers is known by checking in memory.cpp. The init function creates all "souvenirs".
-
-To add a souvenir :
-
-this->addSouvenir("CONCEPT_VERB", "CONCEPT_NAME", "WHO", "WHY", "WHERE", "WHEN", "WHAT", "HOW", BOOL IS, BOOL HAVE);
-
-The booleans are still on working :p
+```
+Lorem ipsum
+```
 
 
-Example :
+## Running the tests
 
-this->addSouvenir("CONCEPT_BE", "CONCEPT_NAME", "I", dunnowhy, dunnowhere, dunnowhen, "Gandalf", dunnohow, true, true);
+@TODO
 
-We just created a souvenir of having a name, and its value.
+### Break down into end to end tests
+
+@TODO
+
+```
+Lorem ipsum
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Lorem ipsum
+```
 
 
-Concepts are structures (check concept.h) of words category. Words can be name, subject, etc...
+## Contributing
 
+@TODO
 
-@TODO :
+## Versioning
 
-Copy the "And You ?" function From previous version
+@TODO
 
+## Authors
 
-Add a vector2 of linking concepts to concept.
+@TODO
 
-	The concept car is related to the concept of mecanic, road, etc...
-	
-	That allows to the next to create a discussion around a topic.
-	
+## License
 
-Handle more sentence structures
+@TODO
+
+## Acknowledgments
+
+@TODO
