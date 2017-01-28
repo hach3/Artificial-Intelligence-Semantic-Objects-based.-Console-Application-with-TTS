@@ -33,7 +33,7 @@ public:
 	bool isInfinitive(std::string verb);
 	bool isGerund(std::string verb);
 
-	std::string getPresentVerbAt(int person);
+	std::string getPresentVerbAt(std::string verb, int person);
 	std::vector<std::string> getPresent();
 
 	void addVerb(std::string infinitiveForm);
