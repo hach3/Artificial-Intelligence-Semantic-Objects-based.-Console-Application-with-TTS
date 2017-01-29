@@ -15,7 +15,9 @@ AI::~AI()
 
 void AI::understandSentence(std::string usersentence)
 {
-	//Si on trouve un wh, qu'il est suivi de l'auxiliaire be, puis un adjectif possessif, puis un nom commun.
+	/*
+	Only handle "what is your name ?" and "what is your car ?" atm. That means WH + Be + Possessive Adj + noun 
+	*/
 	
 	std::string wh;
 	std::string possessiveAdjectif;
