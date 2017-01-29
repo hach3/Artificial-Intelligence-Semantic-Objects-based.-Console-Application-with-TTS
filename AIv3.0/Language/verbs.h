@@ -12,6 +12,13 @@ class Verbs {
 public:
 	Verbs();
 	~Verbs();
+
+	Action_Verb getActionVerbs();
+	Auxiliary_Verb getAuxiliaryVerbs();
+	Modal_Verb getModalVerbs();
+	Phrasal_Verb getPhrasalVerbs();
+	Stative_Verb getStativeVerbs();
+
 protected:
 private:
 	Action_Verb _actionVerbs;

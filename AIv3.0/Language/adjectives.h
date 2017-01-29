@@ -8,6 +8,8 @@ class Adjectives {
 public:
 	Adjectives();
 	~Adjectives();
+
+	Possessive_Adjectives getPossessiveAdjectives();
 protected:
 private:
 	Possessive_Adjectives _possessiveAdjectives;

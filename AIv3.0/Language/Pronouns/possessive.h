@@ -1,5 +1,5 @@
-#ifndef POSSESSIVE_H
-#define POSSESSIVE_H
+#ifndef POSSESSIVE_PRONOUN_H
+#define POSSESSIVE_PRONOUN_H
 
 #include <vector>
 #include <string>
@@ -34,4 +34,4 @@ private:
 	std::vector<POSSESSIVE_PRONOUN> _possessivePronounsList;
 
 };
-#endif //POSSESSIVE_H
+#endif //POSSESSIVE_PRONOUN_H

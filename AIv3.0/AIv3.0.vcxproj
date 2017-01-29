@@ -149,7 +149,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ai.h" />
+    <ClInclude Include="AI\ai.h" />
     <ClInclude Include="Language\adjectives.h" />
     <ClInclude Include="Language\Adjectives\article.h" />
     <ClInclude Include="Language\Adjectives\attribute.h" />
@@ -210,11 +210,55 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AIv3.0.cpp" />
+    <ClCompile Include="AI\ai.cpp" />
+    <ClCompile Include="Language\adjectives.cpp" />
+    <ClCompile Include="Language\Adjectives\article.cpp" />
+    <ClCompile Include="Language\Adjectives\attribute.cpp" />
+    <ClCompile Include="Language\Adjectives\coordinate.cpp" />
+    <ClCompile Include="Language\Adjectives\demonstrative.cpp" />
+    <ClCompile Include="Language\Adjectives\indefinite.cpp" />
+    <ClCompile Include="Language\Adjectives\interrogative.cpp" />
+    <ClCompile Include="Language\Adjectives\numbers.cpp" />
     <ClCompile Include="Language\Adjectives\possessive.cpp" />
+    <ClCompile Include="Language\adverbs.cpp" />
+    <ClCompile Include="Language\Adverbs\clause.cpp" />
+    <ClCompile Include="Language\Adverbs\degree.cpp" />
+    <ClCompile Include="Language\Adverbs\frequency.cpp" />
+    <ClCompile Include="Language\Adverbs\manner.cpp" />
+    <ClCompile Include="Language\Adverbs\place.cpp" />
+    <ClCompile Include="Language\Adverbs\time.cpp" />
+    <ClCompile Include="Language\conjunctions.cpp" />
+    <ClCompile Include="Language\Conjunctions\conjunctive.cpp" />
+    <ClCompile Include="Language\Conjunctions\coordinating.cpp" />
+    <ClCompile Include="Language\Conjunctions\correlative.cpp" />
+    <ClCompile Include="Language\Conjunctions\subordinating.cpp" />
+    <ClCompile Include="Language\interjections.cpp" />
+    <ClCompile Include="Language\Interjections\approval.cpp" />
+    <ClCompile Include="Language\Interjections\attention.cpp" />
+    <ClCompile Include="Language\Interjections\greeting.cpp" />
+    <ClCompile Include="Language\Interjections\joy.cpp" />
+    <ClCompile Include="Language\Interjections\sorrow.cpp" />
+    <ClCompile Include="Language\Interjections\surprise.cpp" />
+    <ClCompile Include="Language\nouns.cpp" />
+    <ClCompile Include="Language\Nouns\abstract.cpp" />
+    <ClCompile Include="Language\Nouns\collective.cpp" />
     <ClCompile Include="Language\Nouns\common.cpp" />
+    <ClCompile Include="Language\Nouns\proper.cpp" />
+    <ClCompile Include="Language\prepositions.cpp" />
+    <ClCompile Include="Language\Prepositions\direction.cpp" />
+    <ClCompile Include="Language\Prepositions\place.cpp" />
+    <ClCompile Include="Language\Prepositions\timePreposition.cpp" />
+    <ClCompile Include="Language\pronouns.cpp" />
+    <ClCompile Include="Language\Pronouns\demonstrative.cpp" />
+    <ClCompile Include="Language\Pronouns\indefinite.cpp" />
+    <ClCompile Include="Language\Pronouns\intensive.cpp" />
     <ClCompile Include="Language\Pronouns\interrogative.cpp" />
     <ClCompile Include="Language\Pronouns\personnal.cpp" />
     <ClCompile Include="Language\Pronouns\possessive.cpp" />
+    <ClCompile Include="Language\Pronouns\reciprocal.cpp" />
+    <ClCompile Include="Language\Pronouns\reflexive.cpp" />
+    <ClCompile Include="Language\Pronouns\relative.cpp" />
+    <ClCompile Include="Language\verbs.cpp" />
     <ClCompile Include="Language\Verbs\action.cpp" />
     <ClCompile Include="Language\Verbs\auxiliary.cpp" />
     <ClCompile Include="Language\Verbs\modal.cpp" />

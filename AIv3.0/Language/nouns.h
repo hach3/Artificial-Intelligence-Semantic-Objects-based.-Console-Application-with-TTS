@@ -11,6 +11,11 @@ class Nouns {
 public:
 	Nouns();
 	~Nouns();
+
+	Abstract_Noun getAbstractNouns();
+	Collective_Noun getCollectiveNouns();
+	Common_Noun getCommonNouns();
+	Proper_Noun getProperNouns();
 protected:
 private:
 	Abstract_Noun _abstractNouns;

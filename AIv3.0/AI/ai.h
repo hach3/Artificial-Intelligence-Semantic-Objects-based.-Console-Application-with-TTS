@@ -18,9 +18,13 @@ public:
 	~AI();
 
 	void understandSentence(std::string usersentence);
-	void createSentence();
+	
+	void saySomething();
 
+	std::string putToUpperCase(std::string userSentence);
+	std::string putToLowerCase(std::string sentence);
 
+	
 protected:
 private:
 	Nouns _nouns;

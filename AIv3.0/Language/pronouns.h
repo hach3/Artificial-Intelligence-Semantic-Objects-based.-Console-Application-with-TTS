@@ -16,6 +16,17 @@ class Pronouns {
 public:
 	Pronouns();
 	~Pronouns();
+
+	Demonstrative_Pronoun getDemonstrativePronouns();
+	Indefinite_Pronoun getIndefinitePronouns();
+	Intensive_Pronoun getIntensivePronouns();
+	Interrogative_Pronoun getInterrogativePronouns();
+	Personnal_Pronoun getPersonnalPronouns();
+	Possessive_Pronoun getPossessivePronouns();
+	Reciprocal_Pronoun getReciprocalPronouns();
+	Reflexive_Pronoun getReflexivePronouns();
+	Relative_Pronoun getRelativePronouns();
+
 protected:
 private:
 	Demonstrative_Pronoun _demonstrativePronouns;

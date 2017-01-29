@@ -1,5 +1,5 @@
-#ifndef POSSESSIVE_H
-#define POSSESSIVE_H
+#ifndef POSSESSIVE_ADJECTIVES_H
+#define POSSESSIVE_ADJECTIVES_H
 
 #include <vector>
 #include <string>
@@ -32,4 +32,4 @@ private:
 	std::vector<POSSESSIVE_ADJECTIVES> _possessiveAdjectivesList;
 };
 
-#endif //POSSESSIVE_H
+#endif //POSSESSIVE_ADJECTIVES_H
