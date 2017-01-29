@@ -21,6 +21,8 @@ public:
 	Personnal_Pronoun();
 	~Personnal_Pronoun();
 
+	void init();
+
 	bool isPersonnal(std::string word);
 
 

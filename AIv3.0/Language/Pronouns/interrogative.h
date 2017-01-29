@@ -18,6 +18,8 @@ public:
 	Interrogative_Pronoun();
 	~Interrogative_Pronoun();
 
+	void init();
+
 	bool isInterrogative(std::string word);
 
 	void addInterrogative(std::string singular);

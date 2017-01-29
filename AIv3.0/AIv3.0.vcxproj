@@ -210,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AIv3.0.cpp" />
+    <ClCompile Include="Language\Adjectives\possessive.cpp" />
     <ClCompile Include="Language\Nouns\common.cpp" />
     <ClCompile Include="Language\Pronouns\interrogative.cpp" />
     <ClCompile Include="Language\Pronouns\personnal.cpp" />

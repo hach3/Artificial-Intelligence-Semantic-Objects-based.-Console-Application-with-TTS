@@ -290,5 +290,8 @@
     <ClCompile Include="Language\Pronouns\possessive.cpp">
       <Filter>Source Files\Language\Pronouns</Filter>
     </ClCompile>
+    <ClCompile Include="Language\Adjectives\possessive.cpp">
+      <Filter>Source Files\Language\Adjectives</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
