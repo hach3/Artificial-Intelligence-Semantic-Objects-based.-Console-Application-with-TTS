@@ -51,9 +51,12 @@ In this case, i'll be able to answer "Why can birds fly ?" and "How can birds fl
 To answer questions like "Can bird fly ?", just have to check if the concept and the verb associated exist and are linked in the bird object.
 
 
-### 28.01.2017 
+### 28.01.2017 -
+
 Doing Collectioners for language structures and types 
+
 Creating .cpp for pronouns, nouns and verbs to be able to start testing
+
 First test will be to answer the question What is your name ?
 
 
