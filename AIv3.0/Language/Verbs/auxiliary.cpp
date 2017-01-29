@@ -152,6 +152,37 @@ bool Auxiliary_Verb::isBe(std::string word)
 	}
 	return isBe;
 }
+bool Auxiliary_Verb::isBeInSentence(std::string sentence, std::string &verb)
+{
+	bool found = false;
+	std::size_t foundAt;
+	for (unsigned int i = 0; i < this->_auxiliaryVerbsList.size(); i++)
+	{
+		foundAt = sentence.find(this->_auxiliaryVerbsList.at(i).infinitiveForm);
+		if (foundAt != std::string::npos)
+		{
+			found = true;
+			verb = this->_auxiliaryVerbsList.at(i).infinitiveForm;
+			break;
+		}
+		for (unsigned int y = 0; y < this->_auxiliaryVerbsList.at(i).presentForm.size(); y++)
+		{
+			foundAt = sentence.find(this->_auxiliaryVerbsList.at(i).presentForm.at(y));
+			if (foundAt != std::string::npos)
+			{
+				found = true;
+				verb = this->_auxiliaryVerbsList.at(i).presentForm.at(y);
+				break;
+			}
+		}
+		if (found == true)
+		{
+			break;
+		}
+
+	}
+	return found;
+}
 bool Auxiliary_Verb::isHave(std::string word)
 {
 	bool found = false;

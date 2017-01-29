@@ -35,6 +35,7 @@ public:
 	void init();
 	/* CHECK IF THE NOUN IS ABSTRACT */
 	bool isCommon(std::string noun);
+	bool isCommonInSentence(std::string sentence, std::string &common);
 	/* CREATE A NEW ABSTRACT NAME */
 	void addCommonNoun(std::string singular);
 	void addCommonNoun(std::string singular, std::string plural);

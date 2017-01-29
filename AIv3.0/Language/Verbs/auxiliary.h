@@ -27,6 +27,7 @@ public:
 	void setPresentForm(std::string auxiliary, std::vector<std::string> presentForm);
 
 	bool isBe(std::string word);
+	bool isBeInSentence(std::string sentence, std::string &verb);
 	bool isHave(std::string word);
 	bool isDo(std::string word);
 protected:

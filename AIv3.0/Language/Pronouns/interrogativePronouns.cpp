@@ -38,6 +38,26 @@ bool Interrogative_Pronoun::isInterrogative(std::string word)
 	}
 	return found;
 }
+bool Interrogative_Pronoun::isInterrogativeInSentence(std::string sentence, std::string &sentenceIfFound, std::string &wh)
+{
+	bool found = false;
+	std::size_t foundAt;
+	for (unsigned int i = 0; i < this->_interrogativePronounsList.size(); i++)
+	{
+		foundAt = sentence.find(this->_interrogativePronounsList.at(i).singular);
+		if (foundAt != std::string::npos)
+		{
+			found = true;
+			sentenceIfFound = sentence.substr(foundAt);
+			wh = this->_interrogativePronounsList.at(i).singular;
+			break;
+		}
+		
+
+	}
+	return found;
+
+}
 
 void Interrogative_Pronoun::addInterrogative(std::string singular)
 {

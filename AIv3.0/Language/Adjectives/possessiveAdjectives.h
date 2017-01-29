@@ -19,6 +19,7 @@ public:
 	void init();
 
 	bool isPossessive(std::string word);
+	bool isPossessiveSentence(std::string sentence, std::string &possessiveAdjectif);
 
 	void addPossessive(std::vector<std::string> possessiveAdjectives);
 	void addPossessive(std::string name, std::vector<std::string> possessiveAdjectives);

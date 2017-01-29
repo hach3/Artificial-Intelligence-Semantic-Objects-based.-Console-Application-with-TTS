@@ -22,6 +22,8 @@ public:
 
 	bool isInterrogative(std::string word);
 
+	bool isInterrogativeInSentence(std::string sentence, std::string &sentenceIfFound, std::string &wh);
+
 	void addInterrogative(std::string singular);
 	void addInterrogative(std::string singular, std::string plural);
 	void addInterrogative(std::string singular, std::string plural, std::vector<std::string> relatedWords);

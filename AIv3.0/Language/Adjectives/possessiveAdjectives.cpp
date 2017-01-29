@@ -45,7 +45,30 @@ bool Possessive_Adjectives::isPossessive(std::string word)
 	}
 	return found;
 }
+bool Possessive_Adjectives::isPossessiveSentence(std::string sentence, std::string &possessiveAdjectif)
+{
+	bool found = false;
+	std::size_t foundPos;
 
+	for (unsigned int i = 0; i < this->_possessiveAdjectivesList.size(); i++)
+	{
+		for (unsigned int y = 0; y < this->_possessiveAdjectivesList.at(i).possessiveAdjectives.size(); y++)
+		{
+			foundPos = sentence.find(this->_possessiveAdjectivesList.at(i).possessiveAdjectives.at(y));
+			if (foundPos != std::string::npos)
+			{
+				found = true;
+				possessiveAdjectif = this->_possessiveAdjectivesList.at(i).possessiveAdjectives.at(y);
+				break;
+			}
+		}
+		if (found == true)
+		{
+			break;
+		}
+	}
+	return found;
+}
 void Possessive_Adjectives::addPossessive(std::vector<std::string> possessiveAdjectives)
 {
 	POSSESSIVE_ADJECTIVES newPossessive;

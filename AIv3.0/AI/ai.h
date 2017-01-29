@@ -1,6 +1,7 @@
 #ifndef AI_H
 #define AI_H
 
+#include <iostream>
 #include <vector>
 #include <string>
 
@@ -30,7 +31,7 @@ private:
 	Nouns _nouns;
 	Pronouns _pronouns;
 	Verbs _verbs;
-
+	Adjectives _adjectives;
 	Objects _objects;
 
 	std::string _sentenceToSay;

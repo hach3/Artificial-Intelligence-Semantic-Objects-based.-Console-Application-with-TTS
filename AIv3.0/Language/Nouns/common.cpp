@@ -47,6 +47,22 @@ bool Common_Noun::isCommon(std::string noun)
 	}
 	return found;
 }
+bool Common_Noun::isCommonInSentence(std::string sentence, std::string &common)
+{
+	bool found = false;
+	size_t foundAt;
+	for (unsigned int i = 0; i < this->_commonNounsList.size(); i++)
+	{
+		foundAt = sentence.find(this->_commonNounsList.at(i)._nounSingular);
+		if (foundAt!=std::string::npos)
+		{
+			found = true;
+			common = this->_commonNounsList.at(i)._nounSingular;
+			break;
+		}
+	}
+	return found;
+}
 /* CREATE A NEW ABSTRACT NAME */
 void Common_Noun::addCommonNoun(std::string singular)
 {

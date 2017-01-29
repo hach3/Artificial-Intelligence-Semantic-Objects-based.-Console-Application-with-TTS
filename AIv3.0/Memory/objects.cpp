@@ -1,9 +1,9 @@
 #include "objects.h"
-
+#include <iostream>
 
 Objects::Objects()
 {
-
+	this->init();
 }
 Objects::~Objects()
 {
@@ -19,6 +19,14 @@ void Objects::init()
 
 	whMySelfBeName.push_back(whMySelfBeName0);
 	this->createObject("MYSELF", "IS", "NAME", whMySelfBeName);
+
+	/* CAR OBJECT FOR MYSELF MYSELF -> is -> name -> tariq */
+	std::vector<WH_ANSWERS> whMySelfBeCar;
+	WH_ANSWERS whMySelfBeCar0;
+	whMySelfBeCar0.whatWH = "A GARBAGE";
+
+	whMySelfBeCar.push_back(whMySelfBeCar0);
+	this->createObject("MYSELF", "IS", "CAR", whMySelfBeCar);
 }
 void Objects::createObject(std::string objectName)
 {
@@ -57,6 +65,7 @@ void Objects::addWHanswer(std::string objectName, std::string verb, std::string 
 	bool found = false;
 	for (unsigned int i = 0; i < this->_objectsList.size(); i++)
 	{
+
 		if (this->_objectsList.at(i).objectName == objectName &&
 			this->_objectsList.at(i).verb == verb &&
 			this->_objectsList.at(i).object == object)
