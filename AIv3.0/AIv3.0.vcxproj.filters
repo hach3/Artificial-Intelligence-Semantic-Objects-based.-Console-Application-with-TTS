@@ -293,5 +293,8 @@
     <ClCompile Include="Language\Adjectives\possessive.cpp">
       <Filter>Source Files\Language\Adjectives</Filter>
     </ClCompile>
+    <ClCompile Include="Memory\objects.cpp">
+      <Filter>Source Files\Memory</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

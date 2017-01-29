@@ -220,6 +220,7 @@
     <ClCompile Include="Language\Verbs\modal.cpp" />
     <ClCompile Include="Language\Verbs\phrasal.cpp" />
     <ClCompile Include="Language\Verbs\stative.cpp" />
+    <ClCompile Include="Memory\objects.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

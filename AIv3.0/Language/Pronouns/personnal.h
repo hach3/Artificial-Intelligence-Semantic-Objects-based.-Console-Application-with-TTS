@@ -37,6 +37,8 @@ public:
 	void addPersonnal(std::string pronoun, std::string pluralForm, int person, bool isObject, bool isSubject);
 
 	bool isPlural(std::string pronoun);
+	bool isObject(std::string pronoun);
+	bool isSubject(std::string pronoun);
 
 	std::string getPersonnal(bool isPlural, int person, bool isObject, bool isSubject);
 

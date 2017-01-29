@@ -15,10 +15,21 @@ void Common_Noun::init()
 	/* CAR */
 	std::vector<std::string> carRelatedWords;
 	carRelatedWords.push_back("VEHICULE");
-	std::vector<std::string> senseCalled;
-	senseCalled.push_back("TOUCH");
+	std::vector<std::string> carSenseCalled;
+	carSenseCalled.push_back("TOUCH");
 	/* std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled */
-	this->addCommonNoun("CAR", "CARS", carRelatedWords, true, true, senseCalled);
+	this->addCommonNoun("CAR", "CARS", carRelatedWords, true, true, carSenseCalled);
+
+
+	/* NAME */
+	std::vector<std::string> nameRelatedWords;
+	nameRelatedWords.push_back("FIRSTNAME");
+	nameRelatedWords.push_back("IDENTITY");
+	std::vector<std::string> nameSenseCalled;
+	/* std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled */
+	this->addCommonNoun("NAME", "NAMES", nameRelatedWords, false, false, nameSenseCalled);
+
+
 
 }
 

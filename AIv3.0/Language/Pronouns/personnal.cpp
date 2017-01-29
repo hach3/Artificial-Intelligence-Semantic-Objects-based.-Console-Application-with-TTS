@@ -10,6 +10,24 @@ Personnal_Pronoun::~Personnal_Pronoun()
 }
 void Personnal_Pronoun::init()
 {
+	this->addPersonnal("I", 1, false, true);
+	this->addPersonnal("ME", 1, true, false);
+
+	this->addPersonnal("YOU", 1, false, true);
+	this->addPersonnal("YOU", 1, true, false);
+
+	this->addPersonnal("HE", 1, false, true);
+	this->addPersonnal("HIM", 1, true, false);
+
+	this->addPersonnal("WE", 1, false, true);
+	this->addPersonnal("US", 1, true, false);
+
+	this->addPersonnal("YOU", 1, false, true);
+	this->addPersonnal("YOU", 1, true, false);
+
+	this->addPersonnal("THEY", 1, false, true);
+	this->addPersonnal("THEM", 1, true, false);
+
 
 }
 
@@ -135,4 +153,35 @@ std::string Personnal_Pronoun::getPersonnal(bool isPlural, int person, bool isOb
 		
 	}
 	return personnalAtPerson;
+}
+
+bool Personnal_Pronoun::isObject(std::string pronoun)
+{
+	bool found = false;
+	bool isObject;
+	for (unsigned int i = 0; i < this->_personnalPronounsList.size(); i++)
+	{
+		if (this->_personnalPronounsList.at(i).pronoun == pronoun || this->_personnalPronounsList.at(i).pluralForm == pronoun)
+		{
+			isObject = this->_personnalPronounsList.at(i).isObject;
+			found = true;
+			break;
+		}
+	}
+	return isObject;
+}
+bool Personnal_Pronoun::isSubject(std::string pronoun)
+{
+	bool found = false;
+	bool isSubject;
+	for (unsigned int i = 0; i < this->_personnalPronounsList.size(); i++)
+	{
+		if (this->_personnalPronounsList.at(i).pronoun == pronoun || this->_personnalPronounsList.at(i).pluralForm == pronoun)
+		{
+			isSubject = this->_personnalPronounsList.at(i).isSubject;
+			found = true;
+			break;
+		}
+	}
+	return isSubject;
 }
