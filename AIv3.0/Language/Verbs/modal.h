@@ -18,6 +18,8 @@ public:
 	Modal_Verb();
 	~Modal_Verb();
 
+	void init();
+
 	bool isModal(std::string word);
 
 	void addModal(std::string infinitiveForm);

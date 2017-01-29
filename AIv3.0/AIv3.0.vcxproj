@@ -149,6 +149,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ai.h" />
     <ClInclude Include="Language\adjectives.h" />
     <ClInclude Include="Language\Adjectives\article.h" />
     <ClInclude Include="Language\Adjectives\attribute.h" />
@@ -201,14 +202,23 @@
     <ClInclude Include="Language\Verbs\action.h" />
     <ClInclude Include="Language\Verbs\auxiliary.h" />
     <ClInclude Include="Language\Verbs\modal.h" />
-    <ClInclude Include="Language\Verbs\objects.h" />
     <ClInclude Include="Language\Verbs\phrasal.h" />
     <ClInclude Include="Language\Verbs\stative.h" />
+    <ClInclude Include="Memory\objects.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AIv3.0.cpp" />
+    <ClCompile Include="Language\Nouns\common.cpp" />
+    <ClCompile Include="Language\Pronouns\interrogative.cpp" />
+    <ClCompile Include="Language\Pronouns\personnal.cpp" />
+    <ClCompile Include="Language\Pronouns\possessive.cpp" />
+    <ClCompile Include="Language\Verbs\action.cpp" />
+    <ClCompile Include="Language\Verbs\auxiliary.cpp" />
+    <ClCompile Include="Language\Verbs\modal.cpp" />
+    <ClCompile Include="Language\Verbs\phrasal.cpp" />
+    <ClCompile Include="Language\Verbs\stative.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

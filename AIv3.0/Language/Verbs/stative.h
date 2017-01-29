@@ -19,6 +19,8 @@ public:
 	Stative_Verb();
 	~Stative_Verb();
 
+	void init();
+
 	bool isStative(std::string word);
 
 	void addStative(std::string infinitiveForm);

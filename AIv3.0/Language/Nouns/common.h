@@ -30,10 +30,9 @@ typedef struct {
 class Common_Noun {
 public:
 	Common_Noun();
-	Common_Noun(std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled);
 	~Common_Noun();
 	
-
+	void init();
 	/* CHECK IF THE NOUN IS ABSTRACT */
 	bool isCommon(std::string noun);
 	/* CREATE A NEW ABSTRACT NAME */
@@ -44,7 +43,7 @@ public:
 	/* RETURN THE RELATED WORDS VECTOR OF A NOUN */
 	std::vector<std::string> getRelatedWords(std::string noun);
 	/* CHECK IF A NOUN IS RELATED TO A COLLECTIVE NOUN */
-	bool checkIfRelated(std::string relatedNoun);
+	bool checkIfRelated(std::string noun, std::string relatedNoun);
 	void addRelatedWord(std::string noun, std::string relatedWord);
 
 	/* RETURN TRUE IF THE NOUN IS COUNTABLE */

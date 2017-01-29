@@ -16,6 +16,8 @@ public:
 	Possessive_Pronoun();
 	~Possessive_Pronoun();
 
+	void init();
+
 	bool isPossessive(std::string word);
 
 	void addPossessive(std::vector<std::string> possessivePronoun);

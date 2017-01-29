@@ -18,6 +18,8 @@ public:
 	Phrasal_Verb();
 	~Phrasal_Verb();
 
+	void init();
+
 	bool isPhrasal(std::string word);
 
 	void addPhrasal(std::string infinitiveForm);

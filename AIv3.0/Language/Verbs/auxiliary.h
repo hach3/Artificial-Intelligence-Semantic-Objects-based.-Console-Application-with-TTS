@@ -15,10 +15,12 @@ class Auxiliary_Verb {
 public:
 	Auxiliary_Verb();
 	~Auxiliary_Verb();
+
+	void init();
 	
 	bool isAuxiliary(std::string word);
 
-	void addAuxiliary(std::string infitiveForm);
+	void addAuxiliary(std::string infinitiveForm);
 	void addAuxiliary(std::string infinitiveForm, std::vector<std::string> presentForm);
 
 	std::string getAuxiliaryAtPerson(std::string auxiliary, int person);

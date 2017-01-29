@@ -30,13 +30,15 @@ public:
 	Action_Verb();
 	~Action_Verb();
 
+	void init();
+
 	bool isActionVerb(std::string word);
 
 	bool isInfinitive(std::string verb);
 	bool isGerund(std::string verb);
 
 	std::string getPresentVerbAt(std::string verb, int person);
-	std::vector<std::string> getPresent();
+	std::vector<std::string> getPresent(std::string verb);
 
 	void addVerb(std::string infinitiveForm);
 	void addVerb(std::string infinitiveForm, std::string gerundForm);

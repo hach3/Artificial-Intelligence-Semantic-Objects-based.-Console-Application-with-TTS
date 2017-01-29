@@ -73,6 +73,9 @@
     <Filter Include="Source Files\Memory">
       <UniqueIdentifier>{4c9ff585-2f79-4fa1-b986-909ce90bffb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\AI">
+      <UniqueIdentifier>{a9f8e6cf-8db6-4096-b08e-2414cfd6d93f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -246,7 +249,10 @@
     <ClInclude Include="Language\verbs.h">
       <Filter>Header Files\Language</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Verbs\objects.h">
+    <ClInclude Include="ai.h">
+      <Filter>Header Files\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\objects.h">
       <Filter>Header Files\Memory</Filter>
     </ClInclude>
   </ItemGroup>
@@ -256,6 +262,33 @@
     </ClCompile>
     <ClCompile Include="AIv3.0.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Verbs\action.cpp">
+      <Filter>Source Files\Language\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Verbs\auxiliary.cpp">
+      <Filter>Source Files\Language\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Verbs\modal.cpp">
+      <Filter>Source Files\Language\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Verbs\phrasal.cpp">
+      <Filter>Source Files\Language\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Verbs\stative.cpp">
+      <Filter>Source Files\Language\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Nouns\common.cpp">
+      <Filter>Source Files\Language\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Pronouns\interrogative.cpp">
+      <Filter>Source Files\Language\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Pronouns\personnal.cpp">
+      <Filter>Source Files\Language\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Pronouns\possessive.cpp">
+      <Filter>Source Files\Language\Pronouns</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
