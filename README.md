@@ -1,4 +1,4 @@
-# AIConceptBased
+# Artificial-Intelligence-Semantic-Objects-based.-Console-Application-with-TTS
 
 This ai is based on the semantic. It extracts the type of words and try to understand a sentence. Words are link between them by concepts. Piano is linked to music for example.
 The uml right here: 
