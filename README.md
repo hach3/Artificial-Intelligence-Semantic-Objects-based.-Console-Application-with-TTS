@@ -11,7 +11,7 @@ Objects in the memory are composed of the object_name, the verb associated, the 
 
 Example :
 ```
-Object_name : Human
+Object_name : Myself
 
 verb_associated : Be
 
@@ -27,6 +27,29 @@ How : ""
 ```
 
 In this case, i'll be able to answer "what is your name ?". It'll answer "I don't know" for the question "why is your name ?" as the string in the WH List is empty.
+
+
+Another Example :
+```
+Object_name : Bird
+
+verb_associated : can
+
+concept : Fly
+
+List of WH :
+What : ""
+Why : "They have wings"
+When : ""
+Where : ""
+Who : ""
+How : "They have wings"
+```
+
+In this case, i'll be able to answer "Why can birds fly ?" and "How can birds fly ?". In this example, it'll answer the same thing.
+
+To answer questions like "Can bird fly ?", just have to check if the concept and the verb associated exist and are linked in the bird object.
+
 
 ### 28.01.2017 
 Doing Collectioners for language structures and types 
