@@ -12,7 +12,13 @@ Objects::~Objects()
 
 void Objects::init()
 {
+	/* NAME OBJECT FOR MYSELF MYSELF -> is -> name -> tariq */
+	std::vector<WH_ANSWERS> whMySelfBeName;
+	WH_ANSWERS whMySelfBeName0;
+	whMySelfBeName0.whatWH = "TARIQ";
 
+	whMySelfBeName.push_back(whMySelfBeName0);
+	this->createObject("MYSELF", "IS", "NAME", whMySelfBeName);
 }
 void Objects::createObject(std::string objectName)
 {
