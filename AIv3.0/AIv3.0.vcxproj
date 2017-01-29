@@ -201,6 +201,7 @@
     <ClInclude Include="Language\Verbs\action.h" />
     <ClInclude Include="Language\Verbs\auxiliary.h" />
     <ClInclude Include="Language\Verbs\modal.h" />
+    <ClInclude Include="Language\Verbs\objects.h" />
     <ClInclude Include="Language\Verbs\phrasal.h" />
     <ClInclude Include="Language\Verbs\stative.h" />
     <ClInclude Include="stdafx.h" />

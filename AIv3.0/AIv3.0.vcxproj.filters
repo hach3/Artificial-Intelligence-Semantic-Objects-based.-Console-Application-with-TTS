@@ -70,6 +70,9 @@
     <Filter Include="Header Files\Memory">
       <UniqueIdentifier>{ccd92c36-c701-484a-acb8-9d687cc18e46}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{4c9ff585-2f79-4fa1-b986-909ce90bffb2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -242,6 +245,9 @@
     </ClInclude>
     <ClInclude Include="Language\verbs.h">
       <Filter>Header Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Verbs\objects.h">
+      <Filter>Header Files\Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

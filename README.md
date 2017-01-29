@@ -42,7 +42,7 @@ Lorem ipsum
 
 ### And coding style tests
 
-Explain what these tests test and why
+
 
 ```
 Lorem ipsum
