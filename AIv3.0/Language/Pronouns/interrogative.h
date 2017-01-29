@@ -24,8 +24,9 @@ public:
 
 	void addInterrogative(std::string singular);
 	void addInterrogative(std::string singular, std::string plural);
+	void addInterrogative(std::string singular, std::string plural, std::vector<std::string> relatedWords);
 
-	void setPlural(std::string singular);
+	void setPlural(std::string singular, std::string plural);
 
 	void addRelatedWord(std::string word, std::string relatedWords);
 	bool isRelatedWord(std::string word, std::string relatedWord);
