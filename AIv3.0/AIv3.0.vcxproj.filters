@@ -67,6 +67,9 @@
     <Filter Include="Source Files\Language\Nouns">
       <UniqueIdentifier>{7ee949e5-edab-4ed2-92e2-c8cf96b30af5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{ccd92c36-c701-484a-acb8-9d687cc18e46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
