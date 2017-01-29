@@ -2,7 +2,7 @@
 #ifndef ADJECTIVES_H
 #define ADJECTIVES_H
 
-#include "Adjectives/possessive.h"
+#include "Adjectives/possessiveAdjectives.h"
 
 class Adjectives {
 public:

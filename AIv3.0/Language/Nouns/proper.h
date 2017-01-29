@@ -26,7 +26,6 @@ typedef struct {
 class Proper_Noun {
 public:
 	Proper_Noun();
-	Proper_Noun(std::string singular, std::string plural, std::string commonNounTarget, std::vector<std::string> relatedWords, bool isConcrete, std::vector<std::string> senseCalled);
 	~Proper_Noun();
 
 	/* CHECK IF THE NOUN IS ABSTRACT */

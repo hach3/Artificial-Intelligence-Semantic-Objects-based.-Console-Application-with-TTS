@@ -1,4 +1,4 @@
-#include "possessive.h"
+#include "possessiveAdjectives.h"
 /*
 TODO : add a vector for the 3rd person, it has to content his, hers, its.
 

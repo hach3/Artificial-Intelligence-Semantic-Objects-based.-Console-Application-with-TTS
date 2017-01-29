@@ -169,7 +169,7 @@ void Action_Verb::setGerundForm(std::string verb, std::string gerundForm)
 }
 std::string Action_Verb::getGerundForm(std::string verb)
 {
-
+	return "Hello world";
 }
 
 void Action_Verb::setMental(bool isMental, std::string verb)
@@ -182,20 +182,20 @@ void Action_Verb::setPhysical(bool isPhysical, std::string verb)
 }
 bool Action_Verb::isStateOfBeing(bool isStateOfBeing, std::string verb)
 {
-
+	return true;
 }
 
 bool Action_Verb::isMental(std::string verb)
 {
-
+	return true;
 }
 bool Action_Verb::isPhysical(std::string verb)
 {
-
+	return true;
 }
 bool Action_Verb::isStateOfBeing(std::string verb)
 {
-
+	return true;
 }
 
 void Action_Verb::setTransitive(bool isTransitive, std::string verb)
@@ -208,9 +208,9 @@ void Action_Verb::setIntransitive(bool isIntransitive, std::string verb)
 }
 bool Action_Verb::isTransitive(std::string verb)
 {
-
+	return true;
 }
 bool Action_Verb::isIntransitive(std::string verb)
 {
-
+	return true;
 }

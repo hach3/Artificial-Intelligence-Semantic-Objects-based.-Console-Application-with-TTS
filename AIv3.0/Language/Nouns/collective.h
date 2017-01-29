@@ -33,7 +33,6 @@ typedef struct {
 class Collective_Noun {
 public:
 	Collective_Noun();
-	Collective_Noun(std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled);
 	~Collective_Noun();
 
 	/* CHECK IF THE NOUN IS ABSTRACT */

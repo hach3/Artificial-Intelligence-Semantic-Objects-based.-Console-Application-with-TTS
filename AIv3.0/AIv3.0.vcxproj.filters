@@ -123,9 +123,6 @@
     <ClInclude Include="Language\Verbs\phrasal.h">
       <Filter>Header Files\Language\Verbs</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Pronouns\indefinite.h">
-      <Filter>Header Files\Language\Pronouns</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Pronouns\personnal.h">
       <Filter>Header Files\Language\Pronouns</Filter>
     </ClInclude>
@@ -138,9 +135,6 @@
     <ClInclude Include="Language\Pronouns\relative.h">
       <Filter>Header Files\Language\Pronouns</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Pronouns\interrogative.h">
-      <Filter>Header Files\Language\Pronouns</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Pronouns\reciprocal.h">
       <Filter>Header Files\Language\Pronouns</Filter>
     </ClInclude>
@@ -150,19 +144,10 @@
     <ClInclude Include="Language\Adjectives\article.h">
       <Filter>Header Files\Language\Adjectives</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Adjectives\possessive.h">
-      <Filter>Header Files\Language\Adjectives</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Adjectives\demonstrative.h">
-      <Filter>Header Files\Language\Adjectives</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Adjectives\coordinate.h">
       <Filter>Header Files\Language\Adjectives</Filter>
     </ClInclude>
     <ClInclude Include="Language\Adjectives\numbers.h">
-      <Filter>Header Files\Language\Adjectives</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Adjectives\interrogative.h">
       <Filter>Header Files\Language\Adjectives</Filter>
     </ClInclude>
     <ClInclude Include="Language\Adjectives\indefinite.h">
@@ -177,9 +162,6 @@
     <ClInclude Include="Language\Adverbs\frequency.h">
       <Filter>Header Files\Language\Adverbs</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Adverbs\place.h">
-      <Filter>Header Files\Language\Adverbs</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Adverbs\time.h">
       <Filter>Header Files\Language\Adverbs</Filter>
     </ClInclude>
@@ -190,9 +172,6 @@
       <Filter>Header Files\Language\Adverbs</Filter>
     </ClInclude>
     <ClInclude Include="Language\Prepositions\timePreposition.h">
-      <Filter>Header Files\Language\Prepositions</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Prepositions\place.h">
       <Filter>Header Files\Language\Prepositions</Filter>
     </ClInclude>
     <ClInclude Include="Language\Prepositions\direction.h">
@@ -258,6 +237,27 @@
     <ClInclude Include="Language\Pronouns\possessive.h">
       <Filter>Header Files\Language\Pronouns</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Adjectives\possessiveAdjectives.h">
+      <Filter>Header Files\Language\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Adverbs\placeAdverbs.h">
+      <Filter>Header Files\Language\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Prepositions\placePreposition.h">
+      <Filter>Header Files\Language\Prepositions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Adjectives\interrogativeAdjectives.h">
+      <Filter>Header Files\Language\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Pronouns\interrogativePronouns.h">
+      <Filter>Header Files\Language\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Pronouns\indefinitePronouns.h">
+      <Filter>Header Files\Language\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Adjectives\demonstrativeAdjectives.h">
+      <Filter>Header Files\Language\Adjectives</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -284,17 +284,11 @@
     <ClCompile Include="Language\Nouns\common.cpp">
       <Filter>Source Files\Language\Nouns</Filter>
     </ClCompile>
-    <ClCompile Include="Language\Pronouns\interrogative.cpp">
-      <Filter>Source Files\Language\Pronouns</Filter>
-    </ClCompile>
     <ClCompile Include="Language\Pronouns\personnal.cpp">
       <Filter>Source Files\Language\Pronouns</Filter>
     </ClCompile>
     <ClCompile Include="Language\Pronouns\possessive.cpp">
       <Filter>Source Files\Language\Pronouns</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Adjectives\possessive.cpp">
-      <Filter>Source Files\Language\Adjectives</Filter>
     </ClCompile>
     <ClCompile Include="Memory\objects.cpp">
       <Filter>Source Files\Memory</Filter>
@@ -317,13 +311,7 @@
     <ClCompile Include="Language\Adjectives\numbers.cpp">
       <Filter>Source Files\Language\Adjectives</Filter>
     </ClCompile>
-    <ClCompile Include="Language\Adjectives\interrogative.cpp">
-      <Filter>Source Files\Language\Adjectives</Filter>
-    </ClCompile>
     <ClCompile Include="Language\Adjectives\indefinite.cpp">
-      <Filter>Source Files\Language\Adjectives</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Adjectives\demonstrative.cpp">
       <Filter>Source Files\Language\Adjectives</Filter>
     </ClCompile>
     <ClCompile Include="Language\Adjectives\coordinate.cpp">
@@ -345,9 +333,6 @@
       <Filter>Source Files\Language\Adverbs</Filter>
     </ClCompile>
     <ClCompile Include="Language\Adverbs\manner.cpp">
-      <Filter>Source Files\Language\Adverbs</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Adverbs\place.cpp">
       <Filter>Source Files\Language\Adverbs</Filter>
     </ClCompile>
     <ClCompile Include="Language\Adverbs\time.cpp">
@@ -395,9 +380,6 @@
     <ClCompile Include="Language\Prepositions\direction.cpp">
       <Filter>Source Files\Language\Prepositions</Filter>
     </ClCompile>
-    <ClCompile Include="Language\Prepositions\place.cpp">
-      <Filter>Source Files\Language\Prepositions</Filter>
-    </ClCompile>
     <ClCompile Include="Language\Prepositions\timePreposition.cpp">
       <Filter>Source Files\Language\Prepositions</Filter>
     </ClCompile>
@@ -411,9 +393,6 @@
       <Filter>Source Files\Language\Pronouns</Filter>
     </ClCompile>
     <ClCompile Include="Language\Pronouns\intensive.cpp">
-      <Filter>Source Files\Language\Pronouns</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Pronouns\indefinite.cpp">
       <Filter>Source Files\Language\Pronouns</Filter>
     </ClCompile>
     <ClCompile Include="Language\Pronouns\demonstrative.cpp">
@@ -430,6 +409,27 @@
     </ClCompile>
     <ClCompile Include="Language\prepositions.cpp">
       <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Adjectives\possessiveAdjectives.cpp">
+      <Filter>Source Files\Language\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Adverbs\placeAdverbs.cpp">
+      <Filter>Source Files\Language\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Prepositions\placePreposition.cpp">
+      <Filter>Source Files\Language\Prepositions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Adjectives\interrogativeAdjectives.cpp">
+      <Filter>Source Files\Language\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Pronouns\interrogativePronouns.cpp">
+      <Filter>Source Files\Language\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Pronouns\indefinitePronouns.cpp">
+      <Filter>Source Files\Language\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Adjectives\demonstrativeAdjectives.cpp">
+      <Filter>Source Files\Language\Adjectives</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

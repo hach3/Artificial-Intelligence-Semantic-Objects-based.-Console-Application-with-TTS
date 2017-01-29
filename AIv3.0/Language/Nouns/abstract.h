@@ -25,11 +25,6 @@ class Abstract_Noun {
 public:
 	/* CONSTRUCTOR*/
 	Abstract_Noun();
-
-	/* CONSTRUCTOR THAT AUTOMATICALLY CREATE A CONCEPT */
-
-	Abstract_Noun(std::string singular, std::string plural, std::string concept, std::vector<std::string> relatedWords, bool isCountable);
-
 	/* DESTRUCTOR : CLEAR THE VECTOR OF ABSTRACT NOUNS */
 	
 	~Abstract_Noun();

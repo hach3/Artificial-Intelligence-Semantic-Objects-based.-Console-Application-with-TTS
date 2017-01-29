@@ -3,9 +3,9 @@
 #define PRONOUNS_H
 
 #include "Pronouns/demonstrative.h"
-#include "Pronouns/indefinite.h"
+#include "Pronouns/indefinitePronouns.h"
 #include "Pronouns/intensive.h"
-#include "Pronouns/interrogative.h"
+#include "Pronouns/interrogativePronouns.h"
 #include "Pronouns/personnal.h"
 #include "Pronouns/possessive.h"
 #include "Pronouns/reciprocal.h"

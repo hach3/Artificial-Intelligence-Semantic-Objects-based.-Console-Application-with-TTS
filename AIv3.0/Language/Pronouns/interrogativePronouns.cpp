@@ -1,4 +1,4 @@
-#include "interrogative.h"
+#include "interrogativePronouns.h"
 
 Interrogative_Pronoun::Interrogative_Pronoun()
 {
