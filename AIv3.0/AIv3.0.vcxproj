@@ -204,7 +204,11 @@
     <ClInclude Include="Language\Verbs\modal.h" />
     <ClInclude Include="Language\Verbs\phrasal.h" />
     <ClInclude Include="Language\Verbs\stative.h" />
-    <ClInclude Include="Memory\objects.h" />
+    <ClInclude Include="Memory\LongTermMemory\declarativeMemory.h" />
+    <ClInclude Include="Memory\LongTermMemory\episodicMemory.h" />
+    <ClInclude Include="Memory\LongTermMemory\explicitMemory.h" />
+    <ClInclude Include="Memory\LongTermMemory\longTermMemory.h" />
+    <ClInclude Include="Memory\LongTermMemory\semanticMemory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -264,7 +268,11 @@
     <ClCompile Include="Language\Verbs\modal.cpp" />
     <ClCompile Include="Language\Verbs\phrasal.cpp" />
     <ClCompile Include="Language\Verbs\stative.cpp" />
-    <ClCompile Include="Memory\objects.cpp" />
+    <ClCompile Include="Memory\LongTermMemory\declarativeMemory.cpp" />
+    <ClCompile Include="Memory\LongTermMemory\episodicMemory.cpp" />
+    <ClCompile Include="Memory\LongTermMemory\explicitMemory.cpp" />
+    <ClCompile Include="Memory\LongTermMemory\longTermMemory.cpp" />
+    <ClCompile Include="Memory\LongTermMemory\semanticMemory.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

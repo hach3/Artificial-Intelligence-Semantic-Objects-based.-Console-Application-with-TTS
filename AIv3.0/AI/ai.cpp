@@ -18,7 +18,9 @@ void AI::understandSentence(std::string usersentence)
 	/*
 	Only handle "what is your name ?" and "what is your car ?" atm. That means WH + Be + Possessive Adj + noun 
 	*/
-	
+	/*
+	have todo smth more general, but for tests and fun, i've done the think below
+	*/
 	std::string wh;
 	std::string possessiveAdjectif;
 	std::string verb;
@@ -26,36 +28,44 @@ void AI::understandSentence(std::string usersentence)
 
 	bool isWH = false;
 	std::string newSentence;
-	std::cout << "Start analyzing sentence." << std::endl;
+
+	std::string answer;
+
+
+	std::cout << "Start analyzing sentence...." << std::endl;
+	Sleep(2000);
 	if (this->_pronouns.getInterrogativePronouns().isInterrogativeInSentence(usersentence, newSentence, wh) == true)
 	{
-	//	std::cout << "Found an interrogative pronoun" << std::endl;
-		//Si on trouve be dans la nouvelle sentence
 		if (this->_verbs.getAuxiliaryVerbs().isBeInSentence(newSentence, verb) == true)
 		{
-		//	std::cout << "Found be" << std::endl;
-			//Si on trouve un adjectif possessif
 			if (this->_adjectives.getPossessiveAdjectives().isPossessiveSentence(newSentence, possessiveAdjectif) == true)
 			{
-			//	std::cout << "Found a possessive adjective" << std::endl;
-				//Si on trouve un nom
 				if (this->_nouns.getCommonNouns().isCommonInSentence(newSentence, noun) == true)
 				{
-					//std::cout << "Found an common noun" << std::endl;
-					isWH = true;
-					//this->_sentenceToSay = wh + " " + verb + " " + possessiveAdjectif + " " + noun + "?";
-					//this->saySomething();
+					isWH = true;					
+					this->_semanticObjects.getIs("MYSELF", noun, wh, answer);
+					if (answer != "")
+						this->_sentenceToSay = "MY " + noun + " IS " + answer + ".";
+					else 
+						this->_sentenceToSay = "I DON\'T KNOW.";
 				}
 			}
-				
+			//sinon si on trouve pas d'adj possessif, on check s'il y a un nom : what is human ?
+			else if (this->_nouns.getCommonNouns().isCommonInSentence(newSentence, noun) == true)
+			{
+				isWH = true;		
+				this->_semanticObjects.getIsA(noun, answer);
+				//Si c'est singulier, il faut rajouter "A" devant, ou du moins l'article qui se trouvait dans la phrase.
+				if (answer != "")
+					this->_sentenceToSay =   "A " + noun + " IS A " + answer + ".";
+				else 
+					this->_sentenceToSay = "I DON\'T KNOW.";				
+			}
 		}
 	}
-	/*
-	have todo smth more general, but for tests and fun, i've done the think below
-	*/
-	std::string answer;
-	answer = this->_objects.getWHAnswer("MYSELF", "IS", noun, wh);
-	this->_sentenceToSay = "MY " + noun + " IS " + answer + ".";
+	
+	if (this->_sentenceToSay == "")
+		this->_sentenceToSay = "I DON\'T KNOW ABOUT THIS CONCEPT.";
 	this->saySomething();
 }
 

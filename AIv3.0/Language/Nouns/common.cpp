@@ -29,6 +29,20 @@ void Common_Noun::init()
 	/* std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled */
 	this->addCommonNoun("NAME", "NAMES", nameRelatedWords, false, false, nameSenseCalled);
 
+	/* AGE */
+	std::vector<std::string> ageRelatedWords;
+	ageRelatedWords.push_back("YEARS");
+	ageRelatedWords.push_back("OLD");
+	ageRelatedWords.push_back("YOUNG");
+	std::vector<std::string> ageSenseCalled;
+	/* std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled */
+	this->addCommonNoun("AGE", "AGES", ageRelatedWords, false, false, ageSenseCalled);
+
+	/* HUMAN */
+	std::vector<std::string> humanRelatedWords;
+	std::vector<std::string> humanSenseCalled;
+	/* std::string singular, std::string plural, std::vector<std::string> relatedWords, bool isCountable, bool isConcrete, std::vector<std::string> senseCalled */
+	this->addCommonNoun("HUMAN", "HUMANS", humanRelatedWords, true, true, humanSenseCalled);
 
 
 }

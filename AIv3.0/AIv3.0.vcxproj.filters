@@ -79,6 +79,12 @@
     <Filter Include="Source Files\AI">
       <UniqueIdentifier>{aabc6492-e430-42ae-b061-0cf7405e52d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Memory\LongTermMemory">
+      <UniqueIdentifier>{d07ab164-12a2-4049-85db-323e30d65018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory\LongTermMemory">
+      <UniqueIdentifier>{6153c51b-5766-480e-9014-521b71ddb41e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -228,9 +234,6 @@
     <ClInclude Include="Language\verbs.h">
       <Filter>Header Files\Language</Filter>
     </ClInclude>
-    <ClInclude Include="Memory\objects.h">
-      <Filter>Header Files\Memory</Filter>
-    </ClInclude>
     <ClInclude Include="AI\ai.h">
       <Filter>Header Files\AI</Filter>
     </ClInclude>
@@ -257,6 +260,21 @@
     </ClInclude>
     <ClInclude Include="Language\Adjectives\demonstrativeAdjectives.h">
       <Filter>Header Files\Language\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\LongTermMemory\longTermMemory.h">
+      <Filter>Header Files\Memory\LongTermMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\LongTermMemory\explicitMemory.h">
+      <Filter>Header Files\Memory\LongTermMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\LongTermMemory\declarativeMemory.h">
+      <Filter>Header Files\Memory\LongTermMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\LongTermMemory\episodicMemory.h">
+      <Filter>Header Files\Memory\LongTermMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\LongTermMemory\semanticMemory.h">
+      <Filter>Header Files\Memory\LongTermMemory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -289,9 +307,6 @@
     </ClCompile>
     <ClCompile Include="Language\Pronouns\possessive.cpp">
       <Filter>Source Files\Language\Pronouns</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory\objects.cpp">
-      <Filter>Source Files\Memory</Filter>
     </ClCompile>
     <ClCompile Include="AI\ai.cpp">
       <Filter>Source Files\AI</Filter>
@@ -430,6 +445,21 @@
     </ClCompile>
     <ClCompile Include="Language\Adjectives\demonstrativeAdjectives.cpp">
       <Filter>Source Files\Language\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\LongTermMemory\semanticMemory.cpp">
+      <Filter>Source Files\Memory\LongTermMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\LongTermMemory\longTermMemory.cpp">
+      <Filter>Source Files\Memory\LongTermMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\LongTermMemory\explicitMemory.cpp">
+      <Filter>Source Files\Memory\LongTermMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\LongTermMemory\episodicMemory.cpp">
+      <Filter>Source Files\Memory\LongTermMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\LongTermMemory\declarativeMemory.cpp">
+      <Filter>Source Files\Memory\LongTermMemory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

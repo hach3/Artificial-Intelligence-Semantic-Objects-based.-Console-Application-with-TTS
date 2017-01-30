@@ -10,7 +10,7 @@
 #include "../Language/pronouns.h"
 #include "../Language/verbs.h"
 
-#include "../Memory/objects.h"
+#include "../Memory/LongTermMemory/semanticMemory.h"
 
 
 class AI {
@@ -32,7 +32,7 @@ private:
 	Pronouns _pronouns;
 	Verbs _verbs;
 	Adjectives _adjectives;
-	Objects _objects;
+	semanticMemory _semanticObjects;
 
 	std::string _sentenceToSay;
 };
