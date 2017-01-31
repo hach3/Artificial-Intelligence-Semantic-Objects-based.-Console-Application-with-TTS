@@ -160,7 +160,6 @@
     <ClInclude Include="Language\Adjectives\numbers.h" />
     <ClInclude Include="Language\Adjectives\possessiveAdjectives.h" />
     <ClInclude Include="Language\adverbs.h" />
-    <ClInclude Include="Language\Adverbs\clause.h" />
     <ClInclude Include="Language\Adverbs\degree.h" />
     <ClInclude Include="Language\Adverbs\frequency.h" />
     <ClInclude Include="Language\Adverbs\manner.h" />
@@ -225,7 +224,6 @@
     <ClCompile Include="Language\Adjectives\numbers.cpp" />
     <ClCompile Include="Language\Adjectives\possessiveAdjectives.cpp" />
     <ClCompile Include="Language\adverbs.cpp" />
-    <ClCompile Include="Language\Adverbs\clause.cpp" />
     <ClCompile Include="Language\Adverbs\degree.cpp" />
     <ClCompile Include="Language\Adverbs\frequency.cpp" />
     <ClCompile Include="Language\Adverbs\manner.cpp" />

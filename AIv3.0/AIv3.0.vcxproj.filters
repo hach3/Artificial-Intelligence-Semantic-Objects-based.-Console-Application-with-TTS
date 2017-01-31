@@ -162,9 +162,6 @@
     <ClInclude Include="Language\Adjectives\attribute.h">
       <Filter>Header Files\Language\Adjectives</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Adverbs\clause.h">
-      <Filter>Header Files\Language\Adverbs</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Adverbs\frequency.h">
       <Filter>Header Files\Language\Adverbs</Filter>
     </ClInclude>
@@ -337,9 +334,6 @@
     </ClCompile>
     <ClCompile Include="Language\Adjectives\article.cpp">
       <Filter>Source Files\Language\Adjectives</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Adverbs\clause.cpp">
-      <Filter>Source Files\Language\Adverbs</Filter>
     </ClCompile>
     <ClCompile Include="Language\Adverbs\degree.cpp">
       <Filter>Source Files\Language\Adverbs</Filter>

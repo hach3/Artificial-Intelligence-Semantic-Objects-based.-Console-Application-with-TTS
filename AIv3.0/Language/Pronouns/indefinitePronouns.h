@@ -1,5 +1,5 @@
-#ifndef INDEFINITE_H
-#define INDEFINITE_H
+#ifndef INDEFINITE_PRONOUNS_H
+#define INDEFINITE_PRONOUNS_H
 
 #include <vector>
 #include <string>
@@ -42,4 +42,4 @@ private:
 	std::vector<INDEFINITE_PRONOUN> _demonstrativePronounsList;
 
 };
-#endif //INDEFINITE_H
+#endif //INDEFINITE_PRONOUNS_H

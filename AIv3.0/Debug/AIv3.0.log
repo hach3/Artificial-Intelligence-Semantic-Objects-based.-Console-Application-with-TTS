@@ -1,36 +1,8 @@
-﻿  stdafx.cpp
-  semanticMemory.cpp
-  longTermMemory.cpp
-  explicitMemory.cpp
-  episodicMemory.cpp
-  declarativeMemory.cpp
-  stative.cpp
-  phrasal.cpp
-  modal.cpp
-  auxiliary.cpp
-  action.cpp
-  verbs.cpp
-  relative.cpp
-  reflexive.cpp
-  reciprocal.cpp
-  possessive.cpp
-  personnal.cpp
-  interrogativePronouns.cpp
-  intensive.cpp
-  indefinitePronouns.cpp
-  Generating Code...
-  Compiling...
-  demonstrative.cpp
-  pronouns.cpp
-  proper.cpp
-  common.cpp
-  collective.cpp
-  abstract.cpp
-  nouns.cpp
-  possessiveAdjectives.cpp
-  adjectives.cpp
+﻿  AIv3.0.cpp
   ai.cpp
-  AIv3.0.cpp
-  Generating Code...
-  AIv3.0.vcxproj -> C:\Users\hach3\Documents\Visual Studio 2015\Projects\AIv3.0\Debug\AIv3.0.exe
-  AIv3.0.vcxproj -> C:\Users\hach3\Documents\Visual Studio 2015\Projects\AIv3.0\Debug\AIv3.0.pdb (Full PDB)
+  Génération de code en cours...
+  Compilation en cours...
+  pronouns.cpp
+  indefinitePronouns.cpp
+  Génération de code en cours...
+  AIv3.0.vcxproj -> C:\Users\triahi\Documents\AIV3\Debug\AIv3.0.exe
