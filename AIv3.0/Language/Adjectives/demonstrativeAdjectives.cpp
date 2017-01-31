@@ -11,7 +11,8 @@ Demonstrative_Adjectives::~Demonstrative_Adjectives()
 
 void Demonstrative_Adjectives::init(void)
 {
-
+	this->addDemonstrative("THIS", "THESE", false);
+	this->addDemonstrative("THAT", "THOSE", true);
 }
 
 void Demonstrative_Adjectives::addDemonstrative(std::string singular, std::string plural)

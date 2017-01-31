@@ -1,5 +1,5 @@
-#ifndef COORDINATING_CONJUNCTIONS_H
-#define COORDINATING_CONJUNCTIONS_H
+#ifndef SUBORDINATING_CONJUNCTIONS_H
+#define SUBORDINATING_CONJUNCTIONS_H
 
 #include <vector>
 #include <string>
@@ -12,19 +12,19 @@ on anything to give themselves meaning.
 */
 
 typedef struct {
-	std::string coordinating;
+	std::string subordinating;
 
 	std::string relatedWord;
-} COORDINATING_CONJUNCTIONS;
+} SUBORDINATING_CONJUNCTIONS;
 
-class Coordinating_Conjunctions {
+class Subordinating_Conjunctions {
 public:
-	Coordinating_Conjunctions();
-	~Coordinating_Conjunctions();
+	Subordinating_Conjunctions();
+	~Subordinating_Conjunctions();
 
 	void init();
 protected:
 private:
-	std::vector<COORDINATING_CONJUNCTIONS> _coordinatingConjunctionsList;
+	std::vector<SUBORDINATING_CONJUNCTIONS> _subordinatingConjunctionsList;
 };
-#endif //COORDINATING_CONJUNCTIONS_H
+#endif //SUBORDINATING_CONJUNCTIONS_H

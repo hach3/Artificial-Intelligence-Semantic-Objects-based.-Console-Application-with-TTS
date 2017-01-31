@@ -3,7 +3,7 @@
 This ai is based on the semantic. It extracts the type of words and try to understand a sentence. Words are link between them by concepts. Piano is linked to music for example.
 The uml right here: 
 
-https://www.lucidchart.com/invitations/accept/2a97dcbf-d29c-46d3-aea1-c894717636a8
+https://www.lucidchart.com/documents/view/3432a9e1-b9be-4de6-8057-558353f730cc
 
 Once the sentence is understood, it looks in the memory to answer. 
 

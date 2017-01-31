@@ -12,7 +12,9 @@ Interrogative_Adjectives::~Interrogative_Adjectives(void)
 
 void Interrogative_Adjectives::init(void)
 {
-	this->add
+	this->addInterrogative("WHAT", "ABOUT");
+	this->addInterrogative("WHICH", "CHOOSE");
+	this->addInterrogative("WHOSE", "POSSESSION");
 }
 
 void Interrogative_Adjectives::addInterrogative(std::string wh)

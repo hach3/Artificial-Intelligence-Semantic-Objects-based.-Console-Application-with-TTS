@@ -189,9 +189,6 @@
     <ClInclude Include="Language\Conjunctions\correlative.h">
       <Filter>Header Files\Language\Conjunctions</Filter>
     </ClInclude>
-    <ClInclude Include="Language\Conjunctions\conjunctive.h">
-      <Filter>Header Files\Language\Conjunctions</Filter>
-    </ClInclude>
     <ClInclude Include="Language\Interjections\greeting.h">
       <Filter>Header Files\Language\Interjections</Filter>
     </ClInclude>
@@ -273,6 +270,9 @@
     <ClInclude Include="Memory\LongTermMemory\semanticMemory.h">
       <Filter>Header Files\Memory\LongTermMemory</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Adverbs\conjunctive.h">
+      <Filter>Header Files\Language\Adverbs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -346,9 +346,6 @@
     </ClCompile>
     <ClCompile Include="Language\Adverbs\time.cpp">
       <Filter>Source Files\Language\Adverbs</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Conjunctions\conjunctive.cpp">
-      <Filter>Source Files\Language\Conjunctions</Filter>
     </ClCompile>
     <ClCompile Include="Language\Conjunctions\coordinating.cpp">
       <Filter>Source Files\Language\Conjunctions</Filter>
@@ -454,6 +451,9 @@
     </ClCompile>
     <ClCompile Include="Memory\LongTermMemory\declarativeMemory.cpp">
       <Filter>Source Files\Memory\LongTermMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Adverbs\conjunctive.cpp">
+      <Filter>Source Files\Language\Adverbs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
