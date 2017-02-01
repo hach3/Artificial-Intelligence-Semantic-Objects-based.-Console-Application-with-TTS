@@ -1,0 +1,19 @@
+﻿  indefinite_Pronouns_Collection.cpp
+c:\users\hach3\documents\visual studio 2015\projects\aiv0.0.0\aiv0.0.0\language\grammar\pronouns\indefinite_pronouns_collection.cpp(60): error C2440: '=': cannot convert from 'Pronouns *' to 'Indefinite_Pronouns *'
+  c:\users\hach3\documents\visual studio 2015\projects\aiv0.0.0\aiv0.0.0\language\grammar\pronouns\indefinite_pronouns_collection.cpp(60): note: Cast from base to derived requires dynamic_cast or static_cast
+  Generating Code...
+  Compiling...
+  It_There_Pronouns_Collection.cpp
+  Generating Code...
+  Compiling...
+  relative_Pronouns_Collection.cpp
+  reflexive_Pronouns_Collection.cpp
+  reciprocal_Pronouns_Collection.cpp
+  question_Pronouns_Collection.cpp
+  possessive_Pronouns_Collection.cpp
+  personnal_Pronouns_Collection.cpp
+  You_They_Pronouns_Collection.cpp
+  This_That_Pronouns_Collection.cpp
+  Pronouns_Collection.cpp
+  One_Ones_Pronouns_Collection.cpp
+  Generating Code...
