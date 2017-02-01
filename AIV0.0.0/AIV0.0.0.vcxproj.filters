@@ -49,6 +49,9 @@
     <Filter Include="Fichiers sources\Language\Grammar\Pronouns">
       <UniqueIdentifier>{189a262f-ac02-4f39-a3c6-e204086653ac}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Language\Grammar\Verbs">
+      <UniqueIdentifier>{b5458c5b-b82a-4baf-a97c-b589723c1eae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -132,6 +135,12 @@
     <ClInclude Include="Language\Grammar\Pronouns\You_They_Pronouns_Collection.h">
       <Filter>Fichiers d%27en-tête\Language\Grammar\Pronouns</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\be_Verb.h">
+      <Filter>Fichiers d%27en-tête\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Verbs.h">
+      <Filter>Fichiers d%27en-tête\Language\Grammar\Verbs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -211,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="Language\Grammar\Pronouns\You_They_Pronouns_Collection.cpp">
       <Filter>Fichiers sources\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\be_Verb.cpp">
+      <Filter>Fichiers sources\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Verbs.cpp">
+      <Filter>Fichiers sources\Language\Grammar\Verbs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
