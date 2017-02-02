@@ -149,16 +149,36 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Indefinite_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Intensive_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Interrogative_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Object_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Personal_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Possessive_Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Reciprocal_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Reflexive_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Relative_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Pronouns\Subject_Pronouns.h" />
     <ClInclude Include="Language\Language.h" />
     <ClInclude Include="Language\Words.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Indefinite_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Intensive_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Interrogative_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Object_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Personal_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Possessive_Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Reciprocal_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Reflexive_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Relative_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Pronouns\Subject_Pronouns.cpp" />
     <ClCompile Include="Language\Language.cpp" />
     <ClCompile Include="Language\Words.cpp" />
     <ClCompile Include="NaturalLanguageProcessingv0.0.0.cpp" />

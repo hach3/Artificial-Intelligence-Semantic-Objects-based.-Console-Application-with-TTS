@@ -78,6 +78,36 @@
     <ClInclude Include="Language\Words.h">
       <Filter>Header Files\Language</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Relative_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Reflexive_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Possessive_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Personal_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Object_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Subject_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Indefinite_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Interrogative_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Intensive_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -97,6 +127,36 @@
     </ClCompile>
     <ClCompile Include="Language\Language.cpp">
       <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Indefinite_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Intensive_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Interrogative_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Object_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Possessive_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Reflexive_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Relative_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Subject_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Personal_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

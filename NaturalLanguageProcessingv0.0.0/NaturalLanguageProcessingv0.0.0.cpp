@@ -23,24 +23,24 @@ int main()
 	while (keepLooping)
 	{
 		wordNType.clear();
+		userVectorPhrase.clear();
 		userPhrase = "";
 
 		getline(cin, userPhrase);
 
 		userVectorPhrase = split(userPhrase);
 		cout << endl;
-		lang.getWordNTypeInSentence(userVectorPhrase, wordNType);
-
+		lang.getWordNTypeInSentence(userVectorPhrase, &wordNType);
 		for (unsigned int i = 0; i < wordNType.size(); i++)
 		{
+		
 			for (unsigned int y = 0; y < wordNType.at(i).types.size(); y++)
-			{
+			{				
 				cout << wordNType.at(i).word << " : " << wordNType.at(i).types.at(y) << endl;
 			}
-			
 
 		}
-
+	
 	}
     return 0;
 }
