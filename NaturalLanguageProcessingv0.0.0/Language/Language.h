@@ -5,7 +5,7 @@
 
 typedef struct {
 	string word;
-	WORDS_TYPE type;
+	vector<WORDS_TYPE> types;
 } WORD_AND_TYPE;
 
 class Language {
@@ -16,7 +16,7 @@ public:
 	void init();
 
 	void addWord(Words* word);
-	void getWordNTypeInSentence(string sentence, vector<WORD_AND_TYPE> &wordNType);
+	void getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE> &wordNType);
 protected:
 private:
 	vector<Words *> _wordsList;

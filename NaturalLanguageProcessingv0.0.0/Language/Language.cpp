@@ -19,22 +19,75 @@ void Language::addWord(Words* word)
 	this->_wordsList.push_back(word);
 }
 
-void Language::getWordNTypeInSentence(string sentence, vector<WORD_AND_TYPE> &wordNType)
+
+void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE> &wordNType)
 {
 	/*
 	Check the phrase, get each word (starting by the composed one)
 	Associate each word with its type !
 	*/
-	size_t foundAt;
-	for (unsigned int i = 0; i < this->_wordsList.size(); i++)
+	WORD_AND_TYPE wnt;
+	string wordToCompareComposedBy2Words;
+	string wordToCompareComposedBy3Words;
+	for (unsigned int i = 0; i < sentence.size(); i++)
 	{
-		foundAt = sentence.find(this->_wordsList.at(i)->getValue());
-		if (foundAt != string::npos)
+		for (unsigned int y = 0; y < this->_wordsList.size(); y++)
 		{
-			WORD_AND_TYPE wNt;
-			wNt.word = this->_wordsList.at(i)->getValue();
-			wNt.type = this->_wordsList.at(i)->getType();
-			wordNType.push_back(wNt);
+			if (i < sentence.size() - 2)
+			{
+				wordToCompareComposedBy3Words = sentence.at(i) + " " + sentence.at(i + 1) + " " + sentence.at(i + 2);
+
+				wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
+				if (wordToCompareComposedBy3Words == this->_wordsList.at(y)->getValue())
+				{
+					wnt.word = this->_wordsList.at(y)->getValue();
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+					wordNType.push_back(wnt);
+					i+=2;
+				}
+				else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
+				{
+					wnt.word = this->_wordsList.at(y)->getValue();
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+					wordNType.push_back(wnt);
+					i++;
+				}
+				else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
+				{
+					wnt.word = this->_wordsList.at(y)->getValue();
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+					wordNType.push_back(wnt);
+				}
+
+			}
+			else if (i < sentence.size() - 1)
+			{
+				wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
+
+				if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
+				{
+					wnt.word = this->_wordsList.at(y)->getValue();
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+					wordNType.push_back(wnt);
+					i++;
+				}
+				else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
+				{
+					wnt.word = this->_wordsList.at(y)->getValue();
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+					wordNType.push_back(wnt);
+				}
+			}
+		
+			else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
+			{
+				wnt.word = this->_wordsList.at(y)->getValue();
+				wnt.types.push_back(this->_wordsList.at(y)->getType());
+				wordNType.push_back(wnt);
+			}
+	
+			
 		}
 	}
+	
 }
