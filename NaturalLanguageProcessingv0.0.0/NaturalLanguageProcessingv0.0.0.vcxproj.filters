@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Language">
+      <UniqueIdentifier>{7d493fe8-7882-4016-871c-283c86da7326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar">
+      <UniqueIdentifier>{14df6cbc-2c3a-4415-a623-fbd6bc0659ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Pronouns">
+      <UniqueIdentifier>{13776b34-b51f-4ba0-a0dc-11255f5cacaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Adjectives">
+      <UniqueIdentifier>{244e0f07-90f4-4521-9148-4c5888902b6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Adverbs">
+      <UniqueIdentifier>{0204a134-000d-4041-a68b-d0fe95586c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Nouns">
+      <UniqueIdentifier>{0f4773a4-8758-4b11-bdbc-fc876bf6b876}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Verbs">
+      <UniqueIdentifier>{9b96ccf8-31c1-42ab-8a57-a29379b18145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language">
+      <UniqueIdentifier>{06091f61-e5a8-4378-b5af-f62b74e0cf06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar">
+      <UniqueIdentifier>{a2e7a735-bd51-468f-a6e3-1d0468d84b40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Pronouns">
+      <UniqueIdentifier>{51fbe737-f3ea-42da-a620-a261f75d4c3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Adjectives">
+      <UniqueIdentifier>{baa82980-19c8-4da3-9156-3a31772fbe57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Adverbs">
+      <UniqueIdentifier>{873da5fc-8f45-4d1c-8857-333762bf029f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Verbs">
+      <UniqueIdentifier>{199c005c-5cb8-42fa-955a-f69f9d45163a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Nouns">
+      <UniqueIdentifier>{12c309c9-bf0d-4a79-b251-0c2a68da5803}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Pronouns\Reciprocal_Pronouns.h">
+      <Filter>Header Files\Language\Grammar\Pronouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Language.h">
+      <Filter>Header Files\Language</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Words.h">
+      <Filter>Header Files\Language</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NaturalLanguageProcessingv0.0.0.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Pronouns\Reciprocal_Pronouns.cpp">
+      <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Words.cpp">
+      <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Language.cpp">
+      <Filter>Source Files\Language</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
