@@ -25,6 +25,7 @@ public:
 	~Language();
 	
 	void init();
+	void initPronouns();
 
 	void addWord(Words* word);
 	void getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE>* wordNType);
