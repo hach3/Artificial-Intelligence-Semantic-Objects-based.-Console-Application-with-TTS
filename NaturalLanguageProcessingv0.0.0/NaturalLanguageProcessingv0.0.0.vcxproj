@@ -149,6 +149,10 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Language\Grammar\Adjectives\Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Comparing_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Compound_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Denominal_Adjectives.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Indefinite_Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Intensive_Pronouns.h" />
@@ -161,12 +165,23 @@
     <ClInclude Include="Language\Grammar\Pronouns\Reflexive_Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Relative_Pronouns.h" />
     <ClInclude Include="Language\Grammar\Pronouns\Subject_Pronouns.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Action_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Auxiliary_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Confusing_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Modal_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Phrasal_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Stative_Verbs.h" />
+    <ClInclude Include="Language\Grammar\Verbs\Verbs.h" />
     <ClInclude Include="Language\Language.h" />
     <ClInclude Include="Language\Words.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Language\Grammar\Adjectives\Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Comparing_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Compound_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Denominal_Adjectives.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Demonstrative_Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Indefinite_Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Intensive_Pronouns.cpp" />
@@ -179,6 +194,13 @@
     <ClCompile Include="Language\Grammar\Pronouns\Reflexive_Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Relative_Pronouns.cpp" />
     <ClCompile Include="Language\Grammar\Pronouns\Subject_Pronouns.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Action_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Auxiliary_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Confusing_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Modal_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Phrasal_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Stative_Verbs.cpp" />
+    <ClCompile Include="Language\Grammar\Verbs\Verbs.cpp" />
     <ClCompile Include="Language\Language.cpp" />
     <ClCompile Include="Language\Words.cpp" />
     <ClCompile Include="NaturalLanguageProcessingv0.0.0.cpp" />

@@ -5,7 +5,7 @@
 
 class Demonstrative_Pronouns : public Pronouns {
 public:
-	Demonstrative_Pronouns(string value, WORDS_TYPE type);
+	Demonstrative_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Demonstrative_Pronouns();
 protected:
 private:

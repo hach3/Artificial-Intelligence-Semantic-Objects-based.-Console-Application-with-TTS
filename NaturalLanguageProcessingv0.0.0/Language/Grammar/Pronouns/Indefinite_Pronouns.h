@@ -5,7 +5,7 @@
 
 class Indefinite_Pronouns : public Pronouns {
 public:
-	Indefinite_Pronouns(string value, WORDS_TYPE type);
+	Indefinite_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Indefinite_Pronouns();
 protected:
 private:

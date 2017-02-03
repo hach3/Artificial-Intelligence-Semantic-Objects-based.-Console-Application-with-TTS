@@ -5,7 +5,7 @@
 
 class Interrogative_Pronouns : public Pronouns {
 public:
-	Interrogative_Pronouns(string value, WORDS_TYPE type);
+	Interrogative_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Interrogative_Pronouns();
 protected:
 private:

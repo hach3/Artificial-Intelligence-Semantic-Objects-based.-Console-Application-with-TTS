@@ -4,8 +4,9 @@ Words::Words()
 {
 
 }
-Words::Words(string value, WORDS_TYPE type) :
+Words::Words(string value, WORDS typeWord, WORDS_TYPE type) :
 	_value(value),
+	_wordType(typeWord),
 	_type(type)
 {
 	
@@ -33,4 +34,13 @@ WORDS_TYPE Words::getType(void)
 void Words::setType(WORDS_TYPE type)
 {
 	this->_type = type;
+}
+
+WORDS Words::getWordType(void)
+{
+	return this->_wordType;
+}
+void Words::setWordType(WORDS type)
+{
+	this->_wordType = type;
 }

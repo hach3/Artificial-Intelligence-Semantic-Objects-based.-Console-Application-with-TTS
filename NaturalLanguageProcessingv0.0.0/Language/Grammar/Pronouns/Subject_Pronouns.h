@@ -5,7 +5,7 @@
 
 class Subject_Pronouns : public Pronouns {
 public:
-	Subject_Pronouns(string value, WORDS_TYPE type);
+	Subject_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Subject_Pronouns();
 protected:
 private:

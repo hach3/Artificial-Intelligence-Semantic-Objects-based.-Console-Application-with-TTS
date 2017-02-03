@@ -1,6 +1,32 @@
-﻿  Language.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
+﻿  Words.cpp
+  Language.cpp
+  Verbs.cpp
+  Stative_Verbs.cpp
+  Phrasal_Verbs.cpp
+  Modal_Verbs.cpp
+  Confusing_Verbs.cpp
+  Auxiliary_Verbs.cpp
+  Action_Verbs.cpp
+  Subject_Pronouns.cpp
+  Relative_Pronouns.cpp
+  Reflexive_Pronouns.cpp
+  Reciprocal_Pronouns.cpp
+  Pronouns.cpp
+  Possessive_Pronouns.cpp
+  Personal_Pronouns.cpp
+  Object_Pronouns.cpp
+  Interrogative_Pronouns.cpp
+  Intensive_Pronouns.cpp
+  Indefinite_Pronouns.cpp
+  Génération de code en cours...
+  Compilation en cours...
+  Demonstrative_Pronouns.cpp
+  Denominal_Adjectives.cpp
+  Compound_Adjectives.cpp
+  Comparing_Adjectives.cpp
+  Adjectives.cpp
+  Génération de code en cours...
+  Compilation en cours...
   NaturalLanguageProcessingv0.0.0.cpp
-  NaturalLanguageProcessingv0.0.0.vcxproj -> c:\users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.0.0\Debug\NaturalLanguageProcessingv0.0.0.exe
-  NaturalLanguageProcessingv0.0.0.vcxproj -> c:\users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.0.0\Debug\NaturalLanguageProcessingv0.0.0.pdb (Full PDB)
+  Génération de code en cours...
+  NaturalLanguageProcessingv0.0.0.vcxproj -> C:\Users\triahi\Documents\Visual Studio 2015\Projects\Artificial-Intelligence-Semantic-Objects-based.-Console-Application-with-TTS-master\Debug\NaturalLanguageProcessingv0.0.0.exe

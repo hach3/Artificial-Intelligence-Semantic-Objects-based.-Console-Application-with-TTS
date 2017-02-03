@@ -5,7 +5,7 @@
 
 class Intensive_Pronouns : public Pronouns {
 public:
-	Intensive_Pronouns(string value, WORDS_TYPE type);
+	Intensive_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Intensive_Pronouns();
 protected:
 private:

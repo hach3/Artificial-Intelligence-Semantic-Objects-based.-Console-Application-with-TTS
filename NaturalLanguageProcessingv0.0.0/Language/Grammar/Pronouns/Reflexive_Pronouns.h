@@ -5,7 +5,7 @@
 
 class Reflexive_Pronouns : public Pronouns {
 public:
-	Reflexive_Pronouns(string value, WORDS_TYPE type);
+	Reflexive_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Reflexive_Pronouns();
 protected:
 private:

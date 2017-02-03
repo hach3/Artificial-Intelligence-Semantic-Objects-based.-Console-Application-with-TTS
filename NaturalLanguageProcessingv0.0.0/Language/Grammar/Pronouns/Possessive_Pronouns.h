@@ -5,7 +5,7 @@
 
 class Possessive_Pronouns : public Pronouns {
 public:
-	Possessive_Pronouns(string value, WORDS_TYPE type);
+	Possessive_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Possessive_Pronouns();
 protected:
 private:

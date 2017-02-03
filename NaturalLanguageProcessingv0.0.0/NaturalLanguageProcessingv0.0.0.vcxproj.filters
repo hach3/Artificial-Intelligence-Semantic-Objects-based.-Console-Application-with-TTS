@@ -108,6 +108,39 @@
     <ClInclude Include="Language\Grammar\Pronouns\Intensive_Pronouns.h">
       <Filter>Header Files\Language\Grammar\Pronouns</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Denominal_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Comparing_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Compound_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Action_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Auxiliary_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Stative_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Modal_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Phrasal_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Verbs\Confusing_Verbs.h">
+      <Filter>Header Files\Language\Grammar\Verbs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +190,39 @@
     </ClCompile>
     <ClCompile Include="Language\Grammar\Pronouns\Personal_Pronouns.cpp">
       <Filter>Source Files\Language\Grammar\Pronouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Comparing_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Compound_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Denominal_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Action_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Auxiliary_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Confusing_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Modal_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Phrasal_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Verbs\Stative_Verbs.cpp">
+      <Filter>Source Files\Language\Grammar\Verbs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

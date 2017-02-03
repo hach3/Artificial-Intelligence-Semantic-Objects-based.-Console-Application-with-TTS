@@ -5,7 +5,7 @@
 
 class Personal_Pronouns : public Pronouns {
 public:
-	Personal_Pronouns(string value, WORDS_TYPE type);
+	Personal_Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Personal_Pronouns();
 protected:
 private:
