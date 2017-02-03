@@ -16,6 +16,7 @@ int main()
 	Language lang;
 	Phrase_Structuration ps;
 
+
 	
 	string userPhrase;
 	vector<string> userVectorPhrase;

@@ -1,7 +1,9 @@
 #ifndef DEMONSTRATIVE_PRONOUNS_H
+
 #define DEMONSTRATIVE_PRONOUNS_H
 
 #include "Pronouns.h"
+
 
 class Demonstrative_Pronouns : public Pronouns {
 public:
@@ -11,4 +13,4 @@ protected:
 private:
 };
 
-#endif //DEMONSTRATIVE_PRONOUNS_H
+#endif //DEMONSTRATIVE_PRONOUNS

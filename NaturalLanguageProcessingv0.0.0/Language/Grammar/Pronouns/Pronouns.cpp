@@ -39,6 +39,7 @@ vector<string> Pronouns::getPresentForm()
 	vector<string> s;
 	return s;
 }
+
 vector<string> Pronouns::getPastForm()
 {
 	vector<string> s;

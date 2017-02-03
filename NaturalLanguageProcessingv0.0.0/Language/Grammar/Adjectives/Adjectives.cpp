@@ -1,6 +1,7 @@
 #include "Adjectives.h"
 
 
+
 Adjectives::Adjectives(void) :
 	Words()
 {

@@ -16,6 +16,7 @@ Words::~Words()
 
 }
 
+
 string Words::getValue(void)
 {
 	return this->_value;

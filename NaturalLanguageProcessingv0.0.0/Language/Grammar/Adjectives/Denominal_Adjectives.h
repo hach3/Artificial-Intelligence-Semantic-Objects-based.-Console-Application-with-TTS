@@ -3,6 +3,7 @@
 
 #include "Adjectives.h"
 
+
 class Denominal_Adjectives : public Adjectives {
 public:
 	Denominal_Adjectives(string value, WORDS wordType, WORDS_TYPE type);
@@ -11,4 +12,4 @@ protected:
 private:
 };
 
-#endif //DENOMINAL_ADJECTIVES_H
+#endif //DENOMINAL_ADJECTIVES

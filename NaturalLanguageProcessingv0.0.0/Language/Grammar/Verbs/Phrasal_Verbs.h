@@ -1,4 +1,5 @@
 #ifndef PHRASAL_VERBS_H
+
 #define PHRASAL_VERBS_H
 
 #include "Verbs.h"
@@ -20,4 +21,4 @@ public:
 private:
 };
 
-#endif //PHRASAL_VERBS_H
+#endif //PHRASAL_VERBS

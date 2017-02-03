@@ -32,6 +32,7 @@ void Phrase_Structuration::initNegations()
 
 }
 
+
 void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 {
 	vector<WORDS_TYPE> phraseWordsTypes;

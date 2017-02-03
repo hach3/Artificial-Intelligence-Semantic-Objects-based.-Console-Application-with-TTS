@@ -3,6 +3,7 @@
 
 #include "Adjectives.h"
 
+
 class Compound_Adjectives : public Adjectives {
 public:
 	Compound_Adjectives(string value, WORDS wordType, WORDS_TYPE type);

@@ -1,7 +1,6 @@
 #ifndef ADJECTIVES_H
 #define ADJECTIVES_H
 
-
 #include "..\..\Words.h"
 
 /*
@@ -28,4 +27,4 @@ private:
 
 };
 
-#endif //ADJECTIVES_H
+#endif //ADJECTIVES

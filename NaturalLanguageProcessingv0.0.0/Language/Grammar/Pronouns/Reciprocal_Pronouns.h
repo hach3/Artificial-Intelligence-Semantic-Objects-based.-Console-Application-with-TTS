@@ -9,6 +9,7 @@ public:
 	~Reciprocal_Pronouns();
 protected:
 private:
+
 };
 
-#endif //RECIPROCAL_PRONOUNS_H
+#endif //RECIPROCAL_PRONOUNS

@@ -12,6 +12,7 @@ LORD MOTHER OF ALL PRONOUNS
 class Pronouns : public Words {
 public:
 	Pronouns(void);
+
 	Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Pronouns(void);
 	

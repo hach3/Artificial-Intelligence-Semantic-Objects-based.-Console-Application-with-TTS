@@ -1,5 +1,7 @@
-#ifndef COMPARING_ADJECTIVES_H
+#ifndef COMPARING_ADJECTIVES
+
 #define COMPARING_ADJECTIVES_H
+
 
 #include "Adjectives.h"
 
@@ -11,4 +13,4 @@ protected:
 private:
 };
 
-#endif //COMPARING_ADJECTIVES_H
+#endif //COMPARING_ADJECTIVES

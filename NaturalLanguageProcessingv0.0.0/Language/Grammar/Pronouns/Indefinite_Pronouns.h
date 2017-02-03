@@ -1,5 +1,7 @@
 #ifndef INDEFINITE_PRONOUNS_H
+
 #define INDEFINITE_PRONOUNS_H
+
 
 #include "Pronouns.h"
 
@@ -11,4 +13,4 @@ protected:
 private:
 };
 
-#endif //INDEFINITE_PRONOUNS_H
+#endif //INDEFINITE_PRONOUNS

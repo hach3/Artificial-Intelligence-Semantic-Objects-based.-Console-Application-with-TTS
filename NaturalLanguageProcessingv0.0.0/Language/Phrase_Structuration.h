@@ -13,6 +13,7 @@ public:
 	void initAffirmations();
 	void initNegations();
 	
+
 	void getStructure(vector<WORD_AND_TYPE> sentenceTypes);
 
 	

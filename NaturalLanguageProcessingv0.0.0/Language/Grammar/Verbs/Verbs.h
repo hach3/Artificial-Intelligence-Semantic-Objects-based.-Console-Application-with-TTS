@@ -1,4 +1,5 @@
 #ifndef VERBS_H
+
 #define VERBS_H
 
 
@@ -47,4 +48,4 @@ private:
 	vector<string> _pastTense;
 };
 
-#endif //VERBS_H
+#endif //VERBS

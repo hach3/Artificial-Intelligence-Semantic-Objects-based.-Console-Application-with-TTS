@@ -33,6 +33,7 @@ Verbs::Verbs(string value, WORDS wordType, WORDS_TYPE type, string infinitiveFor
 {
 
 }
+
 Verbs::~Verbs(void)
 {
 
