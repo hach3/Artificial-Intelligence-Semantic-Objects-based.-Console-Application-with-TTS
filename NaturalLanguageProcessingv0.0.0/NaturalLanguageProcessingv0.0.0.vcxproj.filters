@@ -141,6 +141,9 @@
     <ClInclude Include="Language\Grammar\Verbs\Confusing_Verbs.h">
       <Filter>Header Files\Language\Grammar\Verbs</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Phrase_Structuration.h">
+      <Filter>Header Files\Language</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -223,6 +226,9 @@
     </ClCompile>
     <ClCompile Include="Language\Grammar\Verbs\Stative_Verbs.cpp">
       <Filter>Source Files\Language\Grammar\Verbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Phrase_Structuration.cpp">
+      <Filter>Source Files\Language</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

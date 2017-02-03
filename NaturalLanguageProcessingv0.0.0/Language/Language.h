@@ -44,6 +44,8 @@ public:
 	void initAdjectives();
 	void initVerbs();
 
+
+
 	void addWord(Words* word);
 	void getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE>* wordNType);
 protected:

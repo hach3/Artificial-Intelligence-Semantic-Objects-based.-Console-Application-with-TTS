@@ -9,6 +9,8 @@ Language::~Language()
 {
 
 }
+
+
 void Language::init()
 {
 	this->initPronouns();
@@ -129,7 +131,9 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						wordNType->push_back(wnt);
 						break;
 					}
-					wnt.word = "";
+
+					
+					wnt.word = "";					
 					wnt.types.clear();
 					
 				}
@@ -196,6 +200,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 					wordNType->push_back(wnt);
 				}
 				//cout << "22" << endl;
+		
 				wnt.word = "";
 				wnt.types.clear();
 				break;

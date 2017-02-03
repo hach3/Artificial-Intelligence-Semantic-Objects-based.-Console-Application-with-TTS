@@ -173,6 +173,7 @@
     <ClInclude Include="Language\Grammar\Verbs\Stative_Verbs.h" />
     <ClInclude Include="Language\Grammar\Verbs\Verbs.h" />
     <ClInclude Include="Language\Language.h" />
+    <ClInclude Include="Language\Phrase_Structuration.h" />
     <ClInclude Include="Language\Words.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="Language\Grammar\Verbs\Stative_Verbs.cpp" />
     <ClCompile Include="Language\Grammar\Verbs\Verbs.cpp" />
     <ClCompile Include="Language\Language.cpp" />
+    <ClCompile Include="Language\Phrase_Structuration.cpp" />
     <ClCompile Include="Language\Words.cpp" />
     <ClCompile Include="NaturalLanguageProcessingv0.0.0.cpp" />
     <ClCompile Include="stdafx.cpp" />

@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "Language\Language.h"
+#include "Language\Phrase_Structuration.h"
 /*
 Just wait til the user write a phrase and press enter. 
 If it does, i send the sentence to the language class and save words and types in a vector
@@ -13,9 +14,14 @@ std::vector<std::string> split(const std::string& s);
 int main()
 {
 	Language lang;
+	Phrase_Structuration ps;
+
+	
 	string userPhrase;
 	vector<string> userVectorPhrase;
 	vector<WORD_AND_TYPE> wordNType;
+	
+
 	bool keepLooping = true;
 
 	cout << "AI is waiting for a talk..." << endl;
@@ -40,6 +46,8 @@ int main()
 			}
 
 		}
+		ps.getStructure(wordNType);
+		
 	
 	}
     return 0;
