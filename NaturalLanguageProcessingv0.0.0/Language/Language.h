@@ -1,6 +1,37 @@
 #ifndef LANGUAGE_H
 #define LANGUAGE_H
 
+
+/* ADJECTIVES HERE */
+#include "Grammar\Adjectives\Comparing_Adjectives.h"
+#include "Grammar\Adjectives\Compound_Adjectives.h"
+#include "Grammar\Adjectives\Denominal_Adjectives.h"
+
+/* ADVERBS HERE */
+#include "Grammar\Adverbs\Conjunctive_Adverbs.h"
+#include "Grammar\Adverbs\Degree_Adverbs.h"
+#include "Grammar\Adverbs\Frequency_Adverbs.h"
+#include "Grammar\Adverbs\Manner_Adverbs.h"
+#include "Grammar\Adverbs\Place_Adverbs.h"
+#include "Grammar\Adverbs\Time_Adverbs.h"
+
+/* CONJUNCTIONS HERE */
+#include "Grammar\Conjunctions\Coordinating_Conjunctions.h"
+#include "Grammar\Conjunctions\Correlative_Conjunctions.h"
+#include "Grammar\Conjunctions\Subordinating_Conjunctions.h"
+
+/* PREPOSITIONS HERE */
+#include "Grammar\Prepositions\Place_Prepositions.h"
+#include "Grammar\Prepositions\Time_Prepositions.h"
+
+/* NOUNS HERE */
+#include "Grammar\Nouns\Abstract_Nouns.h"
+#include "Grammar\Nouns\Collective_Nouns.h"
+#include "Grammar\Nouns\Common_Nouns.h"
+#include "Grammar\Nouns\Compound_Nouns.h"
+#include "Grammar\Nouns\Gerund_Nouns.h"
+#include "Grammar\Nouns\Proper_Nouns.h"
+
 /* PRONOUNS HERE */
 #include "Grammar\Pronouns\Demonstrative_Pronouns.h"
 #include "Grammar\Pronouns\Indefinite_Pronouns.h"
@@ -13,11 +44,6 @@
 #include "Grammar\Pronouns\Reflexive_Pronouns.h"
 #include "Grammar\Pronouns\Relative_Pronouns.h"
 #include "Grammar\Pronouns\Subject_Pronouns.h"
-
-/* ADJECTIVES HERE */
-#include "Grammar\Adjectives\Comparing_Adjectives.h"
-#include "Grammar\Adjectives\Compound_Adjectives.h"
-#include "Grammar\Adjectives\Denominal_Adjectives.h"
 
 /* VERBS HERE */
 #include "Grammar\Verbs\Action_Verbs.h"
@@ -40,9 +66,14 @@ public:
 	~Language();
 	
 	void init();
-	void initPronouns();
 	void initAdjectives();
+	void initAdverbs();
+	void initConjunctions();
+	void initNouns();
+	void initPrepositions();
+	void initPronouns();
 	void initVerbs();
+	
 
 
 

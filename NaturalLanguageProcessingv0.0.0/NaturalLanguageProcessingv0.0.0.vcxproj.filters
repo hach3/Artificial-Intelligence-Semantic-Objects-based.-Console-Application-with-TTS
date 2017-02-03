@@ -55,6 +55,18 @@
     <Filter Include="Source Files\Language\Grammar\Nouns">
       <UniqueIdentifier>{12c309c9-bf0d-4a79-b251-0c2a68da5803}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Language\Grammar\Prepositions">
+      <UniqueIdentifier>{13ede40c-bb55-479c-923f-1cad81b2061b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Prepositions">
+      <UniqueIdentifier>{e593480e-40bd-4ea8-a1a2-e46dde54172d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Language\Grammar\Conjunctions">
+      <UniqueIdentifier>{5d1762b1-7dae-427b-bc68-78422db1585c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Language\Grammar\Conjunctions">
+      <UniqueIdentifier>{80f77e77-18f9-49a8-a68e-ff228173d7f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -144,6 +156,69 @@
     <ClInclude Include="Language\Phrase_Structuration.h">
       <Filter>Header Files\Language</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Frequency_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Manner_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Place_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Time_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Degree_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Proper_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Gerund_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Compound_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Collective_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Abstract_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Nouns\Common_Nouns.h">
+      <Filter>Header Files\Language\Grammar\Nouns</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Conjunctions\Conjunctions.h">
+      <Filter>Header Files\Language\Grammar\Conjunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Conjunctions\Correlative_Conjunctions.h">
+      <Filter>Header Files\Language\Grammar\Conjunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Conjunctions\Coordinating_Conjunctions.h">
+      <Filter>Header Files\Language\Grammar\Conjunctions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Prepositions\Prepositions.h">
+      <Filter>Header Files\Language\Grammar\Prepositions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Prepositions\Time_Prepositions.h">
+      <Filter>Header Files\Language\Grammar\Prepositions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Prepositions\Place_Prepositions.h">
+      <Filter>Header Files\Language\Grammar\Prepositions</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Conjunctions\Subordinating_Conjunctions.h">
+      <Filter>Header Files\Language\Grammar\Conjunctions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -229,6 +304,69 @@
     </ClCompile>
     <ClCompile Include="Language\Phrase_Structuration.cpp">
       <Filter>Source Files\Language</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Frequency_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Manner_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Place_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Time_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Degree_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Proper_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Common_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Gerund_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Compound_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Collective_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Abstract_Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Nouns\Nouns.cpp">
+      <Filter>Source Files\Language\Grammar\Nouns</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Conjunctions\Conjunctions.cpp">
+      <Filter>Source Files\Language\Grammar\Conjunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Conjunctions\Correlative_Conjunctions.cpp">
+      <Filter>Source Files\Language\Grammar\Conjunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Conjunctions\Coordinating_Conjunctions.cpp">
+      <Filter>Source Files\Language\Grammar\Conjunctions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Prepositions\Place_Prepositions.cpp">
+      <Filter>Source Files\Language\Grammar\Prepositions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Prepositions\Prepositions.cpp">
+      <Filter>Source Files\Language\Grammar\Prepositions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Prepositions\Time_Prepositions.cpp">
+      <Filter>Source Files\Language\Grammar\Prepositions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Conjunctions\Subordinating_Conjunctions.cpp">
+      <Filter>Source Files\Language\Grammar\Conjunctions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
