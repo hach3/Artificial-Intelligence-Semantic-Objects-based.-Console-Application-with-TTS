@@ -15,6 +15,8 @@ public:
 		vector<string> presentForm, vector<string> pastForm);
 
 	~Stative_Verbs();
+
+
 private:
 };
 

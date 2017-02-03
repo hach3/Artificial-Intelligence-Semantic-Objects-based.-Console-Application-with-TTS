@@ -28,26 +28,116 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 	Associate each word with its type !
 	*/
 	WORD_AND_TYPE wnt;
+	WORDS test;
 	string wordToCompareComposedBy2Words;
 	string wordToCompareComposedBy3Words;
 	
 	for (unsigned int i = 0; i < sentence.size(); i++)
 	{
+		//cout << "0" << endl;
 		for (unsigned int y = 0; y < this->_wordsList.size(); y++)
 		{
-			switch (this->_wordsList.at(i)->getWordType())
+			//cout << "1" << endl;
+			test = this->_wordsList.at(y)->getWordType();
+			switch (test)
 			{
 			case VERBS:
+				//cout << "3" << endl;
+				for (unsigned int z = 0; z < this->_wordsList.at(y)->getPresentForm().size(); z++)
+				{
+					//cout << "4" << endl;
+					//cout << this->_wordsList.at(y)->getPresentForm().size() << endl;
+					if (i < sentence.size() - 2 && sentence.size() > 2)
+					{
+						//cout << "5" << endl;
+						wordToCompareComposedBy3Words = sentence.at(i) + " " + sentence.at(i + 1) + " " + sentence.at(i + 2);
 
+						wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
+						if (wordToCompareComposedBy3Words == this->_wordsList.at(y)->getInfinitiveForm() ||
+							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getIngForm() ||
+							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getParticipateForm() ||
+							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPassiveForm() ||
+							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
+							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPastForm().at(z))
+						{
+							//cout << "6" << endl;
+							wnt.word = this->_wordsList.at(y)->getValue();
+							wnt.types.push_back(this->_wordsList.at(y)->getType());
+							wordNType->push_back(wnt);
+							i += 2;
+						}
+						else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
+						{
+							//cout << "7" << endl;
+							wnt.word = this->_wordsList.at(y)->getValue();
+							wnt.types.push_back(this->_wordsList.at(y)->getType());
+							wordNType->push_back(wnt);
+							i++;
+						}
+						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
+							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
+						{
+							//cout << "8" << endl;
+							wnt.word = this->_wordsList.at(y)->getValue();
+							wnt.types.push_back(this->_wordsList.at(y)->getType());
+							wordNType->push_back(wnt);
+						}
+
+
+					}
+					else if (i < sentence.size() - 1 && sentence.size() > 1)
+					{
+						//cout << "9" << endl;
+						wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
+						if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
+						{
+							//cout << "10" << endl;
+							wnt.word = this->_wordsList.at(y)->getValue();
+							wnt.types.push_back(this->_wordsList.at(y)->getType());
+							wordNType->push_back(wnt);
+							i++;
+						}
+						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
+							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
+						{
+							//cout << "11" << endl;
+							wnt.word = this->_wordsList.at(y)->getValue();
+							wnt.types.push_back(this->_wordsList.at(y)->getType());
+							wordNType->push_back(wnt);
+						}
+					}
+
+					else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+						sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
+						sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
+					{
+						//cout << "12" << endl;
+						wnt.word = this->_wordsList.at(y)->getValue();
+						wnt.types.push_back(this->_wordsList.at(y)->getType());
+						wordNType->push_back(wnt);
+					}
+					wnt.word = "";
+					wnt.types.clear();
+					
+				}
 				break;
 			default:
+				//cout << "13" << endl;
 				if (i < sentence.size() - 2 && sentence.size() > 2)
 				{
+					//cout << "14" << endl;
 					wordToCompareComposedBy3Words = sentence.at(i) + " " + sentence.at(i + 1) + " " + sentence.at(i + 2);
 
 					wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
 					if (wordToCompareComposedBy3Words == this->_wordsList.at(y)->getValue())
 					{
+						//cout << "15" << endl;
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
@@ -55,6 +145,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 					}
 					else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
 					{
+						//cout << "16" << endl;
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
@@ -62,6 +153,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 					}
 					else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
 					{
+						//cout << "17" << endl;
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
@@ -70,9 +162,11 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 				}
 				else if (i < sentence.size() - 1 && sentence.size() > 1)
 				{
+					//cout << "18" << endl;
 					wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
 					if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
 					{
+						//cout << "19" << endl;
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
@@ -80,6 +174,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 					}
 					else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
 					{
+						//cout << "20" << endl;
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
@@ -88,11 +183,12 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 
 				else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
 				{
+					//cout << "21" << endl;
 					wnt.word = this->_wordsList.at(y)->getValue();
 					wnt.types.push_back(this->_wordsList.at(y)->getType());
 					wordNType->push_back(wnt);
 				}
-
+				//cout << "22" << endl;
 				wnt.word = "";
 				wnt.types.clear();
 				break;
@@ -118,7 +214,7 @@ void Language::initVerbs()
 	//Past form of RUN
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("RAN");
+		pastForm.push_back("RAN");
 	}
 	this->addWord(new Action_Verbs("RUN", VERBS, ACTION_VERBS, "RUN", "RUNNING", "RAN", "RUN", presentForm, pastForm));
 
@@ -136,7 +232,7 @@ void Language::initVerbs()
 	//Adding past forms of DO
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("DID");
+		pastForm.push_back("DID");
 	}
 	this->addWord(new Auxiliary_Verbs("DO", VERBS, AUXILIARY_VERBS, "DO", "", "DID", "", presentForm, pastForm));
 
@@ -154,7 +250,7 @@ void Language::initVerbs()
 	//Adding past forms of DO
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("BORROWED");
+		pastForm.push_back("BORROWED");
 	}
 	this->addWord(new Confusing_Verbs("BORROW", VERBS, CONFUSING_VERBS, "BORROW", "BORROWING", "BORROWED", "BORROWED", presentForm, pastForm));
 	/* MODAL VERBS */
@@ -171,7 +267,7 @@ void Language::initVerbs()
 	//Adding past forms of DO
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("");
+		pastForm.push_back("");
 	}
 	this->addWord(new Modal_Verbs("CAN", VERBS, MODAL_VERBS, "CAN", "", "", "", presentForm, pastForm));
 	/* PHRASAL VERBS */
@@ -188,7 +284,7 @@ void Language::initVerbs()
 	//Adding past forms of DO
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("");
+		pastForm.push_back("");
 	}
 	this->addWord(new Phrasal_Verbs("THINK UP", VERBS, PHRASAL_VERBS, "THINK UP", "THINKING UP", "THOUGHT UP", "THOUGHT UP", presentForm, pastForm));
 	/* STATIVE VERBS */
@@ -205,10 +301,11 @@ void Language::initVerbs()
 	//Adding past forms of DO
 	for (unsigned int i = 0; i < 5; i++)
 	{
-		presentForm.push_back("FEEL");
+		pastForm.push_back("FELT");
 	}
 	this->addWord(new Stative_Verbs("FEEL", VERBS, STATIVE_VERBS, "FEEL", "FEELING", "FELT", "FELT", presentForm, pastForm));
-
+	presentForm.clear();
+	pastForm.clear();
 	
 }
 void Language::initAdjectives()

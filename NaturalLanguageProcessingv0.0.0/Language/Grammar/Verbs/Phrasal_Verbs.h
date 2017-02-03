@@ -15,6 +15,8 @@ public:
 		vector<string> presentForm, vector<string> pastForm);
 
 	~Phrasal_Verbs();
+
+
 private:
 };
 

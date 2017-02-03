@@ -25,6 +25,9 @@ public:
 	string getIngForm();
 	string getPassiveForm();
 	string getParticipateForm();
+
+	vector<string> getPresentForm();
+	vector<string> getPastForm();
 protected:
 	
 

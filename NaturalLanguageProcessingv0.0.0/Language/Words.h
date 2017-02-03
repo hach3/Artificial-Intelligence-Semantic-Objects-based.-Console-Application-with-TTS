@@ -47,6 +47,13 @@ public:
 	WORDS_TYPE getType(void);
 	WORDS getWordType(void);
 
+	virtual string getInfinitiveForm() = 0;
+	virtual string getIngForm() = 0;
+	virtual string getPassiveForm() = 0;
+	virtual string getParticipateForm() = 0;
+	virtual vector<string> getPresentForm() = 0;
+	virtual vector<string> getPastForm() = 0;
+
 protected:
 	void setValue(string value);
 	void setType(WORDS_TYPE type);

@@ -55,3 +55,12 @@ string Verbs::getParticipateForm()
 {
 	return this->_participateForm;
 }
+
+vector<string> Verbs::getPresentForm()
+{
+	return this->_presentTense;
+}
+vector<string> Verbs::getPastForm()
+{
+	return this->_pastTense;
+}
