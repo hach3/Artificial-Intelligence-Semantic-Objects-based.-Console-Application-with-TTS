@@ -1,0 +1,56 @@
+﻿  stdafx.cpp
+  NaturalLanguageProcessingv0.1.0.cpp
+  Words.cpp
+  Phrase_Structuration.cpp
+  Language.cpp
+  Verbs.cpp
+  Stative_Verbs.cpp
+  Phrasal_Verbs.cpp
+  Modal_Verbs.cpp
+  Confusing_Verbs.cpp
+  Auxiliary_Verbs.cpp
+  Action_Verbs.cpp
+  Subject_Pronouns.cpp
+  Relative_Pronouns.cpp
+  Reflexive_Pronouns.cpp
+  Reciprocal_Pronouns.cpp
+  Pronouns.cpp
+  Possessive_Pronouns.cpp
+  Personal_Pronouns.cpp
+  Object_Pronouns.cpp
+  Generating Code...
+  Compiling...
+  Interrogative_Pronouns.cpp
+  Intensive_Pronouns.cpp
+  Indefinite_Pronouns.cpp
+  Demonstrative_Pronouns.cpp
+  Time_Prepositions.cpp
+  Prepositions.cpp
+  Place_Prepositions.cpp
+  Proper_Nouns.cpp
+  Nouns.cpp
+  Gerund_Nouns.cpp
+  Compound_Nouns.cpp
+  Common_Nouns.cpp
+  Collective_Nouns.cpp
+  Abstract_Nouns.cpp
+  Subordinating_Conjunctions.cpp
+  Correlative_Conjunctions.cpp
+  Coordinating_Conjunctions.cpp
+  Conjunctions.cpp
+  Time_Adverbs.cpp
+  Place_Adverbs.cpp
+  Generating Code...
+  Compiling...
+  Manner_Adverbs.cpp
+  Frequency_Adverbs.cpp
+  Degree_Adverbs.cpp
+  Conjunctive_Adverbs.cpp
+  Adverbs.cpp
+  Denominal_Adjectives.cpp
+  Compound_Adjectives.cpp
+  Comparing_Adjectives.cpp
+  Adjectives.cpp
+  Generating Code...
+  NaturalLanguageProcessingv0.1.0.vcxproj -> c:\users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.exe
+  NaturalLanguageProcessingv0.1.0.vcxproj -> c:\users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.pdb (Full PDB)
