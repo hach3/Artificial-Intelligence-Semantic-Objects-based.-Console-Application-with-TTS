@@ -1,5 +1,6 @@
 #include "Language.h"
 
+
 Language::Language()
 {
 	this->init();
@@ -65,6 +66,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							wnt.types.push_back(this->_wordsList.at(y)->getType());
 							wordNType->push_back(wnt);
 							i += 2;
+							break;
 						}
 						else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
 							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
@@ -75,6 +77,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							wnt.types.push_back(this->_wordsList.at(y)->getType());
 							wordNType->push_back(wnt);
 							i++;
+							break;
 						}
 						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
 							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
@@ -84,6 +87,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							wnt.word = this->_wordsList.at(y)->getValue();
 							wnt.types.push_back(this->_wordsList.at(y)->getType());
 							wordNType->push_back(wnt);
+							break;
 						}
 
 
@@ -101,15 +105,17 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							wnt.types.push_back(this->_wordsList.at(y)->getType());
 							wordNType->push_back(wnt);
 							i++;
+							break;
 						}
 						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
 							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
 							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
-						{
+						{							
 							//cout << "11" << endl;
 							wnt.word = this->_wordsList.at(y)->getValue();
 							wnt.types.push_back(this->_wordsList.at(y)->getType());
 							wordNType->push_back(wnt);
+							break;
 						}
 					}
 
@@ -121,6 +127,7 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						wnt.word = this->_wordsList.at(y)->getValue();
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
+						break;
 					}
 					wnt.word = "";
 					wnt.types.clear();
@@ -200,9 +207,11 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 }
 void Language::initVerbs()
 {
-	/* ACTION VERBS */
 	vector<string> presentForm;
-	vector<string> pastForm;
+	vector<string> pastForm;	
+
+	/* ACTION VERBS */
+	
 	//Present form of RUN
 	for (unsigned int i = 0; i < 5; i++)
 	{

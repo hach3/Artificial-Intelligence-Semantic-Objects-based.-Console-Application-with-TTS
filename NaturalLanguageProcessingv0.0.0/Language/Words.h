@@ -47,6 +47,7 @@ public:
 	WORDS_TYPE getType(void);
 	WORDS getWordType(void);
 
+	/* VIRTUAL METHODS FOR VERBS */
 	virtual string getInfinitiveForm() = 0;
 	virtual string getIngForm() = 0;
 	virtual string getPassiveForm() = 0;
@@ -59,6 +60,11 @@ protected:
 	void setType(WORDS_TYPE type);
 	void setWordType(WORDS type);
 private:
+	/*
+	Value is the basic form of the word
+	WORDS_TYPE is DEMONSTRATIVE_PRONOUNS
+	WORDS is PRONOUNS
+	*/
 	string _value;
 	WORDS_TYPE _type;
 	WORDS _wordType;
