@@ -1,5 +1,6 @@
 #include "Language.h"
 
+#include <fstream>
 
 Language::Language()
 {
@@ -95,8 +96,6 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							wordNType->push_back(wnt);
 							break;
 						}
-
-
 					}
 					else if (i < sentence.size() - 1 && sentence.size() > 1)
 					{
@@ -124,7 +123,6 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							break;
 						}
 					}
-
 					else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
 						sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
 						sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
@@ -134,12 +132,9 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
 						break;
-					}
-
-					
+					}					
 					wnt.word = "";					
-					wnt.types.clear();
-					
+					wnt.types.clear();					
 				}
 				break;
 			default:
@@ -173,7 +168,6 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
 						wordNType->push_back(wnt);
 					}
-
 				}
 				else if (i < sentence.size() - 1 && sentence.size() > 1)
 				{
@@ -195,7 +189,6 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						wordNType->push_back(wnt);
 					}
 				}
-
 				else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
 				{
 					//cout << "21" << endl;
@@ -203,16 +196,13 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 					wnt.types.push_back(this->_wordsList.at(y)->getType());
 					wordNType->push_back(wnt);
 				}
-				//cout << "22" << endl;
-		
+				//cout << "22" << endl;		
 				wnt.word = "";
 				wnt.types.clear();
 				break;
-			}
-			
+			}			
 		}
-	}
-	
+	}	
 }
 
 
@@ -220,64 +210,158 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 void Language::initAdjectives()
 {
 	/* COMPARING ADJECTIVES */
-	this->addWord(new Comparing_Adjectives("LONG", ADJECTIVES, COMPARING_ADJECTIVES));
+	vector<string> AdjectivesList;
+	this->readFile("Adjectives\\Adjectives_Data\\Comparing_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Comparing_Adjectives(AdjectivesList.at(i), ADJECTIVES, COMPARING_ADJECTIVES));
+	}
 	/* COMPOUND ADJECTIVES */
-	this->addWord(new Comparing_Adjectives("GREEN-EYED", ADJECTIVES, COMPOUND_ADJECTIVES));
+	this->readFile("Adjectives\\Adjectives_Data\\Compound_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Compound_Adjectives(AdjectivesList.at(i), ADJECTIVES, COMPOUND_ADJECTIVES));
+	}
 	/* DENOMINAL ADJECTIVES */
-	this->addWord(new Comparing_Adjectives("BIOLOGICAL", ADJECTIVES, DENOMINAL_ADJECTIVES));
+	this->readFile("Adjectives\\Adjectives_Data\\Denominal_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Denominal_Adjectives(AdjectivesList.at(i), ADJECTIVES, DENOMINAL_ADJECTIVES));
+	}
+	AdjectivesList.clear();
 }
 
 /* ADVERBS CREATION */
 void Language::initAdverbs()
 {
-
-	this->addWord(new Conjunctive_Adverbs("IN FACT", ADVERBS, CONJUNCTIVE_ADVERBS));
-
-	this->addWord(new Degree_Adverbs("ALMOST", ADVERBS, DEGREE_ADVERBS));
-
-	this->addWord(new Frequency_Adverbs("OFTEN", ADVERBS, FREQUENCY_ADVERBS));
-
-	this->addWord(new Manner_Adverbs("BADLY", ADVERBS, MANNER_ADVERBS));
-
-	this->addWord(new Place_Adverbs("AROUND", ADVERBS, PLACE_ADVERBS));
-
-	this->addWord(new Time_Adverbs("LATER", ADVERBS, TIME_ADVERBS));
+	/* CONJUNCTIVE ADVERBS */
+	vector<string> AdverbsList;
+	this->readFile("Adverbs\\Adverbs_Data\\Conjunctive_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Conjunctive_Adverbs(AdverbsList.at(i), ADVERBS, CONJUNCTIVE_ADVERBS));
+	}	
+	/* DEGREE ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Degree_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Degree_Adverbs(AdverbsList.at(i), ADVERBS, DEGREE_ADVERBS));
+	}
+	/* FREQUENCY ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Frequency_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Frequency_Adverbs(AdverbsList.at(i), ADVERBS, FREQUENCY_ADVERBS));
+	}
+	/* MANNER ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Manner_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Manner_Adverbs(AdverbsList.at(i), ADVERBS, MANNER_ADVERBS));
+	}
+	/* PLACE ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Place_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Place_Adverbs(AdverbsList.at(i), ADVERBS, PLACE_ADVERBS));
+	}
+	/* TIME ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Time_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Time_Adverbs(AdverbsList.at(i), ADVERBS, TIME_ADVERBS));
+	}	
+	AdverbsList.clear();
 }
 
 
 /* CONJUNCTIONS CREATION */
 void Language::initConjunctions()
 {
-	this->addWord(new Coordinating_Conjunctions("AND", CONJUNCTIONS, COORDINATING_CONJUNCTIONS));
+	/* COORDINATING CONJUNCTIONS */
+	vector<string> ConjunctionsList;
+	this->readFile("Conjunctions\\Conjunctions_Data\\Coordinating_Conjunctions.txt", ConjunctionsList);
+	for (unsigned int i = 0; i < ConjunctionsList.size(); i++)
+	{
+		this->addWord(new Coordinating_Conjunctions(ConjunctionsList.at(i), CONJUNCTIONS, COORDINATING_CONJUNCTIONS));
+	}
 
-	this->addWord(new Coordinating_Conjunctions("BOTH", CONJUNCTIONS, CORRELATIVE_CONJUNCTIONS));
-
-	this->addWord(new Coordinating_Conjunctions("ALTHOUGH", CONJUNCTIONS, SUBORDINATING_CONJUNCTIONS));
+	/* CORRELATIVE CONJUNCTIONS */
+	this->readFile("Conjunctions\\Conjunctions_Data\\Correlative_Conjunctions.txt", ConjunctionsList);
+	for (unsigned int i = 0; i < ConjunctionsList.size(); i++)
+	{
+		this->addWord(new Correlative_Conjunctions(ConjunctionsList.at(i), CONJUNCTIONS, CORRELATIVE_CONJUNCTIONS));
+	}
+	/* SUBORDINATING CONJUNCTIONS */
+	this->readFile("Conjunctions\\Conjunctions_Data\\Subordinating_Conjunctions.txt", ConjunctionsList);
+	for (unsigned int i = 0; i < ConjunctionsList.size(); i++)
+	{
+		this->addWord(new Subordinating_Conjunctions(ConjunctionsList.at(i), CONJUNCTIONS, SUBORDINATING_CONJUNCTIONS));
+	}
+	ConjunctionsList.clear();
 }
 
 /* PREPOSITIONS CREATION */
 void Language::initPrepositions()
 {
-	this->addWord(new Place_Prepositions("IN", PREPOSITIONS, PLACE_PREPOSITION));
-
-	this->addWord(new Time_Prepositions("AT", PREPOSITIONS, TIME_PREPOSITION));
+	/* PLACE PREPOSITIONS */
+	vector<string> PrepositionsList;
+	this->readFile("Prepositions\\Prepositions_Data\\Place_Prepositions.txt", PrepositionsList);
+	for (unsigned int i = 0; i < PrepositionsList.size(); i++)
+	{
+		this->addWord(new Place_Prepositions(PrepositionsList.at(i), PREPOSITIONS, PLACE_PREPOSITION));
+	}
+	/* TIME PREPOSITIONS */
+	this->readFile("Prepositions\\Prepositions_Data\\Time_Prepositions.txt", PrepositionsList);
+	for (unsigned int i = 0; i < PrepositionsList.size(); i++)
+	{
+		this->addWord(new Time_Prepositions(PrepositionsList.at(i), PREPOSITIONS, TIME_PREPOSITION));
+	}
+	PrepositionsList.clear();
 }
 
 
 /* NOUNS CREATION */
 void Language::initNouns()
 {
-	this->addWord(new Abstract_Nouns("PLEASURE", NOUNS, ABSTRACT_NOUNS));
-
-	this->addWord(new Collective_Nouns("PACK", NOUNS, COLLECTIVE_NOUNS));
-
-	this->addWord(new Common_Nouns("RESTAURANT", NOUNS, COMMON_NOUNS));
-
-	this->addWord(new Compound_Nouns("FULL MOON", NOUNS, COMPOUND_NOUNS));
-
-	this->addWord(new Gerund_Nouns("DANCING", NOUNS, GERUND_NOUNS));
-
-	this->addWord(new Proper_Nouns("LORD VADOR DELAMUERTE", NOUNS, PROPER_NOUNS));
+	/* ABSTRACT NOUNS */
+	vector<string> NounsList;
+	this->readFile("Nouns\\Nouns_Data\\Abstract_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Abstract_Nouns(NounsList.at(i), NOUNS, ABSTRACT_NOUNS));
+	}
+	/* COLLECTIVE NOUNS */
+	this->readFile("Nouns\\Nouns_Data\\Collective_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Collective_Nouns(NounsList.at(i), NOUNS, COLLECTIVE_NOUNS));
+	}
+	/* COMMON NOUNS */
+	this->readFile("Nouns\\Nouns_Data\\Common_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Common_Nouns(NounsList.at(i), NOUNS, COMMON_NOUNS));
+	}
+	/* COMPOUND NOUNS */
+	this->readFile("Nouns\\Nouns_Data\\Compound_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Compound_Nouns(NounsList.at(i), NOUNS, COMPOUND_NOUNS));
+	}
+	/* GERUND NOUNS */
+	this->readFile("Nouns\\Nouns_Data\\Gerund_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Gerund_Nouns(NounsList.at(i), NOUNS, GERUND_NOUNS));
+	}
+	/* PROPER NOUNS */
+	this->readFile("Nouns\\Nouns_Data\\Proper_Nouns.txt", NounsList);
+	for (unsigned int i = 0; i < NounsList.size(); i++)
+	{
+		this->addWord(new Proper_Nouns(NounsList.at(i), NOUNS, PROPER_NOUNS));
+	}
+	NounsList.clear();
 }
 
 
@@ -287,98 +371,37 @@ void Language::initPronouns()
 {
 	/* DEMONSTRATIVE PRONOUNS */
 	this->addWord(new Demonstrative_Pronouns("THIS", ADJECTIVES, DEMONSTRATIVE_PRONOUNS));
-	this->addWord(new Demonstrative_Pronouns("THAT", ADJECTIVES, DEMONSTRATIVE_PRONOUNS));
-	this->addWord(new Demonstrative_Pronouns("THESE", ADJECTIVES, DEMONSTRATIVE_PRONOUNS));
-	this->addWord(new Demonstrative_Pronouns("THOSE", ADJECTIVES, DEMONSTRATIVE_PRONOUNS));
+
 	/* INDEFINITE PRONOUNS Add : many --- a few.*/
 	this->addWord(new Indefinite_Pronouns("SOMEBODY", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("SOMEONE", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("SOMETHING", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("ANYBODY", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("ANYONE", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("ANYTHING", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("NO ONE", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("NOBODY", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("NOTHING", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("EVERYBODY", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("EVERYONE", ADJECTIVES, INDEFINITE_PRONOUNS));
-	this->addWord(new Indefinite_Pronouns("EVERYTHING", ADJECTIVES, INDEFINITE_PRONOUNS));
+
 	/* INTENSIVE PRONOUNS */
 	this->addWord(new Intensive_Pronouns("HIMSELF", PRONOUNS, INTENSIVE_PRONOUNS));
-	this->addWord(new Intensive_Pronouns("HERSELF", PRONOUNS, INTENSIVE_PRONOUNS));
-	this->addWord(new Intensive_Pronouns("OURSELVES", PRONOUNS, INTENSIVE_PRONOUNS));
-	this->addWord(new Intensive_Pronouns("YOURSELF", PRONOUNS, INTENSIVE_PRONOUNS));
-	this->addWord(new Intensive_Pronouns("THEMSELVES", PRONOUNS, INTENSIVE_PRONOUNS));
+
 	/* INTERROGATIVE PRONOUNS Add : Whatever, whatsoever & stuff */
 	this->addWord(new Interrogative_Pronouns("WHAT", PRONOUNS, INTERROGATIVE_PRONOUNS));
-	this->addWord(new Interrogative_Pronouns("WHICH", PRONOUNS, INTERROGATIVE_PRONOUNS));
-	this->addWord(new Interrogative_Pronouns("WHO", PRONOUNS, INTERROGATIVE_PRONOUNS));
-	this->addWord(new Interrogative_Pronouns("WHOM", PRONOUNS, INTERROGATIVE_PRONOUNS));
-	this->addWord(new Interrogative_Pronouns("WHOSE", PRONOUNS, INTERROGATIVE_PRONOUNS));
+
 	/* OBJECT PRONOUNS */
 	this->addWord(new Object_Pronouns("ME", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("YOU", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("HIM", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("HER", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("IT", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("US", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("YOU", PRONOUNS, OBJECT_PRONOUNS));
-	this->addWord(new Object_Pronouns("THEM", PRONOUNS, OBJECT_PRONOUNS));
+
 	/* PERSONAL PRONOUNS AS IT IS A HIDDEN NINJA MOTHER CLASS OF OBJECT PRONOUNS AND SUBJECT PRONOUNS
 	this->addWord(new Personal_Pronouns("I", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("YOU", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("HE", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("SHE", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("IT", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("YOU", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("WE", PERSONAL_PRONOUNS));
-	this->addWord(new Personal_Pronouns("THEY", PERSONAL_PRONOUNS)); */
+	 */
 	/* POSSESSIVE PRONOUNS */
 	this->addWord(new Possessive_Pronouns("MINE", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("MY", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("YOURS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("HIS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("HER", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("HERS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("ITS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("OUR", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("OURS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("YOUR", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("YOURS", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("THEIR", PRONOUNS, POSSESSIVE_PRONOUNS));
-	this->addWord(new Possessive_Pronouns("THEIRS", PRONOUNS, POSSESSIVE_PRONOUNS));
+
 	/* RECIPROCAL PRONOUNS */
 	this->addWord(new Reciprocal_Pronouns("ONE ANOTHER", PRONOUNS, RECIPROCAL_PRONOUNS));
-	this->addWord(new Reciprocal_Pronouns("EACH OTHER", PRONOUNS, RECIPROCAL_PRONOUNS));
+
 	/* REFLEXIVE PRONOUNS */
 	this->addWord(new Reflexive_Pronouns("MYSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("YOURSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("HIMSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("HERSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("ITSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("OURSELVES", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("YOURSELVES", PRONOUNS, REFLEXIVE_PRONOUNS));
-	this->addWord(new Reflexive_Pronouns("THEMSELVES", PRONOUNS, REFLEXIVE_PRONOUNS));
+
 	/* RELATIVE PRONOUNS*/
 	this->addWord(new Relative_Pronouns("WHICH", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("THAT", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHOSE", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHOEVER", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHOMEVER", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHO", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHOM", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHAT", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHEN", PRONOUNS, RELATIVE_PRONOUNS));
-	this->addWord(new Relative_Pronouns("WHERE", PRONOUNS, RELATIVE_PRONOUNS));
+
 	/* SUBJECT PRONOUNS*/
 	this->addWord(new Subject_Pronouns("I", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("YOU", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("HE", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("SHE", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("IT", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("WE", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("YOU", PRONOUNS, SUBJECT_PRONOUNS));
-	this->addWord(new Subject_Pronouns("THEY", PRONOUNS, SUBJECT_PRONOUNS));
+
 }
 
 
@@ -493,4 +516,23 @@ void Language::initVerbs()
 	presentForm.clear();
 	pastForm.clear();
 
+}
+
+void Language::readFile(string path, vector<string> &save)
+{
+	save.clear();
+	string Word;
+	ifstream file;
+
+	file.open("C:\\Users\\hach3\\Documents\\Visual Studio 2015\\Projects\\NaturalLanguageProcessingv0.1.0\\NaturalLanguageProcessingv0.1.0\\Language\\Grammar\\" + path);
+	if (file.fail())
+		cout << "Failed to open file" << endl;
+
+	while (getline(file, Word))
+	{
+		cout << Word << endl;
+		save.push_back(Word);
+	}
+	file.close();
+	
 }

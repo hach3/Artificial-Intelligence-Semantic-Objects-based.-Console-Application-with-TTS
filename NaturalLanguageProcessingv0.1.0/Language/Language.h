@@ -76,7 +76,7 @@ public:
 	void initVerbs();
 	
 
-
+	void readFile(string path, vector<string> &save);
 
 	void addWord(Words* word);
 	void getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE>* wordNType);
