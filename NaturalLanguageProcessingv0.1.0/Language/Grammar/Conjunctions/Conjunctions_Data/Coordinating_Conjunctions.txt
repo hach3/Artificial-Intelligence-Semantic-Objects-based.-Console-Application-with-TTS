@@ -1,0 +1,7 @@
+FOR
+AND
+NOR
+BUT
+OR
+YET
+SO

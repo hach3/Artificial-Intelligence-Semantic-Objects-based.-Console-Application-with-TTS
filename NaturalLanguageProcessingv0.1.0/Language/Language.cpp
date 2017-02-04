@@ -76,6 +76,10 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							break;
 						}
 						else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getInfinitiveForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getIngForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getParticipateForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPassiveForm() ||
 							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
 							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
 						{
@@ -87,6 +91,10 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							break;
 						}
 						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+							sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
 							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
 							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
 						{
@@ -102,6 +110,10 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						//cout << "9" << endl;
 						wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
 						if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getInfinitiveForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getIngForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getParticipateForm() ||
+							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPassiveForm() ||
 							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
 							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
 						{
@@ -113,6 +125,10 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 							break;
 						}
 						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+							sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
+							sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
 							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
 							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
 						{							
@@ -124,6 +140,10 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 						}
 					}
 					else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
+						sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
+						sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
+						sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
+						sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
 						sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
 						sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
 					{
@@ -532,6 +552,7 @@ void Language::readVerbsFile(string path, vector<vector<string>> &base, vector<v
 			if (Word != ";")
 			{
 				baseL.push_back(Word);			
+				cout << Word << endl;
 			}
 			else {
 				base.push_back(baseL);
@@ -543,6 +564,7 @@ void Language::readVerbsFile(string path, vector<vector<string>> &base, vector<v
 			if (Word != ";")
 			{
 				presentFormL.push_back(Word);
+				cout << Word << endl;
 			}
 			else {
 				presentForm.push_back(presentFormL);
@@ -554,6 +576,7 @@ void Language::readVerbsFile(string path, vector<vector<string>> &base, vector<v
 			if (Word != ";")
 			{
 				pastFormL.push_back(Word);
+				cout << Word << endl;
 			}
 			else {
 				pastForm.push_back(pastFormL);
