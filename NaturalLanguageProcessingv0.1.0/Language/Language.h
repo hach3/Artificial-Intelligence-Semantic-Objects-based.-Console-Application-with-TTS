@@ -4,9 +4,14 @@
 
 
 /* ADJECTIVES HERE */
-#include "Grammar\Adjectives\Comparing_Adjectives.h"
-#include "Grammar\Adjectives\Compound_Adjectives.h"
-#include "Grammar\Adjectives\Denominal_Adjectives.h"
+#include "Grammar\Adjectives\Articles_Adjectives.h"
+#include "Grammar\Adjectives\Attributive_Adjectives.h"
+#include "Grammar\Adjectives\Coordinate_Adjectives.h"
+#include "Grammar\Adjectives\Demonstrative_Adjectives.h"
+#include "Grammar\Adjectives\Indefinite_Adjectives.h"
+#include "Grammar\Adjectives\Interrogative_Adjectives.h"
+#include "Grammar\Adjectives\Number_Adjectives.h"
+#include "Grammar\Adjectives\Possessive_Adjectives.h"
 
 /* ADVERBS HERE */
 #include "Grammar\Adverbs\Conjunctive_Adverbs.h"

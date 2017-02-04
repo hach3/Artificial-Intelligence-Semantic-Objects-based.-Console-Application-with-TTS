@@ -229,24 +229,54 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 /* ADJECTIVES CREATION */
 void Language::initAdjectives()
 {
-	/* COMPARING ADJECTIVES */
+	/* ARTICLES ADJECTIVES */
 	vector<string> AdjectivesList;
-	this->readFile("Adjectives\\Adjectives_Data\\Comparing_Adjectives.txt", AdjectivesList);
+	this->readFile("Adjectives\\Adjectives_Data\\Articles_Adjectives.txt", AdjectivesList);
 	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
 	{
-		this->addWord(new Comparing_Adjectives(AdjectivesList.at(i), ADJECTIVES, COMPARING_ADJECTIVES));
+		this->addWord(new Articles_Adjectives(AdjectivesList.at(i), ADJECTIVES, ARTICLES_ADJECTIVES));
 	}
-	/* COMPOUND ADJECTIVES */
-	this->readFile("Adjectives\\Adjectives_Data\\Compound_Adjectives.txt", AdjectivesList);
+	/* ATTRIBUTIVE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Attributive_Adjectives.txt", AdjectivesList);
 	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
 	{
-		this->addWord(new Compound_Adjectives(AdjectivesList.at(i), ADJECTIVES, COMPOUND_ADJECTIVES));
+		this->addWord(new Attributive_Adjectives(AdjectivesList.at(i), ADJECTIVES, ATTRIBUTIVE_ADJECTIVES));
 	}
-	/* DENOMINAL ADJECTIVES */
-	this->readFile("Adjectives\\Adjectives_Data\\Denominal_Adjectives.txt", AdjectivesList);
+	/* COORDINATE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Coordinate_Adjectives.txt", AdjectivesList);
 	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
 	{
-		this->addWord(new Denominal_Adjectives(AdjectivesList.at(i), ADJECTIVES, DENOMINAL_ADJECTIVES));
+		this->addWord(new Coordinate_Adjectives(AdjectivesList.at(i), ADJECTIVES, COORDINATE_ADJECTIVES));
+	}
+	/* DEMONSTRATIVE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Demonstrative_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Demonstrative_Adjectives(AdjectivesList.at(i), ADJECTIVES, DEMONSTRATIVE_ADJECTIVES));
+	}
+	/* INDEFINITE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Indefinite_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Indefinite_Adjectives(AdjectivesList.at(i), ADJECTIVES, INDEFINITE_ADJECTIVES));
+	}
+	/* INTERROGATIVE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Interrogative_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Interrogative_Adjectives(AdjectivesList.at(i), ADJECTIVES, INTERROGATIVE_ADJECTIVES));
+	}
+	/* NUMBER ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Number_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Number_Adjectives(AdjectivesList.at(i), ADJECTIVES, NUMBER_ADJECTIVES));
+	}
+	/* POSSESSIVE ADJECTIVES */
+	this->readFile("Adjectives\\Adjectives_Data\\Possessive_Adjectives.txt", AdjectivesList);
+	for (unsigned int i = 0; i < AdjectivesList.size(); i++)
+	{
+		this->addWord(new Possessive_Adjectives(AdjectivesList.at(i), ADJECTIVES, POSSESSIVE_ADJECTIVES));
 	}
 	AdjectivesList.clear();
 }

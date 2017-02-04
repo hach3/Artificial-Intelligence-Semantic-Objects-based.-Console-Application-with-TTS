@@ -72,9 +72,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -88,15 +85,6 @@
       <Filter>Header Files\Language</Filter>
     </ClInclude>
     <ClInclude Include="Language\Grammar\Adjectives\Adjectives.h">
-      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Grammar\Adjectives\Comparing_Adjectives.h">
-      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Grammar\Adjectives\Compound_Adjectives.h">
-      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
-    </ClInclude>
-    <ClInclude Include="Language\Grammar\Adjectives\Denominal_Adjectives.h">
       <Filter>Header Files\Language\Grammar\Adjectives</Filter>
     </ClInclude>
     <ClInclude Include="Language\Grammar\Adverbs\Adverbs.h">
@@ -219,6 +207,33 @@
     <ClInclude Include="Language\Grammar\Prepositions\Time_Prepositions.h">
       <Filter>Header Files\Language\Grammar\Prepositions</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Articles_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Possessive_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Demonstrative_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Coordinate_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Number_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Interrogative_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Indefinite_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
+    <ClInclude Include="Language\Grammar\Adjectives\Attributive_Adjectives.h">
+      <Filter>Header Files\Language\Grammar\Adjectives</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -237,15 +252,6 @@
       <Filter>Source Files\Language</Filter>
     </ClCompile>
     <ClCompile Include="Language\Grammar\Adjectives\Adjectives.cpp">
-      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Grammar\Adjectives\Comparing_Adjectives.cpp">
-      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Grammar\Adjectives\Compound_Adjectives.cpp">
-      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
-    </ClCompile>
-    <ClCompile Include="Language\Grammar\Adjectives\Denominal_Adjectives.cpp">
       <Filter>Source Files\Language\Grammar\Adjectives</Filter>
     </ClCompile>
     <ClCompile Include="Language\Grammar\Adverbs\Adverbs.cpp">
@@ -367,6 +373,30 @@
     </ClCompile>
     <ClCompile Include="Language\Grammar\Prepositions\Time_Prepositions.cpp">
       <Filter>Source Files\Language\Grammar\Prepositions</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Articles_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Attributive_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Coordinate_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Demonstrative_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Indefinite_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Interrogative_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Number_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adjectives\Possessive_Adjectives.cpp">
+      <Filter>Source Files\Language\Grammar\Adjectives</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

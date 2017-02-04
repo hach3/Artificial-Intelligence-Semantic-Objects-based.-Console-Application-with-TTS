@@ -150,9 +150,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Language\Grammar\Adjectives\Adjectives.h" />
-    <ClInclude Include="Language\Grammar\Adjectives\Comparing_Adjectives.h" />
-    <ClInclude Include="Language\Grammar\Adjectives\Compound_Adjectives.h" />
-    <ClInclude Include="Language\Grammar\Adjectives\Denominal_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Articles_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Attributive_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Coordinate_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Demonstrative_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Indefinite_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Interrogative_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Number_Adjectives.h" />
+    <ClInclude Include="Language\Grammar\Adjectives\Possessive_Adjectives.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Degree_Adverbs.h" />
@@ -201,9 +206,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Language\Grammar\Adjectives\Adjectives.cpp" />
-    <ClCompile Include="Language\Grammar\Adjectives\Comparing_Adjectives.cpp" />
-    <ClCompile Include="Language\Grammar\Adjectives\Compound_Adjectives.cpp" />
-    <ClCompile Include="Language\Grammar\Adjectives\Denominal_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Articles_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Attributive_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Coordinate_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Demonstrative_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Indefinite_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Interrogative_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Number_Adjectives.cpp" />
+    <ClCompile Include="Language\Grammar\Adjectives\Possessive_Adjectives.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Degree_Adverbs.cpp" />
