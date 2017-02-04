@@ -1,5 +1,5 @@
 #include "Language.h"
-
+#include <sstream>
 #include <fstream>
 
 Language::Language()
@@ -370,149 +370,116 @@ void Language::initNouns()
 void Language::initPronouns()
 {
 	/* DEMONSTRATIVE PRONOUNS */
-	this->addWord(new Demonstrative_Pronouns("THIS", ADJECTIVES, DEMONSTRATIVE_PRONOUNS));
-
+	vector<string> PronounsList;
+	this->readFile("Pronouns\\Pronouns_Data\\Demonstrative_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Demonstrative_Pronouns(PronounsList.at(i), PRONOUNS, DEMONSTRATIVE_PRONOUNS));
+	}
 	/* INDEFINITE PRONOUNS Add : many --- a few.*/
-	this->addWord(new Indefinite_Pronouns("SOMEBODY", ADJECTIVES, INDEFINITE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Indefinite_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Indefinite_Pronouns(PronounsList.at(i), PRONOUNS, INDEFINITE_PRONOUNS));
+	}
 	/* INTENSIVE PRONOUNS */
-	this->addWord(new Intensive_Pronouns("HIMSELF", PRONOUNS, INTENSIVE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Intensive_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Intensive_Pronouns(PronounsList.at(i), PRONOUNS, INTENSIVE_PRONOUNS));
+	}
 	/* INTERROGATIVE PRONOUNS Add : Whatever, whatsoever & stuff */
-	this->addWord(new Interrogative_Pronouns("WHAT", PRONOUNS, INTERROGATIVE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Interrogative_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Interrogative_Pronouns(PronounsList.at(i), PRONOUNS, INTERROGATIVE_PRONOUNS));
+	}
 	/* OBJECT PRONOUNS */
-	this->addWord(new Object_Pronouns("ME", PRONOUNS, OBJECT_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Object_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Object_Pronouns(PronounsList.at(i), PRONOUNS, OBJECT_PRONOUNS));
+	}
 	/* PERSONAL PRONOUNS AS IT IS A HIDDEN NINJA MOTHER CLASS OF OBJECT PRONOUNS AND SUBJECT PRONOUNS
 	this->addWord(new Personal_Pronouns("I", PERSONAL_PRONOUNS));
 	 */
 	/* POSSESSIVE PRONOUNS */
-	this->addWord(new Possessive_Pronouns("MINE", PRONOUNS, POSSESSIVE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Possessive_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Possessive_Pronouns(PronounsList.at(i), PRONOUNS, POSSESSIVE_PRONOUNS));
+	}
 	/* RECIPROCAL PRONOUNS */
-	this->addWord(new Reciprocal_Pronouns("ONE ANOTHER", PRONOUNS, RECIPROCAL_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Reciprocal_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Reciprocal_Pronouns(PronounsList.at(i), PRONOUNS, RECIPROCAL_PRONOUNS));
+	}
 	/* REFLEXIVE PRONOUNS */
-	this->addWord(new Reflexive_Pronouns("MYSELF", PRONOUNS, REFLEXIVE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Reflexive_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Reflexive_Pronouns(PronounsList.at(i), PRONOUNS, REFLEXIVE_PRONOUNS));
+	}
 	/* RELATIVE PRONOUNS*/
-	this->addWord(new Relative_Pronouns("WHICH", PRONOUNS, RELATIVE_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Relative_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Relative_Pronouns(PronounsList.at(i), PRONOUNS, RELATIVE_PRONOUNS));
+	}
 	/* SUBJECT PRONOUNS*/
-	this->addWord(new Subject_Pronouns("I", PRONOUNS, SUBJECT_PRONOUNS));
-
+	this->readFile("Pronouns\\Pronouns_Data\\Subject_Pronouns.txt", PronounsList);
+	for (unsigned int i = 0; i < PronounsList.size(); i++)
+	{
+		this->addWord(new Subject_Pronouns(PronounsList.at(i), PRONOUNS, SUBJECT_PRONOUNS));
+	}
+	PronounsList.clear();
 }
 
 
 void Language::initVerbs()
 {
-	vector<string> presentForm;
-	vector<string> pastForm;
+	vector<vector<string>> base;
+	vector<vector<string>> presentForm;
+	vector<vector<string>> pastForm;
 
 	/* ACTION VERBS */
-
-	//Present form of RUN
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		if (i == 2)
-			presentForm.push_back("RUNS");
-		else
-			presentForm.push_back("RUN");
+	this->readVerbsFile("Verbs\\Verbs_Data\\Action_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
+	{		
+		this->addWord(new Action_Verbs(base.at(i).at(0), VERBS, ACTION_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Past form of RUN
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("RAN");
-	}
-	this->addWord(new Action_Verbs("RUN", VERBS, ACTION_VERBS, "RUN", "RUNNING", "RAN", "RUN", presentForm, pastForm));
-
 	/* AUXILIARY_VERBS*/
-	presentForm.clear();
-	pastForm.clear();
-	//Adding present forms of DO
-	for (unsigned int i = 0; i < 5; i++)
+	this->readVerbsFile("Verbs\\Verbs_Data\\Auxiliary_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
 	{
-		if (i == 2)
-			presentForm.push_back("DOES");
-		else
-			presentForm.push_back("DO");
+		this->addWord(new Auxiliary_Verbs(base.at(i).at(0), VERBS, AUXILIARY_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Adding past forms of DO
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("DID");
-	}
-	this->addWord(new Auxiliary_Verbs("DO", VERBS, AUXILIARY_VERBS, "DO", "", "DID", "", presentForm, pastForm));
-
 	/* CONFUSING VERBS */
-	presentForm.clear();
-	pastForm.clear();
-	//Adding present forms of DO
-	for (unsigned int i = 0; i < 5; i++)
+	this->readVerbsFile("Verbs\\Verbs_Data\\Confusing_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
 	{
-		if (i == 2)
-			presentForm.push_back("BORROWS");
-		else
-			presentForm.push_back("BORROW");
+		this->addWord(new Confusing_Verbs(base.at(i).at(0), VERBS, CONFUSING_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Adding past forms of DO
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("BORROWED");
-	}
-	this->addWord(new Confusing_Verbs("BORROW", VERBS, CONFUSING_VERBS, "BORROW", "BORROWING", "BORROWED", "BORROWED", presentForm, pastForm));
 	/* MODAL VERBS */
-	presentForm.clear();
-	pastForm.clear();
-	//Adding present forms of DO
-	for (unsigned int i = 0; i < 5; i++)
+	this->readVerbsFile("Verbs\\Verbs_Data\\Modal_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
 	{
-		if (i == 2)
-			presentForm.push_back("CAN");
-		else
-			presentForm.push_back("CAN");
+		this->addWord(new Modal_Verbs(base.at(i).at(0), VERBS, MODAL_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Adding past forms of DO
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("");
-	}
-	this->addWord(new Modal_Verbs("CAN", VERBS, MODAL_VERBS, "CAN", "", "", "", presentForm, pastForm));
 	/* PHRASAL VERBS */
-	presentForm.clear();
-	pastForm.clear();
-	//Adding present forms of DO
-	for (unsigned int i = 0; i < 5; i++)
+	this->readVerbsFile("Verbs\\Verbs_Data\\Phrasal_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
 	{
-		if (i == 2)
-			presentForm.push_back("THINKS UP");
-		else
-			presentForm.push_back("THINK UP");
+		this->addWord(new Phrasal_Verbs(base.at(i).at(0), VERBS, PHRASAL_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Adding past forms of DO
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("");
-	}
-	this->addWord(new Phrasal_Verbs("THINK UP", VERBS, PHRASAL_VERBS, "THINK UP", "THINKING UP", "THOUGHT UP", "THOUGHT UP", presentForm, pastForm));
 	/* STATIVE VERBS */
-	presentForm.clear();
-	pastForm.clear();
-	//Adding present forms of DO
-	for (unsigned int i = 0; i < 5; i++)
+	this->readVerbsFile("Verbs\\Verbs_Data\\Stative_Verbs.txt", base, presentForm, pastForm);
+	for (unsigned int i = 0; i < base.size(); i++)
 	{
-		if (i == 2)
-			presentForm.push_back("FEELS");
-		else
-			presentForm.push_back("FEEL");
+		this->addWord(new Stative_Verbs(base.at(i).at(0), VERBS, STATIVE_VERBS, base.at(i).at(1), base.at(i).at(2), base.at(i).at(3), base.at(i).at(4), presentForm.at(i), pastForm.at(i)));
 	}
-	//Adding past forms of DO
-	for (unsigned int i = 0; i < 5; i++)
-	{
-		pastForm.push_back("FELT");
-	}
-	this->addWord(new Stative_Verbs("FEEL", VERBS, STATIVE_VERBS, "FEEL", "FEELING", "FELT", "FELT", presentForm, pastForm));
+	base.clear();
 	presentForm.clear();
 	pastForm.clear();
 
@@ -535,4 +502,71 @@ void Language::readFile(string path, vector<string> &save)
 	}
 	file.close();
 	
+}
+
+void Language::readVerbsFile(string path, vector<vector<string>> &base, vector<vector<string>> &presentForm, vector<vector<string>> &pastForm)
+{
+	base.clear();
+	presentForm.clear();
+	pastForm.clear();
+
+	vector<string> baseL;
+	vector<string> presentFormL;
+	vector<string> pastFormL;
+
+	string Word;
+	ifstream file;
+	int totalLine = 0;
+	int line = 0;
+	int Count = 0;
+
+	file.open("C:\\Users\\hach3\\Documents\\Visual Studio 2015\\Projects\\NaturalLanguageProcessingv0.1.0\\NaturalLanguageProcessingv0.1.0\\Language\\Grammar\\" + path);
+	if (file.fail())
+		cout << "Failed to open file" << endl;
+
+	while (file >> Word)
+	{
+		switch (line)
+		{
+		case 0:
+			if (Word != ";")
+			{
+				baseL.push_back(Word);			
+			}
+			else {
+				base.push_back(baseL);
+				line++;
+				baseL.clear();
+			}
+			break;
+		case 1:
+			if (Word != ";")
+			{
+				presentFormL.push_back(Word);
+			}
+			else {
+				presentForm.push_back(presentFormL);
+				line++;
+				presentFormL.clear();
+			}
+			break;
+		case 2:
+			if (Word != ";")
+			{
+				pastFormL.push_back(Word);
+			}
+			else {
+				pastForm.push_back(pastFormL);
+				line = 0;
+				pastFormL.clear();
+			}
+			break;
+			
+		}
+	}
+	pastFormL.clear();
+	presentFormL.clear();
+	baseL.clear();
+	file.close();
+
 }

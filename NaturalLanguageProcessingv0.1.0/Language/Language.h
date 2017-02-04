@@ -77,6 +77,7 @@ public:
 	
 
 	void readFile(string path, vector<string> &save);
+	void readVerbsFile(string path, vector<vector<string>> &base, vector<vector<string>> &presentForm, vector<vector<string>> &pastForm);
 
 	void addWord(Words* word);
 	void getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_TYPE>* wordNType);
