@@ -77,20 +77,26 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 	}
 	
 	*/
-	this->printAll(sentenceTypes, &phraseWordsTypesVector, 0, 0);
+	vector<WORDS_TYPE> tmpVector;
+	this->printAll(sentenceTypes, &phraseWordsTypesVector, tmpVector, 0, 0);
 
 
 	
 	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
 	{
-		cout << "POSSIBLE NUMBER " << i << " : " << endl;
 		
+		if (phraseWordsTypesVector.at(i).size() == sentenceTypes.size())
+		{
+			cout << "POSSIBLE NUMBER " << i << " : " << endl;
 			for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
 			{
 				cout << phraseWordsTypesVector.at(i).at(y) << " ";
 			}
+			cout << endl;
+		}
+			
 		
-	cout << endl;	
+		
 		
 	
 	}
@@ -98,12 +104,13 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 
 }
 
-void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector<vector<WORDS_TYPE>>* phraseWordsTypesVector, size_t vecIndex, int strSoFar)
+void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector<vector<WORDS_TYPE>>* phraseWordsTypesVector, vector<WORDS_TYPE> &tmpVector, size_t vecIndex, int strSoFar)
 {
-	vector<WORDS_TYPE> tmpVector;
+	
 	if (vecIndex >= allVecs.size())
 	{		
-		
+		phraseWordsTypesVector->push_back(tmpVector);
+		tmpVector.clear();
 		cout << strSoFar << endl;
 		return;
 	}
@@ -111,14 +118,17 @@ void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector
 	for (size_t i = 0; i < allVecs[vecIndex].types.size(); i++)
 	{
 		
-		cout << "Vec : " << allVecs[vecIndex].types.at(i) << endl;
+		//cout << "Vec : " << allVecs[vecIndex].types.at(i) << endl;
 		tmpVector.push_back(allVecs[vecIndex].types.at(i));
-		printAll(allVecs, phraseWordsTypesVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types.at(i));
-			
+		printAll(allVecs, phraseWordsTypesVector, tmpVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types.at(i));
+		//cout << "Vec2 : " << allVecs[vecIndex].types.at(i) << endl;		
 		
-		phraseWordsTypesVector->push_back(tmpVector);
-		tmpVector.clear();
 	}
+
+
+	
+	
+	
 	
 	
 }
