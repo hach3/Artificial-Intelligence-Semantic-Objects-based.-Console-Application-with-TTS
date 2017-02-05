@@ -14,13 +14,7 @@ public:
 	Nouns(void);
 	Nouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Nouns(void);
-
-	string getInfinitiveForm();
-	string getIngForm();
-	string getPassiveForm();
-	string getParticipateForm();
-	vector<string> getPresentForm();
-	vector<string> getPastForm();
+	
 
 protected:
 

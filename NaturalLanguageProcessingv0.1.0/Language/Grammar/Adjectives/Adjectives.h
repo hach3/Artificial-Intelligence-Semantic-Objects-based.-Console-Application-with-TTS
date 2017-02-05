@@ -14,13 +14,6 @@ public:
 	Adjectives(string value, WORDS wordType, WORDS_TYPE type);
 	~Adjectives(void);
 
-	string getInfinitiveForm();
-	string getIngForm();
-	string getPassiveForm();
-	string getParticipateForm();
-	vector<string> getPresentForm();
-	vector<string> getPastForm();
-
 protected:
 
 private:

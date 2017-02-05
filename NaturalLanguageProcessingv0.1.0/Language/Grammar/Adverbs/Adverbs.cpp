@@ -16,30 +16,3 @@ Adverbs::~Adverbs(void)
 {
 	
 }
-
-string Adverbs::getInfinitiveForm()
-{
-	return "s";
-}
-string Adverbs::getIngForm()
-{
-	return "s";
-}
-string Adverbs::getPassiveForm()
-{
-	return "a";
-}
-string Adverbs::getParticipateForm()
-{
-	return "s";
-}
-vector<string> Adverbs::getPresentForm()
-{
-	vector<string> s;
-	return s;
-}
-vector<string> Adverbs::getPastForm()
-{
-	vector<string> s;
-	return s;
-}

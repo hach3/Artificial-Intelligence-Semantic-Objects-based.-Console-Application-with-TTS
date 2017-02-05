@@ -16,12 +16,6 @@ public:
 	Adverbs(string value, WORDS wordType, WORDS_TYPE type);
 	~Adverbs(void);
 
-	string getInfinitiveForm();
-	string getIngForm();
-	string getPassiveForm();
-	string getParticipateForm();
-	vector<string> getPresentForm();
-	vector<string> getPastForm();
 
 protected:
 

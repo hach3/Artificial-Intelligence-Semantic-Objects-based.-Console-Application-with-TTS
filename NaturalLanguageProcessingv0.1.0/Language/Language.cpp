@@ -35,194 +35,37 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 	Check the phrase, get each word (starting by the composed one)
 	Associate each word with its type !
 	*/
+	vector<vector<WORD_AND_TYPE>*> s;
 	WORD_AND_TYPE wnt;
 	WORDS test;
 	string wordToCompareComposedBy2Words;
 	string wordToCompareComposedBy3Words;
-	
-	for (unsigned int i = 0; i < sentence.size(); i++)
+	int formFound = 0;
+	int typeFound = 0;
+	for (int i = 0; i < formFound + 1; i++)
 	{
-		//cout << "0" << endl;
-		for (unsigned int y = 0; y < this->_wordsList.size(); y++)
-		{
-			//cout << "1" << endl;
-			test = this->_wordsList.at(y)->getWordType();
-			switch (test)
+		
+		for (unsigned int z = 0; z < sentence.size(); z++)
+		{			
+			for (unsigned int y = 0; y < this->_wordsList.size(); y++)
 			{
-			case VERBS:
-				//cout << "3" << endl;
-				for (unsigned int z = 0; z < this->_wordsList.at(y)->getPresentForm().size(); z++)
+				switch (this->_wordsList.at(y)->getType())
 				{
-					//cout << "4" << endl;
-					//cout << this->_wordsList.at(y)->getPresentForm().size() << endl;
-					if (i < sentence.size() - 2 && sentence.size() > 2)
+				default:
+					if (this->_wordsList.at(y)->getValue() == sentence.at(z))
 					{
-						//cout << "5" << endl;
-						wordToCompareComposedBy3Words = sentence.at(i) + " " + sentence.at(i + 1) + " " + sentence.at(i + 2);
-
-						wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
-						if (wordToCompareComposedBy3Words == this->_wordsList.at(y)->getInfinitiveForm() ||
-							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getIngForm() ||
-							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getParticipateForm() ||
-							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPassiveForm() ||
-							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
-							wordToCompareComposedBy3Words == this->_wordsList.at(y)->getPastForm().at(z))
-						{
-							//cout << "6" << endl;
-							wnt.word = this->_wordsList.at(y)->getValue();
-							wnt.types.push_back(this->_wordsList.at(y)->getType());
-							wordNType->push_back(wnt);
-							i += 2;
-							break;
-						}
-						else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getInfinitiveForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getIngForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getParticipateForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPassiveForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
-						{
-							//cout << "7" << endl;
-							wnt.word = this->_wordsList.at(y)->getValue();
-							wnt.types.push_back(this->_wordsList.at(y)->getType());
-							wordNType->push_back(wnt);
-							i++;
-							break;
-						}
-						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
-							sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
-							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
-						{
-							//cout << "8" << endl;
-							wnt.word = this->_wordsList.at(y)->getValue();
-							wnt.types.push_back(this->_wordsList.at(y)->getType());
-							wordNType->push_back(wnt);
-							break;
-						}
-					}
-					else if (i < sentence.size() - 1 && sentence.size() > 1)
-					{
-						//cout << "9" << endl;
-						wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
-						if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getInfinitiveForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getIngForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getParticipateForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPassiveForm() ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPresentForm().at(z) ||
-							wordToCompareComposedBy2Words == this->_wordsList.at(y)->getPastForm().at(z))
-						{
-							//cout << "10" << endl;
-							wnt.word = this->_wordsList.at(y)->getValue();
-							wnt.types.push_back(this->_wordsList.at(y)->getType());
-							wordNType->push_back(wnt);
-							i++;
-							break;
-						}
-						else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
-							sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
-							sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
-							sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
-						{							
-							//cout << "11" << endl;
-							wnt.word = this->_wordsList.at(y)->getValue();
-							wnt.types.push_back(this->_wordsList.at(y)->getType());
-							wordNType->push_back(wnt);
-							break;
-						}
-					}
-					else if (sentence.at(i) == this->_wordsList.at(y)->getValue() ||
-						sentence.at(i) == this->_wordsList.at(y)->getInfinitiveForm() ||
-						sentence.at(i) == this->_wordsList.at(y)->getIngForm() ||
-						sentence.at(i) == this->_wordsList.at(y)->getParticipateForm() ||
-						sentence.at(i) == this->_wordsList.at(y)->getPassiveForm() ||
-						sentence.at(i) == this->_wordsList.at(y)->getPresentForm().at(z) ||
-						sentence.at(i) == this->_wordsList.at(y)->getPastForm().at(z))
-					{
-						//cout << "12" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
+						wnt.word = sentence.at(z);
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-						break;
-					}					
-					wnt.word = "";					
-					wnt.types.clear();					
+					}
+					break;
 				}
-				break;
-			default:
-				//cout << "13" << endl;
-				if (i < sentence.size() - 2 && sentence.size() > 2)
-				{
-					//cout << "14" << endl;
-					wordToCompareComposedBy3Words = sentence.at(i) + " " + sentence.at(i + 1) + " " + sentence.at(i + 2);
-
-					wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
-					if (wordToCompareComposedBy3Words == this->_wordsList.at(y)->getValue())
-					{
-						//cout << "15" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
-						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-						i += 2;
-					}
-					else if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
-					{
-						//cout << "16" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
-						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-						i++;
-					}
-					else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
-					{
-						//cout << "17" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
-						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-					}
-				}
-				else if (i < sentence.size() - 1 && sentence.size() > 1)
-				{
-					//cout << "18" << endl;
-					wordToCompareComposedBy2Words = sentence.at(i) + " " + sentence.at(i + 1);
-					if (wordToCompareComposedBy2Words == this->_wordsList.at(y)->getValue())
-					{
-						//cout << "19" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
-						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-						i++;
-					}
-					else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
-					{
-						//cout << "20" << endl;
-						wnt.word = this->_wordsList.at(y)->getValue();
-						wnt.types.push_back(this->_wordsList.at(y)->getType());
-						wordNType->push_back(wnt);
-					}
-				}
-				else if (sentence.at(i) == this->_wordsList.at(y)->getValue())
-				{
-					//cout << "21" << endl;
-					wnt.word = this->_wordsList.at(y)->getValue();
-					wnt.types.push_back(this->_wordsList.at(y)->getType());
-					wordNType->push_back(wnt);
-				}
-				//cout << "22" << endl;		
-				wnt.word = "";
-				wnt.types.clear();
-				break;
-			}			
+			}
+		wordNType->push_back(wnt);
+		wnt.word = "";
+		wnt.types.clear();
 		}
-	}	
+	}
+	
 }
 
 

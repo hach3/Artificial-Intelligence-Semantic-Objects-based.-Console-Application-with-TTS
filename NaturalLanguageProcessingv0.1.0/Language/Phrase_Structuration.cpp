@@ -37,37 +37,56 @@ void Phrase_Structuration::initNegations()
 void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 {
 	vector<WORDS_TYPE> phraseWordsTypes;	
+	vector<vector<WORDS_TYPE>> phraseWordsTypesVector;
 	string subject;
+	string aux;
 	string verb;
 	string complement;
+	int nbPossibilities = 1;
+
+	int maxLength = 0;
+	vector<int> vectorLengths;
+	int size = vectorLengths.size();
+	for (unsigned int i = 0; i < sentenceTypes.size(); i++)
+	{
+		vectorLengths.push_back(sentenceTypes.at(i).types.size());
+		if (maxLength < sentenceTypes.at(i).types.size())
+		{
+			maxLength = sentenceTypes.at(i).types.size();
+		}
+	}
+
+
+	for (unsigned int i = 0; i < maxLength; i++)
+	{
+		for (unsigned int y = 0; y < sentenceTypes.size(); y++)
+		{
+			if (sentenceTypes.at(y).types.size() < maxLength)
+			{
+				if(sentenceTypes.at(y).types.size() > 0)
+					phraseWordsTypes.push_back(sentenceTypes.at(y).types.at(0));
+			}
+			else
+			{
+				phraseWordsTypes.push_back(sentenceTypes.at(y).types.at(i));
+			}
+		}
+		phraseWordsTypesVector.push_back(phraseWordsTypes);
+		phraseWordsTypes.clear();
+	}
+
+	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
+	{
+		cout << "POSSIBLE NUMBER " << i << " : " << endl;
+		for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
+		{
+			 cout << phraseWordsTypesVector.at(i).at(y) << " ";
+		}
+		cout << endl;
+		
+	}
 	
-	for (unsigned int y = 0; y < sentenceTypes.size(); y++)
-	{
-		phraseWordsTypes.push_back(sentenceTypes.at(y).types.at(0));
-		switch (sentenceTypes.at(y).types.at(0))
-		{
-		case SUBJECT_PRONOUNS:
-			subject = sentenceTypes.at(y).word;
-			break;
-		case CONFUSING_VERBS:
-			verb = sentenceTypes.at(y).word;
-			break;
-		case INDEFINITE_PRONOUNS:
-			complement = sentenceTypes.at(y).word;
-			break;
-		default:
-			break;
-		}
-	}
-	for (unsigned int i = 0; i < this->_phraseTypes.size(); i++)
-	{
-		if (this->_phraseTypes.at(i) == phraseWordsTypes)
-		{
-			cout << "STRUCTURE FOUND " << endl;
-			cout << "SUBJECT : " << subject << endl;
-			cout << "VERB : " << verb << endl;
-			cout << "COMPLEMENT : " << complement << endl;
-		}
-	}
+	
 	
 }
+

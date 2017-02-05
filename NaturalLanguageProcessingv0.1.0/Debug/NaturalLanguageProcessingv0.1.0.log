@@ -1,62 +1,6 @@
 ﻿  Phrase_Structuration.cpp
-  Language.cpp
-  Possessive_Adjectives.cpp
-  Number_Adjectives.cpp
-  Interrogative_Adjectives.cpp
-  Indefinite_Adjectives.cpp
-  Demonstrative_Adjectives.cpp
-  Coordinate_Adjectives.cpp
-  Attributive_Adjectives.cpp
-  Articles_Adjectives.cpp
-  Generating Code...
-  Compiling...
-  NaturalLanguageProcessingv0.1.0.cpp
-  Words.cpp
-  Verbs.cpp
-  Stative_Verbs.cpp
-  Phrasal_Verbs.cpp
-  Modal_Verbs.cpp
-  Confusing_Verbs.cpp
-  Auxiliary_Verbs.cpp
-  Action_Verbs.cpp
-  Subject_Pronouns.cpp
-  Relative_Pronouns.cpp
-  Reflexive_Pronouns.cpp
-  Reciprocal_Pronouns.cpp
-  Pronouns.cpp
-  Possessive_Pronouns.cpp
-  Personal_Pronouns.cpp
-  Object_Pronouns.cpp
-  Interrogative_Pronouns.cpp
-  Intensive_Pronouns.cpp
-  Indefinite_Pronouns.cpp
-  Generating Code...
-  Compiling...
-  Demonstrative_Pronouns.cpp
-  Time_Prepositions.cpp
-  Prepositions.cpp
-  Place_Prepositions.cpp
-  Proper_Nouns.cpp
-  Nouns.cpp
-  Gerund_Nouns.cpp
-  Compound_Nouns.cpp
-  Common_Nouns.cpp
-  Collective_Nouns.cpp
-  Abstract_Nouns.cpp
-  Subordinating_Conjunctions.cpp
-  Correlative_Conjunctions.cpp
-  Coordinating_Conjunctions.cpp
-  Conjunctions.cpp
-  Time_Adverbs.cpp
-  Place_Adverbs.cpp
-  Manner_Adverbs.cpp
-  Frequency_Adverbs.cpp
-  Degree_Adverbs.cpp
-  Generating Code...
-  Compiling...
-  Conjunctive_Adverbs.cpp
-  Adverbs.cpp
-  Adjectives.cpp
-  Generating Code...
+c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(53): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(60): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(64): warning C4018: '<': signed/unsigned mismatch
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.exe
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.pdb (Full PDB)

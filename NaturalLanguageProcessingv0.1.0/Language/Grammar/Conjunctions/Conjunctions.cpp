@@ -16,31 +16,3 @@ Conjunctions::~Conjunctions(void)
 
 }
 
-
-string Conjunctions::getInfinitiveForm()
-{
-	return "s";
-}
-string Conjunctions::getIngForm()
-{
-	return "s";
-}
-string Conjunctions::getPassiveForm()
-{
-	return "s";
-}
-string Conjunctions::getParticipateForm()
-{
-	return "s";
-}
-vector<string> Conjunctions::getPresentForm()
-{
-	vector<string> s;
-
-	return s;
-}
-vector<string> Conjunctions::getPastForm()
-{
-	vector<string> s;
-	return s;
-}

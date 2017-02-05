@@ -15,31 +15,3 @@ Prepositions::~Prepositions(void)
 {
 
 }
-
-
-string Prepositions::getInfinitiveForm()
-{
-	return "s";
-}
-string Prepositions::getIngForm()
-{
-	return "s";
-}
-string Prepositions::getPassiveForm()
-{
-	return "s";
-}
-string Prepositions::getParticipateForm()
-{
-	return "s";
-}
-vector<string> Prepositions::getPresentForm()
-{
-	vector<string> s;
-	return s;
-}
-vector<string> Prepositions::getPastForm()
-{
-	vector<string> s;
-	return s;
-}

@@ -75,12 +75,12 @@ public:
 	WORDS getWordType(void);
 
 	/* VIRTUAL METHODS FOR VERBS */
-	virtual string getInfinitiveForm() = 0;
-	virtual string getIngForm() = 0;
-	virtual string getPassiveForm() = 0;
-	virtual string getParticipateForm() = 0;
-	virtual vector<string> getPresentForm() = 0;
-	virtual vector<string> getPastForm() = 0;
+	virtual string getInfinitiveForm();
+	virtual string getIngForm();
+	virtual string getPassiveForm();
+	virtual string getParticipateForm();
+	virtual vector<string> getPresentForm();
+	virtual vector<string> getPastForm();
 
 protected:
 	void setValue(string value);

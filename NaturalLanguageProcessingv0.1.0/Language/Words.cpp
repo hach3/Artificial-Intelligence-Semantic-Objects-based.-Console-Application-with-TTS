@@ -45,3 +45,31 @@ void Words::setWordType(WORDS type)
 {
 	this->_wordType = type;
 }
+
+
+string Words::getInfinitiveForm()
+{
+	return "Hello World";
+}
+string Words::getIngForm()
+{
+	return "Hello World";
+}
+string Words::getPassiveForm()
+{
+	return "Hello World";
+}
+string Words::getParticipateForm()
+{
+	return "Hello World";
+}
+vector<string> Words::getPresentForm()
+{
+	vector<string> helloWorld;
+	return helloWorld;
+}
+vector<string> Words::getPastForm()
+{
+	vector<string> helloWorld;
+	return helloWorld;
+}
