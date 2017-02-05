@@ -47,6 +47,7 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 	int maxLength = 0;
 	vector<int> vectorLengths;
 	int size = vectorLengths.size();
+	/*
 	for (unsigned int i = 0; i < sentenceTypes.size(); i++)
 	{
 		vectorLengths.push_back(sentenceTypes.at(i).types.size());
@@ -74,19 +75,50 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 		phraseWordsTypesVector.push_back(phraseWordsTypes);
 		phraseWordsTypes.clear();
 	}
+	
+	*/
+	this->printAll(sentenceTypes, &phraseWordsTypesVector, 0, 0);
 
+
+	
 	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
 	{
 		cout << "POSSIBLE NUMBER " << i << " : " << endl;
-		for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
-		{
-			 cout << phraseWordsTypesVector.at(i).at(y) << " ";
-		}
-		cout << endl;
 		
+			for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
+			{
+				cout << phraseWordsTypesVector.at(i).at(y) << " ";
+			}
+		
+	cout << endl;	
+		
+	
+	}
+	
+
+}
+
+void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector<vector<WORDS_TYPE>>* phraseWordsTypesVector, size_t vecIndex, int strSoFar)
+{
+	vector<WORDS_TYPE> tmpVector;
+	if (vecIndex >= allVecs.size())
+	{		
+		
+		cout << strSoFar << endl;
+		return;
+	}
+	
+	for (size_t i = 0; i < allVecs[vecIndex].types.size(); i++)
+	{
+		
+		cout << "Vec : " << allVecs[vecIndex].types.at(i) << endl;
+		tmpVector.push_back(allVecs[vecIndex].types.at(i));
+		printAll(allVecs, phraseWordsTypesVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types.at(i));
+			
+		
+		phraseWordsTypesVector->push_back(tmpVector);
+		tmpVector.clear();
 	}
 	
 	
-	
 }
-
