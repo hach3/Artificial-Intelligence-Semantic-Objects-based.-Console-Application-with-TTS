@@ -28,63 +28,21 @@ void Phrase_Structuration::initAffirmations()
 	PAuxINGP.push_back(INDEFINITE_PRONOUNS);
 	this->_phraseTypes.push_back(PAuxINGP);
 }
-void Phrase_Structuration::initNegations()
-{
-
-}
+void Phrase_Structuration::initNegations(){}
 
 
 void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 {
-	vector<WORDS_TYPE> phraseWordsTypes;	
 	vector<vector<WORDS_TYPE>> phraseWordsTypesVector;
+	vector<WORDS_TYPE> tmpVector;
 	string subject;
 	string aux;
 	string verb;
 	string complement;
-	int nbPossibilities = 1;
-
-	int maxLength = 0;
-	vector<int> vectorLengths;
-	int size = vectorLengths.size();
-	/*
-	for (unsigned int i = 0; i < sentenceTypes.size(); i++)
-	{
-		vectorLengths.push_back(sentenceTypes.at(i).types.size());
-		if (maxLength < sentenceTypes.at(i).types.size())
-		{
-			maxLength = sentenceTypes.at(i).types.size();
-		}
-	}
-
-
-	for (unsigned int i = 0; i < maxLength; i++)
-	{
-		for (unsigned int y = 0; y < sentenceTypes.size(); y++)
-		{
-			if (sentenceTypes.at(y).types.size() < maxLength)
-			{
-				if(sentenceTypes.at(y).types.size() > 0)
-					phraseWordsTypes.push_back(sentenceTypes.at(y).types.at(0));
-			}
-			else
-			{
-				phraseWordsTypes.push_back(sentenceTypes.at(y).types.at(i));
-			}
-		}
-		phraseWordsTypesVector.push_back(phraseWordsTypes);
-		phraseWordsTypes.clear();
-	}
 	
-	*/
-	vector<WORDS_TYPE> tmpVector;
-	this->printAll(sentenceTypes, &phraseWordsTypesVector, tmpVector, 0, 0);
-
-
-	
+	this->printAll(sentenceTypes, &phraseWordsTypesVector, tmpVector, 0, 0);	
 	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
-	{
-		
+	{		
 		if (phraseWordsTypesVector.at(i).size() == sentenceTypes.size())
 		{
 			cout << "POSSIBLE NUMBER " << i << " : " << endl;
@@ -94,14 +52,7 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 			}
 			cout << endl;
 		}
-			
-		
-		
-		
-	
 	}
-	
-
 }
 
 void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector<vector<WORDS_TYPE>>* phraseWordsTypesVector, vector<WORDS_TYPE> &tmpVector, size_t vecIndex, int strSoFar)
@@ -113,22 +64,10 @@ void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector
 		tmpVector.clear();
 		cout << strSoFar << endl;
 		return;
-	}
-	
+	}	
 	for (size_t i = 0; i < allVecs[vecIndex].types.size(); i++)
-	{
-		
-		//cout << "Vec : " << allVecs[vecIndex].types.at(i) << endl;
+	{		
 		tmpVector.push_back(allVecs[vecIndex].types.at(i));
-		printAll(allVecs, phraseWordsTypesVector, tmpVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types.at(i));
-		//cout << "Vec2 : " << allVecs[vecIndex].types.at(i) << endl;		
-		
-	}
-
-
-	
-	
-	
-	
-	
+		printAll(allVecs, phraseWordsTypesVector, tmpVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types.at(i));			
+	}	
 }
