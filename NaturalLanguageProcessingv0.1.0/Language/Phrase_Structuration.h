@@ -2,6 +2,7 @@
 #define PHRASE_STRUCTURATION_H
 
 #include "Language.h"
+#include <map>
 
 class Phrase_Structuration {
 public:
@@ -19,6 +20,7 @@ public:
 protected:
 private:
 	vector<vector<WORDS_TYPE>> _phraseTypes;
+	map<WORDS_TYPE, string> wordTypes;
 };
 
 #endif //PHRASE_STRUCTURATION_H

@@ -35,36 +35,59 @@ void Language::getWordNTypeInSentence(vector<string> sentence, vector<WORD_AND_T
 	Check the phrase, get each word (starting by the composed one)
 	Associate each word with its type !
 	*/
-	vector<vector<WORD_AND_TYPE>*> s;
 	WORD_AND_TYPE wnt;
-	WORDS test;
 	string wordToCompareComposedBy2Words;
 	string wordToCompareComposedBy3Words;
-	int formFound = 0;
-	int typeFound = 0;
-	for (int i = 0; i < formFound + 1; i++)
-	{
+
 		
-		for (unsigned int z = 0; z < sentence.size(); z++)
-		{			
-			for (unsigned int y = 0; y < this->_wordsList.size(); y++)
+	for (unsigned int z = 0; z < sentence.size(); z++)
+	{			
+		for (unsigned int y = 0; y < this->_wordsList.size(); y++)
+		{
+			switch (this->_wordsList.at(y)->getWordType())
 			{
-				switch (this->_wordsList.at(y)->getType())
+			case VERBS:
+				for (unsigned int j = 0; j < this->_wordsList.at(y)->getPastForm().size(); j++)
 				{
-				default:
-					if (this->_wordsList.at(y)->getValue() == sentence.at(z))
+					if (this->_wordsList.at(y)->getInfinitiveForm() == sentence.at(z) ||
+						this->_wordsList.at(y)->getIngForm() == sentence.at(z) ||
+						this->_wordsList.at(y)->getParticipateForm() == sentence.at(z) ||
+						this->_wordsList.at(y)->getPassiveForm() == sentence.at(z) ||
+						this->_wordsList.at(y)->getPastForm().at(j) == sentence.at(z) || 
+						this->_wordsList.at(y)->getPresentForm().at(j) == sentence.at(z))
 					{
 						wnt.word = sentence.at(z);
 						wnt.types.push_back(this->_wordsList.at(y)->getType());
+						break;
 					}
-					break;
+						
 				}
+				break;
+			default:
+				if (this->_wordsList.at(y)->getValue() == sentence.at(z))
+				{
+					wnt.word = sentence.at(z);
+					wnt.types.push_back(this->_wordsList.at(y)->getType());
+				}
+				break;
 			}
-		wordNType->push_back(wnt);
-		wnt.word = "";
-		wnt.types.clear();
 		}
+		if (wnt.types.size() > 0)
+		{
+			wordNType->push_back(wnt);
+			wnt.word = "";
+			wnt.types.clear();
+		}
+		else {
+			wnt.word = sentence.at(z);
+			wnt.types.push_back(UNDEFINED);
+			wordNType->push_back(wnt);
+			wnt.word = "";
+			wnt.types.clear();
+		}
+	
 	}
+	
 	
 }
 
