@@ -1,5 +1,4 @@
 ﻿  Phrase_Structuration.cpp
-c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(59): warning C4018: '<': signed/unsigned mismatch
+c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(58): warning C4018: '<': signed/unsigned mismatch
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.exe
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.pdb (Full PDB)

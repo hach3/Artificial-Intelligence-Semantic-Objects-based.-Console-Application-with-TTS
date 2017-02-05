@@ -35,7 +35,7 @@ void Phrase_Structuration::initNegations(){}
 
 void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 {
-	vector<vector<WORDS_TYPE>> phraseWordsTypesVector;
+	
 	vector<WORDS_TYPE> tmpVector;
 	vector<WORDS_TYPE> tmp2Vector;
 	string subject;
@@ -48,65 +48,38 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 	//So i've got sentenceTypes which is a vector of vector of int
 	
 
-
-
-	
-	for (int i = 0; i < sentenceTypes.size(); i++)
+	int finalSize = 1;
+	for (auto const &n : sentenceTypes)
 	{
-		cout << "Possibility " << endl;
-		do
-		{
-			for (int j = 0; j < sentenceTypes.at(i).types.size(); j++)
-			{
-				cout << sentenceTypes.at(i).types.at(j) << " ";
-			}
-			cout << endl;
-		} while (next_permutation(sentenceTypes.at(i).types.begin(), sentenceTypes.at(i).types.begin() + sentenceTypes.at(i).types.size()));
-
+		finalSize *= n.types.size();
 	}
+	vector<vector<WORDS_TYPE>> phraseWordsTypesVector (finalSize);	
 
-
+	for (int i = 0; i < sentenceTypes.size(); ++i) {
+		cout << " Possibility " << endl;
+		for (int j = 0; j < finalSize; ++j) {
+			phraseWordsTypesVector.at(j).push_back(sentenceTypes.at(i).types.at(j%sentenceTypes.at(i).types.size()));
+		}
+		cout << endl;
+	}
 	
-	/*
-	
-	this->printAll(sentenceTypes, tmpVector, tmp2Vector,phraseWordsTypesVector, 0, 0, 0);
 
 	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
 	{		
-		if (phraseWordsTypesVector.at(i).size() == sentenceTypes.size())
+		
+		cout << "POSSIBLE NUMBER " << i << " : " << endl;
+		for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
 		{
-			cout << "POSSIBLE NUMBER " << i << " : " << endl;
-			for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
-			{
-				cout << phraseWordsTypesVector.at(i).at(y) << " ";
-			}
-			cout << endl;
+			cout << phraseWordsTypesVector.at(i).at(y) << " ";
 		}
+		cout << endl;
+		
 			
 		
-	}*/
+	}
 	
 }
 
 
 
 
-void Phrase_Structuration::printAll(const vector<WORD_AND_TYPE> &allVecs, vector<WORDS_TYPE> &tmpVector, vector<WORDS_TYPE> tmp2Vector, vector<vector<WORDS_TYPE>> &phraseWordsTypesVector, size_t vecIndex, int strSoFar, int nb)
-{
-	if (vecIndex >= allVecs.size())
-	{	
-		phraseWordsTypesVector.push_back(tmpVector);
-		tmpVector.clear();
-		
-		cout << strSoFar << endl;
-		return;
-	}
-	
-	for (size_t i = 0; i < allVecs[vecIndex].types.size(); i++)
-	{
-		tmpVector.push_back(allVecs[vecIndex].types[i]);
-		printAll(allVecs, tmpVector, tmp2Vector, phraseWordsTypesVector, vecIndex + 1, strSoFar + allVecs[vecIndex].types[i], allVecs[vecIndex].types[i]);
-		
-	}
-
-}
