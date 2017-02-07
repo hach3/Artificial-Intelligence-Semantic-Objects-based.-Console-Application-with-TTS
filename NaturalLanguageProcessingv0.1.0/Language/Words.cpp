@@ -73,3 +73,7 @@ vector<string> Words::getPastForm()
 	vector<string> helloWorld;
 	return helloWorld;
 }
+bool Words::isPlural()
+{
+	return false;
+}

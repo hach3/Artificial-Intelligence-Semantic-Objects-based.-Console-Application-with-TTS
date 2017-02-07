@@ -245,7 +245,11 @@ void Language::initNouns()
 	this->readFile("Nouns\\Nouns_Data\\Abstract_Nouns.txt", NounsList);
 	for (unsigned int i = 0; i < NounsList.size(); i++)
 	{
-		this->addWord(new Abstract_Nouns(NounsList.at(i), NOUNS, ABSTRACT_NOUNS));
+		if (i % 2 == 0)
+			this->addWord(new Abstract_Nouns(NounsList.at(i), false, NOUNS, ABSTRACT_NOUNS));
+		else
+			this->addWord(new Abstract_Nouns(NounsList.at(i), true, NOUNS, ABSTRACT_NOUNS));
+		
 	}
 	/* COLLECTIVE NOUNS */
 	this->readFile("Nouns\\Nouns_Data\\Collective_Nouns.txt", NounsList);

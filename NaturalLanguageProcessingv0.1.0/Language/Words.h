@@ -83,6 +83,8 @@ public:
 	virtual vector<string> getPresentForm();
 	virtual vector<string> getPastForm();
 
+
+	virtual bool isPlural();
 protected:
 	void setValue(string value);
 	void setType(WORDS_TYPE type);

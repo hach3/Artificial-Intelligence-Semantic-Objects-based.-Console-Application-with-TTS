@@ -1,3 +1,16 @@
 ﻿  Language.cpp
+  Nouns.cpp
+  Abstract_Nouns.cpp
+  Generating Code...
+  Compiling...
+  NaturalLanguageProcessingv0.1.0.cpp
+  Phrase_Structuration.cpp
+c:\users\hach3\documents\visual studio 2015\projects\naturallanguageprocessingv0.1.0\naturallanguageprocessingv0.1.0\language\phrase_structuration.cpp(98): warning C4018: '<': signed/unsigned mismatch
+  Proper_Nouns.cpp
+  Gerund_Nouns.cpp
+  Compound_Nouns.cpp
+  Common_Nouns.cpp
+  Collective_Nouns.cpp
+  Generating Code...
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.exe
   NaturalLanguageProcessingv0.1.0.vcxproj -> C:\Users\hach3\documents\visual studio 2015\Projects\NaturalLanguageProcessingv0.1.0\Debug\NaturalLanguageProcessingv0.1.0.pdb (Full PDB)

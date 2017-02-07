@@ -16,3 +16,8 @@ Pronouns::~Pronouns(void)
 {
 
 }
+
+bool Pronouns::isPlural()
+{
+	return false;
+}

@@ -16,6 +16,7 @@ public:
 	Pronouns(string value, WORDS wordType, WORDS_TYPE type);
 	~Pronouns(void);
 
+	virtual bool isPlural();
 
 protected:	
 
