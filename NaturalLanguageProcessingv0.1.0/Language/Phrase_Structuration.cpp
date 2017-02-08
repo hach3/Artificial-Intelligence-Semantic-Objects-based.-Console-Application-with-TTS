@@ -77,7 +77,7 @@ void Phrase_Structuration::initAffirmations()
 void Phrase_Structuration::initNegations(){}
 
 
-void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
+void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes, vector<vector<WORDS_TYPE>> &test1)
 {
 	
 	vector<WORDS_TYPE> tmpVector;
@@ -105,12 +105,7 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 	for (unsigned int i = 0; i < phraseWordsTypesVector.size(); i++)
 	{		
 		
-		cout << "POSSIBLE NUMBER " << i << " : " << endl;
-		for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
-		{
-			cout << phraseWordsTypesVector.at(i).at(y) << " ";
-		}
-		cout << " = ";
+		cout << "POSSIBILITY " << i + 1 << " : " << endl;
 		for (unsigned int y = 0; y < phraseWordsTypesVector.at(i).size(); y++)
 		{
 			cout << this->wordTypes[phraseWordsTypesVector.at(i).at(y)]  << " ";
@@ -118,9 +113,14 @@ void Phrase_Structuration::getStructure(vector<WORD_AND_TYPE> sentenceTypes)
 		cout << endl;
 		cout << endl;
 	}
-	
+	test1 = phraseWordsTypesVector;
+
 }
 
 
 
 
+map<WORDS_TYPE, string> Phrase_Structuration::getWordTypesInString()
+{
+	return this->wordTypes;
+}

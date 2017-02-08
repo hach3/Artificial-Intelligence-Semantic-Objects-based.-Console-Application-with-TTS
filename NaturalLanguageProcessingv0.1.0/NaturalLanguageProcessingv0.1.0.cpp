@@ -19,8 +19,42 @@ int main()
 	string userPhrase;
 	vector<string> userVectorPhrase;
 	vector<WORD_AND_TYPE> wordNType;
+	vector<vector<WORDS_TYPE>> currentPhraseTypes;
+	std::vector<std::vector<WORDS_TYPE>> structuresFound;
+
+	/* DEFINED STRUCTURES, THE PLACE GONNA CHANGE BUT HERE FOR TESTS */
+	std::vector<std::vector<WORDS_TYPE>> tz;
+	/* DAY 1 http://www.english-for-students.com/Frequently-Used-Sentences-1.html*/
+	std::vector<WORDS_TYPE> ABC = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+	std::vector<WORDS_TYPE> DEF = { INTERROGATIVE_PRONOUNS, AUXILIARY_VERBS, POSSESSIVE_ADJECTIVES, ABSTRACT_NOUNS };
+	std::vector<WORDS_TYPE> GHI = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, ARTICLES_ADJECTIVES, PLACE_ADVERBS, PROPER_NOUNS };
+	std::vector<WORDS_TYPE> JKL = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, ACTION_VERBS, ABSTRACT_NOUNS };
+	std::vector<WORDS_TYPE> MNO = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, ARTICLES_ADJECTIVES, COMMON_NOUNS };
+	std::vector<WORDS_TYPE> PQR = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, POSSESSIVE_ADJECTIVES, COMMON_NOUNS };
+	std::vector<WORDS_TYPE> STU = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, POSSESSIVE_ADJECTIVES,  ATTRIBUTIVE_ADJECTIVES, COMMON_NOUNS };
+
+	/* DAY 2 http://www.english-for-students.com/Frequently-Used-Sentences-2.html*/
+//	std::vector<WORDS_TYPE> VWX = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+//	std::vector<WORDS_TYPE> YZA = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+//	std::vector<WORDS_TYPE> BCD = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+//	std::vector<WORDS_TYPE> EFG = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+//	std::vector<WORDS_TYPE> HIJ = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
+//	std::vector<WORDS_TYPE> KLM = { SUBJECT_PRONOUNS, AUXILIARY_VERBS, PROPER_NOUNS };
 
 
+	tz.push_back(ABC);	
+	tz.push_back(DEF);
+	tz.push_back(GHI);
+	tz.push_back(JKL);
+	tz.push_back(MNO);
+	tz.push_back(PQR);
+	tz.push_back(STU);
+
+	
+
+
+
+	/* WAITING FOR USER INPUT LOOP */
 	bool keepLooping = true;
 
 	cout << "AI is waiting for a talk..." << endl;
@@ -36,6 +70,8 @@ int main()
 		userVectorPhrase = split(userPhrase);
 		cout << endl;
 		lang.getWordNTypeInSentence(userVectorPhrase, &wordNType);
+
+		/* DISPLAY THE WORDS AND THEIR INT VALUE (which is the int value enumeration WORDS_TYPE) */
 		for (unsigned int i = 0; i < wordNType.size(); i++)
 		{
 
@@ -45,9 +81,40 @@ int main()
 			}
 
 		}
-		ps.getStructure(wordNType);
+		 ps.getStructure(wordNType, currentPhraseTypes);
+
+		/* COMPARE HERE TO THE DEFINED STRUCTURES AND CHECK IF THE CURRENT STRUCTURES EXISTS */
+		
+		for (int a = 0; a < currentPhraseTypes.size(); a++)
+		{
+			for (int i = 0; i < tz.size(); i++)
+			{
+				if (currentPhraseTypes.at(a) == tz.at(i))
+				{
+					structuresFound.push_back(tz.at(i));
+				}				
+			}
+		}
+
+		
+		/* DISPLAYING FOUND STRUCTURES */
+		cout << "FOUND " << structuresFound.size() << " EXISTING STRUCTURES : " << endl;
+		for (int i = 0; i < structuresFound.size(); i++)
+		{
+			cout << "STRUCTURE " << i + 1 << " : ";
+			for (int y = 0; y < structuresFound.at(i).size(); y++)
+			{
+				cout << ps.getWordTypesInString()[structuresFound.at(i).at(y)] << " ";
+			}
+			cout << endl;
+		}
+		 
+		currentPhraseTypes.clear();
+		
+		/* Now we have the structures found, we have to check which one is the correct one. For this, we'll create some attributes to the words like bool isPlural, int person, bool isTransitive, etc...*/
 
 
+		structuresFound.clear();
 	}
 	return 0;
 }

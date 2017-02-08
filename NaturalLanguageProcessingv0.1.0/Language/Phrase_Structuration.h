@@ -15,7 +15,8 @@ public:
 	void initNegations();
 	
 
-	void getStructure(vector<WORD_AND_TYPE> sentenceTypes);
+	void getStructure(vector<WORD_AND_TYPE> sentenceTypes, vector<vector<WORDS_TYPE>> &test1);
+	map<WORDS_TYPE, string> getWordTypesInString();
 	
 protected:
 private:
