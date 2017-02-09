@@ -169,6 +169,12 @@ void Language::initAdverbs()
 	{
 		this->addWord(new Frequency_Adverbs(AdverbsList.at(i), ADVERBS, FREQUENCY_ADVERBS));
 	}
+	/* INTERROGATIVE ADVERBS */
+	this->readFile("Adverbs\\Adverbs_Data\\Interrogative_Adverbs.txt", AdverbsList);
+	for (unsigned int i = 0; i < AdverbsList.size(); i++)
+	{
+		this->addWord(new Interrogative_Adverbs(AdverbsList.at(i), ADVERBS, INTERROGATIVE_ADVERBS));
+	}
 	/* MANNER ADVERBS */
 	this->readFile("Adverbs\\Adverbs_Data\\Manner_Adverbs.txt", AdverbsList);
 	for (unsigned int i = 0; i < AdverbsList.size(); i++)

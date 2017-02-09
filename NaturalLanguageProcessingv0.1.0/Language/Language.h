@@ -17,6 +17,7 @@
 #include "Grammar\Adverbs\Conjunctive_Adverbs.h"
 #include "Grammar\Adverbs\Degree_Adverbs.h"
 #include "Grammar\Adverbs\Frequency_Adverbs.h"
+#include "Grammar\Adverbs\Interrogative_Adverbs.h"
 #include "Grammar\Adverbs\Manner_Adverbs.h"
 #include "Grammar\Adverbs\Place_Adverbs.h"
 #include "Grammar\Adverbs\Time_Adverbs.h"

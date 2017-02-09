@@ -162,6 +162,7 @@
     <ClInclude Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Degree_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Frequency_Adverbs.h" />
+    <ClInclude Include="Language\Grammar\Adverbs\Interrogative_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Manner_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Place_Adverbs.h" />
     <ClInclude Include="Language\Grammar\Adverbs\Time_Adverbs.h" />
@@ -218,6 +219,7 @@
     <ClCompile Include="Language\Grammar\Adverbs\Conjunctive_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Degree_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Frequency_Adverbs.cpp" />
+    <ClCompile Include="Language\Grammar\Adverbs\Interrogative_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Manner_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Place_Adverbs.cpp" />
     <ClCompile Include="Language\Grammar\Adverbs\Time_Adverbs.cpp" />

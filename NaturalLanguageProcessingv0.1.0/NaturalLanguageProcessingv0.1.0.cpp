@@ -112,7 +112,7 @@ int main()
 		currentPhraseTypes.clear();
 		
 		/* Now we have the structures found, we have to check which one is the correct one. For this, we'll create some attributes to the words like bool isPlural, int person, bool isTransitive, etc...*/
-
+		
 
 		structuresFound.clear();
 	}

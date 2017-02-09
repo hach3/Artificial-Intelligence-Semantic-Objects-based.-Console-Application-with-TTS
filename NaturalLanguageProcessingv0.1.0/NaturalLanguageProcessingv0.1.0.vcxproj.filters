@@ -234,6 +234,9 @@
     <ClInclude Include="Language\Grammar\Adjectives\Attributive_Adjectives.h">
       <Filter>Header Files\Language\Grammar\Adjectives</Filter>
     </ClInclude>
+    <ClInclude Include="Language\Grammar\Adverbs\Interrogative_Adverbs.h">
+      <Filter>Header Files\Language\Grammar\Adverbs</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -397,6 +400,9 @@
     </ClCompile>
     <ClCompile Include="Language\Grammar\Adjectives\Possessive_Adjectives.cpp">
       <Filter>Source Files\Language\Grammar\Adjectives</Filter>
+    </ClCompile>
+    <ClCompile Include="Language\Grammar\Adverbs\Interrogative_Adverbs.cpp">
+      <Filter>Source Files\Language\Grammar\Adverbs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
